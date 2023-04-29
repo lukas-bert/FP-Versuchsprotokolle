@@ -1,4 +1,5 @@
 \section{Zielsetzung}
+\label{sec:Ziel}
 Laser (\textbf{l}ight \textbf{a}mplification by \textbf{s}timulated \textbf{e}mission of \textbf{r}adiation) sind in der experimentellen Physik von zentraler Bedeutung
 und werden u.a. zur Untersuchung atomarer Strukturen genutzt. Sie bieten eine leistungsstarke Quelle für kohärentes Licht und sind 
 oft auf bestimmte Wellenlängen einstellbar. In diesem Versuch wird die Funktionsweise eines Diodenlasers, die Justierung des Lasers
@@ -13,7 +14,12 @@ und dessen Bedienung im Experiment am Beispiel des Absorptionsspektrums von Rubi
 Das Funktionsprinzip eines Lasers beruht auf der quantenmechanischen Beschreibung von Zustandssystemen. Demnach lassen sich Systeme von Teilchen (z.B. Elektronen oder Atome)
 durch ein Zustandssystem beschreiben, bei dem jedem möglichen Zustand eine Energie zugeordnet wird. Damit ein Teilchen in einen energetisch höheren Zustand gelangen kann,
 muss es genau die Energiedifferenz zwischen den beiden Zuständen überwinden. Dies ist über die Absorption eines Photons möglich, dessen Frequenz $\nu$ genau zur nötigen 
-Energie $E = \symup{h}\nu$ korrespondiert. Ebenso wird bei einem Übergang in ein niedrigeres Niveau Energie frei, die in Form eines Photons emittiert wird. Ein solcher 
+Energie 
+\begin{equation}
+    \label{eqn:E}
+    E = \symup{h}\nu
+\end{equation}
+korrespondiert. Ebenso wird bei einem Übergang in ein niedrigeres Niveau Energie frei, die in Form eines Photons emittiert wird. Ein solcher 
 Übergang kann spontan auftreten (spontane Emission) oder durch ein Photon gleicher Frequenz angeregt werden (stimulierte/induzierte Emission). Bei stimulierter Emission
 stimmt das emittierte Photon in Frequenz, Phasenlage und Polarisation mit dem anregenden Photon überein, weshalb dieser Vorgang zur Erzeugung von kohärentem Licht in einem 
 Laser genutzt wird. Dazu müssen jedoch die energetisch höheren Zustände stets stärker besetzt sein, als energetisch Niedrige, damit die stimulierte Emission überwiegen kann. 
@@ -33,34 +39,106 @@ liegt - in den Grundzustand zurück, aus dem es wieder in den vierten Zustand ge
 \subsection{Funktionsweise von Halbleiterdioden}
 Eine Halbleiterdiode besteht im wesentlichen aus einem p- und einem n-dotierten Halbleitermaterial. Eine \glqq Dotierung\grqq{} meint das Einbringen von Fremdatomen in ein
 Grundmaterial. Negativ geladenen Atome bringen dabei zusätzliche Elektronen in das Material, welche sich frei bewegen können. Diese Art von Dotieratomen werden Elektronendonatoren
-genannt. Positiv geladene Atome werden Elektronenakzeptoren bringen \dq Fehlstellen\dq{} - auch Löcher genannt - in das Material, die sich ebenfalls frei bewegen können 
+genannt. Positiv geladene Atome (Elektronenakzeptoren) bringen \dq Fehlstellen\dq{} - auch Löcher genannt - in das Material, die sich ebenfalls frei bewegen können 
 und sich wie positive Elektronen verhalten. Bei n-Dotierung entsteht ein Donatorniveau knapp unter dem Leitungsband des Materials, bei p-Dotierung ein Akzeptorniveau knapp 
 über dem Valenzband. Diese können schon durch geringfügige thermische Anregung (Raumtemperatur) besetzt werden, wodurch die Anzahl der freien Ladungsträger und somit auch die 
 Leitfähigkeit steigt. 
 Im Übergang einer p- zu einer n-dotierten Schicht bilden sich durch den Austausch von Löchern aus der p-dotierten Schicht und Elektronen aus der n-dotierten Schicht Bereiche 
 positiver Ladung in der n-dotierten Schicht und negativer Ladung in der p-dotierten Schicht. Die dadurch bedingte Coulombkraft führt dazu, dass keine freien Ladungsträger 
 im pn-Übergang verweilen könnnen und dieser somit wie ein Isolator fungiert. Dieser Bereich wird \textit{Verarmungszone} oder \textit{Sperrschicht} genannt.
-Wird ein Strom an das Material angelagt, sodass die negativ dotierte Schicht mit dem negativen Pol der Stromquellen verbunden ist, wirkt die anliegende Spannung diesem 
+Wird ein Strom so an das Material angelegt, dass die negativ dotierte Schicht mit dem negativen Pol der Stromquelle verbunden ist, wirkt die anliegende Spannung diesem 
 Effekt entgegen, weshalb Strom zwischen den Schichten fließen kann. Elektronen rekombinieren dann mit Löchern im Valenzband der p-dotierten Schicht, wodurch ein Photon
 emittiert wird, dessen Energie ungefähr der Bandlücke $E_G$ des Materials entspricht. Valenzband und Akzeptorniveau, sowie Donatorniveau und Leitungsband entsprechen 
 den Energieniveaus des 4-Zustandssystems aus \autoref{subsec:Theorie_Zustandssysteme}, was bedeutet, dass Besetzungsinversion vorliegt. 
 Die emittierten Photonen können ihrerseits wieder Emission weiterer Photonen gleicher Wellenlänge anregen.
 
 \subsection{Aufbau eines Diodenlasers}
-Das Herzstück eines Lasers ist der Diodenchip, in dem durch die oben beschriebenen Prozesse kohärentes Licht emittiert werden. Die gewünschte Wellenlänge der Photonen lässt sich 
+Das Herzstück eines Diodenlasers ist der Diodenchip, in dem durch die oben beschriebenen Prozesse bei hinreichend hoher Stromstärke kohärentes Licht emittiert wird. 
+Die gewünschte Wellenlänge der Photonen lässt sich 
 über den Diodenstrom und die Diodentemperatur regulieren. Der Aufbau einer solchen Diode ist in \autoref{fig:LDChip} zu sehen. Die Grafik zeigt eine stehende Welle, die sich in 
 der Diode bildet, da diese wie ein optischer Hohlraumresonator wirkt. Dies ist möglich, da die Front- und Rückseite der Diode (teilweise) reflektieren. 
 In einer Diode der Länge $L$ aus einem Material mit Brechungsindex $n$ können Wellen der Wellenlänge $\lambda = \sfrac{2L}{k}  \;,k \in \mathbb{N}$ entstehen, die in der Frequenz 
 eine Periodizität von 
 \begin{equation}
-    \label{eq:delta_nu}
+    \label{eqn:delta_nu}
     \Delta \nu = \frac{c}{2Ln}
 \end{equation}  
-vorweisen.
+vorweisen. So ergibt sich eine Bandbreite von $\Delta \nu \approx 50 \unit{\mega\hertz}$ für einen reinen Diodenlaser \cite{diode_laser_spectroscopy}. 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{content/pics/LDChip.png}
     \caption{Schematische Abbildung eines Laser-Diodenchips. Es sind einzelne Schichten der Diode und eine stehende Welle erkennbar. \cite{diode_laser_spectroscopy}}
     \label{fig:LDChip}
+\end{figure}
+Der aus der Frontseite der Diode austretende Laserstrahl ist elliptisch und divergiert, aber wird jedoch durch eine kollimierende Linse gebündelt (\autoref{fig:aufbau}). 
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{content/pics/aufbau_laser.png}
+    \caption{Konfiguration des Diodenlasers im Littrow-Aufbau. \cite{diode_laser_spectroscopy}}
+    \label{fig:aufbau}
+\end{figure}
+
+Da die Bandbreite des Frequenzspektrums eines reinen Diodenlasers nicht genügt um atomare Übergangsspektren aufzulösen, ist außerhalb des Diodenchips ein Beugungsgitter installiert. 
+Ein Teil des auf das Gitter treffenden Strahles wird in nullter Beugungsordnung am Gitter aus dem Laser gelenkt. In erster Beugungsordnung werden ca. $15 \%$ 
+des Strahles zurück reflektiert, wodurch ein weiterer Resonator entsteht, dessen Enden die Rückwand der Diode und das Beugungsgitter sind. In diesem äußeren Resonator 
+(external cavity) können sich wieder Wellen bestimmter Wellenlänge ausbilden. Da jedoch die Länge des äußeren Resonators bedeutend größer als die der Diode ist, ergibt 
+sich nach \autoref{eqn:delta_nu} ein feineres Frequenzspektrum. Ein weiterer Effekt des Beugungsgitters ist, dass zu einem festen Winkel nur Licht einer bestimmten
+Wellenlänge zurückreflektiert wird. Für einen Eintrittswinkel $\theta$ und einen Gitterabstand $d$ gilt für das erste Beugungsmaximum die Braggbedingung 
+\begin{equation}
+    \label{eqn:Bragg}
+    \lambda = 2d \sin\theta.
+\end{equation}
+Der Winkel des Beugungsgitters kann so eingestellt werden, dass nur Licht der gewünschten Wellenlänge im richtigen Winkel zurückgestreut wird, was das Frequenzspektrum der 
+Diode stabilisert. 
+
+\subsection{Frequenzjustierung des Diodenlasers}
+Das aktive Medium (Bereich des pn-Übergangs), der innere Resonator, die Gitterstreuung und der äußere Resonator tragen zur Verstärkung bestimmter Wellenlängen 
+bei. Wie die Verstärkung der einzelnen Komponenten relativ zueinander wirkt ist in \autoref{fig:net_gain} dargestellt.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.50]{content/pics/net_gain.png}
+    \caption{Verstärkungsfaktor der Laserkomponenten in Abhängigkeit zur Wellenlänge. Zu Gunsten der Lesbarkeit sind die Graphen versetzt zueinander 
+    aufgetragen. \cite{diode_laser_spectroscopy}}
+    \label{fig:net_gain}
+\end{figure}
+
+Durch das aktive Medium findet eine Verstärkung in einem relativ großen Bereich um eine Wellenlänge $\lambda_0$ statt, die der Energie der Bandlücke des Halbleitermaterials entspricht. 
+Die Lage dieses Maximums kann sowohl über die Temperatur der Diode, als auch über den Diodenstrom reguliert werden. Eine Änderung der Temperatur beeinflusst einerseits 
+den Abstand der Energieniveaus und andererseits auch den Brechungsindex des Diodenmaterials, wodurch sich die möglichen Moden im inneren Resonator ändern. 
+Durch Kombination dieser Effekte kommt es zu Modensprüngen was in \autoref{fig:temperatur} zu sehen ist. 
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.55]{content/pics/temperatur.png}
+    \caption{Temperaturabhänigkeit der Wellenlänge einer Sanyo DL-7140-200S Diode \cite{diode_laser_spectroscopy}.}
+    \label{fig:temperatur}
+\end{figure}
+Durch den Diodenstrom wird die Ladungsdichte im aktiven Medium und die Temperatur der Diode beeinflusst, was ebenfalls die emittierte Wellenlänge ändert.
+Durch Abstimmen des inneren- und äußeren Resonators kann ebenfalls die gewünschte Frequenz des Lasers verstärkt werden. Bei festen Werten (Temperatur, Strom) für den inneren 
+Resonator lässt sich mithilfe des Beugungswinkels und des Abstandes des Gitters das Modenspektrum der beiden Resonatoren abgleichen, um eine maximale Verstärkung der 
+eingestellten Wellenlänge zu erreichen. Dies ist in \autoref{fig:moden} dargestellt.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.55]{content/pics/moden.png}
+    \caption{Abstimmen der Moden des inneren Resonators mit dem Spektrum des äußeren Resonators und des Gitters. \cite{diode_laser_spectroscopy}.}
+    \label{fig:moden}
+\end{figure}
+
+\subsection{Absorptionsspektrum von Rubidium}
+Wie in \autoref{sec:Ziel} erwähnt, wird die Funktionsweise des Lasers am experimentellen Beispiel des Absorptionsspektrums von Rubidium erprobt. 
+Dazu wird der Laserstrahl durch eine mit Rubidium gefüllte Kammer geleitet. Die Elektronen der Rubidiumatome befinden sich auch auf Energieniveaus.
+Photonen mit Frequenzen die nach \autoref{eqn:E} genau der Energiedifferenz zwischen solchen Niveaus entsprechen können von einem Rubidiumatom absorbiert werden.
+Ein Elektron wird dann auf eine höhere Schale gehoben und fällt nach kurzer Zeit zurück in den nicht angeregten Zustand. Das dabei wieder emittierte Photon kann jedoch
+in alle Raumrichtungen entsendet werden, weshalb sich eine Intensitätsminderung des Laserstrahls nach dem Passieren der Rubidiumzelle bei solchen Frequenzen feststellen lässt. 
+Die anzuregenden Energieniveaus und das zu erwartende Absorptionsspektrum sind in \autoref{fig:spektrum_rubidium} zu sehen.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.55]{content/pics/spektrum_rubidium.png}
+    \caption{Energieniveaus von Rubidium und daraus resultierendes Absorptionsspektrum. \cite{diode_laser_spectroscopy}.}
+    \label{fig:spektrum_rubidium}
 \end{figure}
