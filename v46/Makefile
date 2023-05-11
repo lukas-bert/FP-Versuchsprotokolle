@@ -1,14 +1,14 @@
 all: build/v46.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+build/magnetfeld.pdf build/messwerte.pdf build/fit.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
 # hier weitere Abhängigkeiten für build/v46.pdf deklarieren:
-build/v46.pdf: build/plot.pdf
+build/v46.pdf: build/magnetfeld.pdf build/messwerte.pdf build/fit.pdf
 
 build/v46.pdf: FORCE | build
 	# to find header and bib files in the main directory
@@ -22,7 +22,7 @@ build/v46.pdf: FORCE | build
 	  --halt-on-error \
 	v46.tex
 	cp build/v46.pdf v46.pdf
-	open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
+#	open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
 
 build:
 	mkdir -p build
