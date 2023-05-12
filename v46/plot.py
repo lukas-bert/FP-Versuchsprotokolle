@@ -26,15 +26,25 @@ plt.close()
 
 y, t1, m1, t2, m2 = np.genfromtxt("content/data/GaAs12.txt", unpack = True)
 # umrechnen der Minuten
-theta12 = ((t1 + m1/60) - (t2 + m2/60))/2
+
+t1_12 = (t1 + m1/60)
+t2_12 = (t2 + m2/60)
+theta12 = (t1_12 - t2_12)/2
 
 y, t1, m1, t2, m2 = np.genfromtxt("content/data/GaAs28.txt", unpack = True)
-theta28 = ((t1 + m1/60) - (t2 + m2/60))/2
+t1_28 = (t1 + m1/60)
+t2_28 = (t2 + m2/60)
+theta28 = (t1_28 - t2_28)/2
 
 y, t1, m1, t2, m2 = np.genfromtxt("content/data/GaAs_pure.txt", unpack = True)
-theta_p =( (t1 + m1/60) - (t2 + m2/60))/2
+t1_p = (t1 + m1/60)
+t2_p = (t2 + m2/60)
+theta_p = (t1_p - t2_p)/2
 
-np.savetxt("content/data/differenzen.txt", np.array([theta12, theta28, theta_p]).transpose(), header = "GaAs12,   GaAs28,    GaAs (rein)", fmt = "%.2f")
+np.savetxt(
+    "content/data/differenzen.txt", np.array([theta12, t1_12, t2_12,  theta28, t1_28, t2_28, theta_p, t1_p, t2_p]).transpose(),
+     header = "GaAs12 (theta, theta1, theta2),   GaAs28 (theta, theta1, theta2),    GaAs (rein) (theta, theta1, theta2)", fmt = "%.2f"
+)
 
 # Umrechnen in Bogenmaß
 l12 = 1.36e-3
@@ -102,7 +112,7 @@ delta3 = (m -m_lit)/m_lit*100
 print("------------------------------------------------------")
 print(f"m12 = {m1:.4e} kg           delta = {delta1:.3f}")
 print(f"m28 = {m2:.4e} kg           delta = {delta2:.3f}")
-print(f"Mittelwert = {m2:.4e} kg    delta = {delta3:.3f}")
+print(f"Mittelwert = {m:.4e} kg    delta = {delta3:.3f}")
 print(f"Literaturwert = {m_lit:.4e} kg")
 print("------------------------------------------------------")
 
@@ -117,6 +127,7 @@ plt.plot(y**2, theta12-theta_p, lw = 0, c = "indigo", marker = "x", label = r"Ga
 plt.plot(y**2, theta28-theta_p, lw = 0, c = "peru", marker = "1", label = r"GaAs n-dotiert, N = $\qty{2.8e18}{\per\cubic\centi\metre}$", ms = 9)
 
 plt.grid()
+plt.ylim(0, 115)
 plt.xlim(1, 7.5)
 plt.ylabel(r"$\theta_\text{frei} \mathbin{/} \unit{\radian\per\metre}$")
 plt.xlabel(r"$\lambda^2 \mathbin{/} \unit{\micro\metre\squared}$")

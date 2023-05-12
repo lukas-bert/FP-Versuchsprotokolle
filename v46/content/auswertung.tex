@@ -1,26 +1,129 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{magnetfeld.pdf}
-  \caption{Plot.}
-  \label{fig:magnetfeld}
-\end{figure}
+\subsection{Bestimmung der maximalen magnetischen Kraftflussdichte}
+Zur Bestimmung der maximalen magnetischen Flussdichte werden die in \autoref{fig:magnetfeld} dargestellten Messwerte verwendet. Die genauen Messdaten sind im Anhang
+\ref{subsec:Originaldaten} aufgelistet. Anhand des Graphen lässt sich ein eindeutiges Maximum erkennen. Dieses liegt bei einer magnetischen Flussdichte von 
+$B = \qty{412}{\milli\tesla}$.
 
 \begin{figure}
   \centering
-  \includegraphics{messwerte.pdf}
-  \caption{Plot.}
-  \label{fig:messwerte}
+  \includegraphics{magnetfeld.pdf}
+  \caption{Grafische Darstellung der Messdaten zur Bestimmung der magnetischen Kraftflussdichte.}
+  \label{fig:magnetfeld}
 \end{figure}
+
+\subsection{Bestimmung der effektiven Elektronenmasse der Dotieratome}
+\label{subsec:Elektronenmasse}
+Zur Bestimmung der effektiven Elektronenmasse werden neun Interferenzfilter und drei verschiedene Galliumarsenid Proben verwendet. Eine der Proben ist undotiert und wird verwendet 
+um die Faradayrotation gebundender Ladungsträger zu bestimmen. Die anderen Proben haben Donatorenkonzentrationenn von $\qty{1.2e18}{\cubic\centi\metre^{-1}}$ (Probe $1$) und 
+$\qty{2.8e18}{\cubic\centi\metre^{-1}}$ (Probe $2$). Die undotierte Kontrollprobe heiße Probe $0$.
+Die Dicken der Proben sind als
+\begin{align*}
+  d_0 &= \qty{5.11}{\milli\metre} & d_1 &= \qty{1.36}{\milli\metre} & d_2 &= \qty{1.296}{\milli\metre}
+\end{align*}
+gegeben. Die jeweiligen Messwerte der Drehwinkel $\theta_1$ und $\theta_2$, sowie die daraus berechnete Differenz $\theta$ sind den Tabellen 
+\ref{tab:mw1} - \ref{tab:mw2} zu entnehmen.
+
+\begin{table}
+  \centering
+  \caption{Messwerte zur undotierten Probe und nach \autoref{eqn:theta_diff} bestimmter Drehwinkel der Faradayrotation.}
+  \label{tab:mw1}
+  \begin{tabular}{c c c c}
+    \toprule
+    $\lambda \mathbin{/} \unit{\micro\meter}$ & $\theta_{1} \mathbin{/} \unit{\degree}$ & $\theta_{2} \mathbin{/} \unit{\degree}$ &%
+     $\theta \mathbin{/} \unit{\degree}$ \\
+    \midrule
+    $1,06 $ & $94.28$ & $72.58$ & $10.85$ \\
+    $1,29 $ & $91.35$ & $75.07$ & $8.14 $ \\
+    $1,45 $ & $90.50$ & $80.73$ & $4.88 $ \\
+    $1,72 $ & $86.05$ & $80.00$ & $3.02 $ \\
+    $1,96 $ & $80.73$ & $75.53$ & $2.60 $ \\
+    $2,156$ & $80.28$ & $74.38$ & $2.95 $ \\
+    $2,34 $ & $55.00$ & $48.00$ & $3.50 $ \\
+    $2,51 $ & $22.52$ & $30.20$ & $-3.84$ \\
+    $2,65 $ & $71.48$ & $65.17$ & $3.16 $ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Messwerte zur Probe mit $N = \qty{1.2e18}{\cubic\centi\metre^{-1}}$ und nach \autoref{eqn:theta_diff} bestimmter Drehwinkel der Faradayrotation.}
+  \label{tab:mw2}
+  \begin{tabular}{c c c c}
+    \toprule
+    $\lambda \mathbin{/} \unit{\micro\meter}$ & $\theta_{1} \mathbin{/} \unit{\degree}$ & $\theta_{2} \mathbin{/} \unit{\degree}$ &%
+     $\theta \mathbin{/} \unit{\degree}$ \\
+    \midrule
+    $1,06 $ & $87.17$ & $80.00$ & $3.58$ \\
+    $1,29 $ & $87.00$ & $80.17$ & $3.42$ \\
+    $1,45 $ & $89.00$ & $84.13$ & $2.43$ \\
+    $1,72 $ & $87.20$ & $80.13$ & $3.53$ \\
+    $1,96 $ & $82.03$ & $78.02$ & $2.01$ \\
+    $2,156$ & $81.15$ & $75.18$ & $2.98$ \\
+    $2,34 $ & $54.70$ & $46.57$ & $4.07$ \\
+    $2,51 $ & $35.30$ & $27.22$ & $4.04$ \\
+    $2,65 $ & $73.52$ & $65.07$ & $4.23$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Messwerte zur Probe mit $N = \qty{2.8e18}{\cubic\centi\metre^{-1}}$ und nach \autoref{eqn:theta_diff} bestimmter Drehwinkel der Faradayrotation.}
+  \label{tab:mw3}
+  \begin{tabular}{c c c c}
+    \toprule
+    $\lambda \mathbin{/} \unit{\micro\meter}$ & $\theta_{1} \mathbin{/} \unit{\degree}$ & $\theta_{2} \mathbin{/} \unit{\degree}$ &%
+     $\theta \mathbin{/} \unit{\degree}$ \\
+    \midrule
+    $1,06 $ & $91.00$ & $78.62$ & $6.19$ \\
+    $1,29 $ & $88.83$ & $78.25$ & $5.29$ \\
+    $1,45 $ & $90.07$ & $81.90$ & $4.08$ \\
+    $1,72 $ & $85.02$ & $79.68$ & $2.67$ \\
+    $1,96 $ & $82.13$ & $74.15$ & $3.99$ \\
+    $2,156$ & $83.58$ & $70.57$ & $6.51$ \\
+    $2,34 $ & $56.48$ & $43.52$ & $6.48$ \\
+    $2,51 $ & $39.10$ & $25.08$ & $7.01$ \\
+    $2,65 $ & $79.10$ & $64.03$ & $7.53$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Die Messwerte der Drehwinkel $\theta$ werden normiert, indem sie durch die jeweiligen Probenlängen geteilt werden. Durch Subtraktion der Messwerte der undotierten Probe von 
+denjenigen der n-dotierten Proben ergibt sich die Faradayrotation pro Eineheitslänge 
+\begin{equation*}
+  \theta_{\text{frei}, i} = \frac{\theta_i}{d_i} - \frac{\theta_0}{d_0}, \qquad i = \{1, 2\}.
+\end{equation*}
+An \autoref{eqn:theta_l2} lässt sich erkennen, dass $\theta_\text{frei}$ direkt proportional zum Quadrat der Wellenlänge ($\lambda^2$) ist. Mithilfe des Proportionalitätsfaktors 
+kann die effektive Elektronenmasse $m^*$ ermittelt werden. Dazu wird eine lineare Funktion der Form $f(x) = ax + b$ mit $f(x) = \theta_\text{frei}$ und $x = \lambda^2$
+angesetzt. In der Theorie gilt $b = 0$, jedoch wird hier der zusätzliche Freiheitsgrad $b$ dennoch verwendet, um eventuelle systematische Abweichungen zu kompensieren.
+Es wird eine lineare Regression mittels \textit{scipy} \cite{scipy} durchgeführt. Die Messwerte der Faradayrotation pro Eineheitslänge und die Ausgleichsgeraden sind für 
+beide Galliumarsenid-Proben in \autoref{fig:fit} dargestellt.
 
 \begin{figure}
   \centering
   \includegraphics{fit.pdf}
-  \caption{Plot.}
+  \caption{Werte der freien Weglänge $\theta_\text{frei}$ der dotierten Proben und ermittelte Ausgleichsgeraden.}
   \label{fig:fit}
 \end{figure}
 
-
-Siehe \autoref{fig:plot}!
+Die Parameter der Geradengleichung ergeben sich zu
+\begin{align*}
+  a_1 &= \qty{7.186+-1.752e12}{\metre^{-3}} &  a_2 &= \qty{11.14+-2.61e12}{\metre^{-3}} \\
+  b_1 &= \qty{1.76+-7.67}{\metre^{-1}} & b_1 &= \qty{17.56+-11.41}{\metre^{-1}}
+\end{align*}
+für Probe $1$ und Probe $2$ respektive. Durch Umstellen von \autoref{eqn:theta_l2} und Einsetzen des Ansatzes $\theta_\text{frei} = a \lambda^2$ ergibt sich 
+die Gleichung
+\begin{equation}
+  m^* = \sqrt{\frac{e^3 N B}{8 \symup{\pi}^2 \varepsilon_0 c^3 n a}}
+\end{equation}
+zur Berechnung der effektiven Elektronenmasse. Für die magnetische Kraftflussdichte wird $B = \qty{412}{\milli\tesla}$ verwendet. Der Berechnungsindex von Galliumarsenid ist
+im vorliegenden Wellenlängenbereich $n = \num{3.354}$ !!!QUELLE!!!. Für die bekannten Werte der Elementarladung $e$, der Permittivität des Vakuums $\varepsilon_0$ und der 
+Lichtgeschwindigkeit $c$ werden Werte aus \textit{scipy constants} \cite{scipy} verwendet. Für die einzelnen Proben ergeben sich nach Gaußscher Fehlerfortpflanzung 
+die Werte
+\begin{align*}
+  m_1 &= \qty{6.69+-0.82e-32}{\kilo\gram} & m_2 &=  \qty{8.21+-0.96e-32}{\kilo\gram}
+\end{align*}
+für die effektive Elektronenmasse. Der Mittelwert der Messungen ergibt sich zu $\qty{7.45+-0.63e-32}{\kilo\gram}$.
