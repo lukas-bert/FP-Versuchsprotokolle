@@ -14,6 +14,13 @@ Es ergibt sich für verschiedene Materialien eine Struktur, die bestimmte Eigens
 Valenz- und Leitungsband einem Isolator entsprechen. Umgekehrt sind Materialien mit keiner Bandlücke Leiter. Ein schematisches Bild von Bandstrukturen ist in \autoref{fig:Bandstruktur}
 zu sehen.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{content/pics/Bandstruktur.png}
+    \caption{Bandstruktur eines Isolators, Metalls und Halbmetalls. Hierbei bezeichnet $E_{\symup{F}}$ die Fermienergie \cite{GrossMarx2018}.}
+    \label{fig:Bandstruktur}
+\end{figure}
+
 Materialien mit einer relativ kleinen Bandlücke von etwa $\symup{\Delta}E_{\text{gap}}=\qtyrange{0}{6}{\electronvolt}$ weisen nochmal andere Eigenschaften auf und werden als Halbleiter
 bezeichnet. Am absoluten Temperaturnullpunkt von $T=\qty{0}{\kelvin}$ ist ein Halbleiter nichtleitend, die Fermienergie liegt demnach in der Bandlücke. Für Raumtemperaturen liegt die
 thermische Energie von Elektronen bei rund $E_{\text{therm.}}=\qty{26}{\milli\electronvolt}$. Hat ein Halbleiter eine Bandlücke in etwa diesem Energiebereich, treten Elektronen in das 
@@ -21,15 +28,8 @@ Leitungsband über und das Material wird leitend.
 
 Die Bandlücke von dem in diesem Versuch verwendetem Galliumarsenid beträgt $E_{\text{gap, GaAs}} = \qty{1,42}{\electronvolt}$, somit befinden sich bei Raumtemperatur sehr wenig 
 Elektronen im Leitungsband und die Leitfähigkeit ist entsprechend gering. Durch das Einbringen von Fremdatomen kann ein weiteres Energieniveau unterhalb des Leitungsbands geschaffen werden,
-sodass zwischen diesem Band und dem Leitungsband eine deutlich kleinere Bandlücke ergibt. So hat das hier verwendete, n-dotierte Galliumarsenid eine Bandlücke in der Größenordnung der
+sodass sich zwischen diesem Band und dem Leitungsband eine deutlich kleinere Bandlücke ergibt. Das hier verwendete, n-dotierte Galliumarsenid hat eine Bandlücke in der Größenordnung der
 thermischen Energie der Elektronen und wird somit leitend. 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{content/pics/Bandstruktur.png}
-    \caption{Bandstruktur eines Isolators, Metalls und Halbmetalls. Hierbei bezeichnet $E_{\symup{F}}$ die Fermienergie \cite{GrossMarx2018}.}
-    \label{fig:Bandstruktur}
-\end{figure}
 
 \subsection{Effektive Masse}
 \label{subsec:Effektive Masse}
@@ -69,8 +69,8 @@ zum beschriebenen Effekt.
     \label{fig:Zirkulare Doppelbrechung}
 \end{figure}
 
-Der Rotationswinkel $\theta$ kann über die Brechungsindices für rechts und links polarisiertes Licht~(\eqref{eq:theta_rl_n}) oder letzlich über die 
-Suszeptibilität~(\eqref{eq:theta_rl_chi}) ausgedrückt werden.
+Der Rotationswinkel $\theta$ kann über die Brechungsindices für rechts und links polarisiertes Licht \eqref{eq:theta_rl_n} oder letzlich über die 
+Suszeptibilität \eqref{eq:theta_rl_chi} ausgedrückt werden.
 
 \begin{align}
     \theta &= \frac{L\omega}{2}\left(\frac{1}{n_{\symup{r}}}-\frac{1}{n_{\symup{l}}}\right) \label{eq:theta_rl_n} \\
@@ -86,16 +86,16 @@ zu der Ausbreitungsrichtung des Lichts angelegt, ist eine zirkulare Doppelbrechu
 
 Die Suszeptibilität $\chi_\text{xy}$ ist von dem angelegten Magnetfeld abhängig
 \begin{equation}
-    \chi_\text{xy} = \frac{Ne^3\omega B}{\varepsilon_0\left(\left(-m\omega^2+K\right)^2-\left(e\omega B\right)\right)}.
+    \chi_\text{xy} = \frac{Ne^3\omega B}{\varepsilon_0\left(\left(-m\omega^2+K\right)^2-\left(e\omega B\right)^2\right)}.
     \label{eq:Suszeptibilität_Faraday}
 \end{equation}
 
-Wird für die Suszeptibilität in \eqref{eq:theta_rl_chi} die Suszeptibilität aus \eqref{eq:Suszeptibilität_Faraday} eingesetzt, folgt
+Wird für die Suszeptibilität in \eqref{eq:theta_rl_chi} \autoref{eq:Suszeptibilität_Faraday} eingesetzt, folgt
 \begin{equation}
-    \theta = \frac{e^3\omega NBL} {2\varepsilon_0 cm^2XXXXXn}. %\left(\left(\omega^2+\omega_0\right)^2-\left(\omega \omega_\symup{c}\right)^2\right)
+    \theta = \frac{e^3\omega^2 NBL} {2\varepsilon_0 cm^2\left(\left(\omega_0^2-\omega^2\right)^2-\left(\omega \cdot \omega_c\right)^2\right)n}.
     \label{eq:theta_fast_umgeformt}
 \end{equation}
-Hierbei wird $\omega_0 = \sqrt{\frac{K}{m}}$ als Resonanzfrequenz und $\omega_symup{c} = \frac{eB}{m}$ als Zyklotronfrequenz eingeführt. Dadurch, dass $\omega << \omega_0$ gilt
+Hierbei wird $\omega_0 = \sqrt{\frac{K}{m}}$ als Resonanzfrequenz und $\omega_\text{c} = \frac{eB}{m}$ als Zyklotronfrequenz eingeführt. Dadurch, dass $\omega << \omega_0$ gilt
 und durch Definieren von $\theta_\text{frei} = \frac{\theta}{L}$ als Faradayrotation pro Einheitslänge wird \eqref{eq:theta_fast_umgeformt} zu
 
 \begin{equation}
