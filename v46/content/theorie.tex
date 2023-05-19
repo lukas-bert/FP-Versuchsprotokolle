@@ -9,7 +9,7 @@ beim Durchgang durch ein Medium in einem Magnetfeld.
 \subsection{Bandstruktur}
 \label{subsec:Bandstruktur}
 Das Konzept der Bandstruktur ist elementarer Bestandteil der Festkörperphysik und beschreibt die Überlagerung diskreter Energieniveaus von Teilchen in einem Kristall. Das Valenzband
-entspricht den bei $T=\qty{0}{\kelvin}$ höchstem besetzten Energieband. Befinden sich freie Elektronen im darüber liegenden Leitungsband wird das Material leitend.
+entspricht dem bei $T=\qty{0}{\kelvin}$ höchstem besetzten Energieband. Befinden sich freie Elektronen im darüber liegenden Leitungsband wird das Material leitend.
 Es ergibt sich für verschiedene Materialien eine Struktur, die bestimmte Eigenschaften definiert. So ergibt es sich, dass Materialien mit einer großen Bandlücke zwischen 
 Valenz- und Leitungsband einem Isolator entsprechen. Umgekehrt sind Materialien mit keiner Bandlücke Leiter. Ein schematisches Bild von Bandstrukturen ist in \autoref{fig:Bandstruktur}
 zu sehen.
@@ -21,7 +21,7 @@ zu sehen.
     \label{fig:Bandstruktur}
 \end{figure}
 
-Materialien mit einer relativ kleinen Bandlücke von etwa $\symup{\Delta}E_{\text{gap}}=\qtyrange{0}{6}{\electronvolt}$ weisen nochmal andere Eigenschaften auf und werden als Halbleiter
+Materialien mit einer relativ kleinen Bandlücke von etwa $E_{\text{gap}}=\qtyrange{0}{6}{\electronvolt}$ weisen nochmal andere Eigenschaften auf und werden als Halbleiter
 bezeichnet. Am absoluten Temperaturnullpunkt von $T=\qty{0}{\kelvin}$ ist ein Halbleiter nichtleitend, die Fermienergie liegt demnach in der Bandlücke. Für Raumtemperaturen liegt die
 thermische Energie von Elektronen bei rund $E_{\text{therm.}}=\qty{26}{\milli\electronvolt}$. Hat ein Halbleiter eine Bandlücke in etwa diesem Energiebereich, treten Elektronen in das 
 Leitungsband über und das Material wird leitend.
@@ -92,11 +92,11 @@ Die Suszeptibilität $\chi_\text{xy}$ ist von dem angelegten Magnetfeld abhängi
 
 Wird für die Suszeptibilität in \eqref{eq:theta_rl_chi} \autoref{eq:Suszeptibilität_Faraday} eingesetzt, folgt
 \begin{equation}
-    \theta = \frac{e^3\omega^2 NBL} {2\varepsilon_0 cm^2\left(\left(\omega_0^2-\omega^2\right)^2-\left(\omega \cdot \omega_c\right)^2\right)n}.
+    \theta = \frac{e^3\omega^2 NBL} {2\varepsilon_0 cm^2\left(\left(\omega_0^2-\omega^2\right)^2-\left(\omega \cdot \omega_\text{c}\right)^2\right)n}.
     \label{eq:theta_fast_umgeformt}
 \end{equation}
 Hierbei wird $\omega_0 = \sqrt{\frac{K}{m}}$ als Resonanzfrequenz und $\omega_\text{c} = \frac{eB}{m}$ als Zyklotronfrequenz eingeführt. Dadurch, dass $\omega << \omega_0$ gilt
-und durch Definieren von $\theta_\text{frei} = \frac{\theta}{L}$ als Faradayrotation pro Einheitslänge wird \eqref{eq:theta_fast_umgeformt} zu
+und durch Definieren von $\theta_\text{frei} = \frac{\theta}{L}$ als Faradayrotation pro Einheitslänge wird \autoref{eq:theta_fast_umgeformt} zu
 
 \begin{equation}
     \label{eqn:theta_l2}
