@@ -1,4 +1,60 @@
-\section{Theorie}
-\label{sec:Theorie}
+\section{Motivation}
+\label{sec:Motivation}
+The aim of this experiment is to determine the specififc heat capacity $C$ of copper and its temperature dependency at low temperatures and room temperature.
+Therefore the specififc heat capacity at consant pressure $C_p$ is measured and translated to the specififc heat capacity at constant volume $C_V$.
+Different models to describe the temperature dependency are compared and experimentally tested. These are the classical model, the Einstein-Model and the Debye-Model.
+Furthermore the \textit{Debye Temperature} $\Theta_D$ is 
+derived from the experiment's results and compared with the model's theoretical expectations.
 
-\cite{sample}
+
+\section{Theory}
+\label{sec:Theory}
+The heat capacity of a material describes the amount of heat that is needed to increase the temperature of a certain amount of the material for $\qty{1}{\kelvin}$.
+In general it can be calculated as 
+\begin{equation*}
+    C = \frac{\delta Q}{\delta T}
+\end{equation*}
+where $\delta Q$ is the input heat and $\delta T$ the change in temperature.
+Most often the molar heat capacity $c^\text{m}$ is used, but also the heat capacity per mass $c^\text{mass}$ or the heat capacity per volume $c^\text{vol}$ can be applied.
+As mentioned before, it is differentiated between heat capacity at constant Volume $C_V$ and constant pressure $C_p$.
+For $C_V$ the equation 
+\begin{equation}
+    \label{eqn:CV}
+    C_V = \frac{\delta U}{\delta T} \biggr\rvert_{\mathbf{V}}
+\end{equation}
+can be used to calculate the heat capacity, where $U$ is the internal energy of the system. Experimentally, it is often easier to measure the heat capacity
+\begin{equation*}
+    C_p = \frac{\delta Q}{\delta T} \biggr\rvert_{\mathbf{p}}
+\end{equation*}
+at constant pressure because most materials expand when being heated.
+The deviation of $C_p$ and $C_V$ can be corrected using 
+\begin{equation}
+    \label{eqn:Cp_CV}
+    C_p - C_V = T V \alpha^2_V B
+\end{equation}
+where $\alpha_V$ is the volumetric expansion coefficient and $B$ the so called bulk module.
+
+\subsection{Classical Theory of heat capacity}
+\label{subsec:Classical}
+
+In classical thermodynamics the Equipartition theorem states that the thermal energy of a solid is evenly distributed on its degrees of freedom and every degree of 
+freedom corresponds to $\frac{1}{2}k_B T$ of kinetic and potential energy respectively. $k_B$ is the Boltzmann constant. 
+Assuming a crystal of $N$ unit cells (1 atom per cell) this results in a total internal energy of 
+\begin{equation*}
+    U = U^\text{eq} + 3N \cdot 2 \frac{1}{2}k_B T = U^\text{eq} + 3Nk_B T.
+\end{equation*}
+Using \autoref{eqn:CV} the heat capacity at constant volume reads 
+\begin{equation*}
+    C_V = 3Nk_B.
+\end{equation*}
+For the molar heat capacity the \textit{Dulong-Petit} law
+\begin{equation}
+    c^m_V = 3 R
+\end{equation}
+can be derived. Here $R = N_A k_B$ is the gas constant and $N_A$ the Avogadro constant (number of atoms in $\qty{1}{\mol}$).
+The classical approach leads to a heat capacity that is material- and temperature independent. Experimental results however show that at low temperatures the heat capacity is 
+proportional to $T^3$ and only approaches the classical value for $C_V$ at higher temperatures. Also a dependance on the material can be noticed in experiments.
+Quantum mechanical effects have to be taken into account to explain this behaviour.
+
+\subsection{The Einstein-Model}
+\label{subsec:Einstein}

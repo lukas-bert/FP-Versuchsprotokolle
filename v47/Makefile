@@ -22,7 +22,7 @@ build/v47.pdf: FORCE | build
 	  --halt-on-error \
 	v47.tex
 	cp build/v47.pdf v47.pdf
-	open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
+#	open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
 
 build:
 	mkdir -p build

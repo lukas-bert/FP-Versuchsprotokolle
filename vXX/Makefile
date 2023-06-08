@@ -22,7 +22,7 @@ build/vXX.pdf: FORCE | build
 	  --halt-on-error \
 	vXX.tex
 	cp build/vXX.pdf vXX.pdf
-	open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
+#	open "https://www.youtube.com/watch?v=xvFZjo5PgG0"
 
 build:
 	mkdir -p build
