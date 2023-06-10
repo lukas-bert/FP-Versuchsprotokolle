@@ -1,23 +1,22 @@
 \section{Motivation}
 \label{sec:Motivation}
-The aim of this experiment is to determine the specififc heat capacity $C$ of copper and its temperature dependency at low temperatures and room temperature.
-Therefore the specififc heat capacity at consant pressure $C_p$ is measured and translated to the specififc heat capacity at constant volume $C_V$.
+The aim of this experiment is to determine the specific heat capacity $C$ of copper and its temperature dependence at low temperatures and room temperature.
+Therefore, the specific heat capacity at constant pressure $C_p$ is measured and translated to the specific heat capacity at constant volume $C_V$.
 Different models to describe the temperature dependency are compared and experimentally tested. These are the classical model, the Einstein-Model and the Debye-Model.
-Furthermore the \textit{Debye Temperature} $\Theta_D$ is 
+Furthermore, the \textit{Debye Temperature} $\Theta_D$ is
 derived from the experiment's results and compared with the model's theoretical expectations.
-
 
 \section{Theory}
 \label{sec:Theory}
-The heat capacity of a material describes the amount of heat that is needed to increase the temperature of a certain amount of the material for $\qty{1}{\kelvin}$.
-In general it can be calculated as 
+The heat capacity of a material describes the amount of heat that is needed to increase the temperature of a certain amount of the material by $\qty{1}{\kelvin}$.
+In general, it can be calculated as
 \begin{equation*}
     C = \frac{\delta Q}{\delta T}
 \end{equation*}
 where $\delta Q$ is the input heat and $\delta T$ the change in temperature.
 Most often the molar heat capacity $c^\text{m}$ is used, but also the heat capacity per mass $c^\text{mass}$ or the heat capacity per volume $c^\text{vol}$ can be applied.
-As mentioned before, it is differentiated between heat capacity at constant Volume $C_V$ and constant pressure $C_p$.
-For $C_V$ the equation 
+As mentioned before, it is differentiated between heat capacity at constant volume $C_V$ and constant pressure $C_p$.
+For $C_V$ the equation
 \begin{equation}
     \label{eqn:CV}
     C_V = \frac{\delta U}{\delta T} \biggr\rvert_{\mathbf{V}}
@@ -26,35 +25,90 @@ can be used to calculate the heat capacity, where $U$ is the internal energy of 
 \begin{equation*}
     C_p = \frac{\delta Q}{\delta T} \biggr\rvert_{\mathbf{p}}
 \end{equation*}
-at constant pressure because most materials expand when being heated.
-The deviation of $C_p$ and $C_V$ can be corrected using 
+at constant pressure because most materials expand when heated.
+The deviation of $C_p$ and $C_V$ can be corrected using
 \begin{equation}
     \label{eqn:Cp_CV}
     C_p - C_V = T V \alpha^2_V B
 \end{equation}
-where $\alpha_V$ is the volumetric expansion coefficient and $B$ the so called bulk module.
+where $\alpha_V$ is the volumetric expansion coefficient and $B$ the so-called bulk module.
 
-\subsection{Classical Theory of heat capacity}
+\subsection{Classical Theory of Heat Capacity}
 \label{subsec:Classical}
 
-In classical thermodynamics the Equipartition theorem states that the thermal energy of a solid is evenly distributed on its degrees of freedom and every degree of 
-freedom corresponds to $\frac{1}{2}k_B T$ of kinetic and potential energy respectively. $k_B$ is the Boltzmann constant. 
-Assuming a crystal of $N$ unit cells (1 atom per cell) this results in a total internal energy of 
+In classical thermodynamics, the Equipartition theorem states that the thermal energy of a solid is evenly distributed on its degrees of freedom and every degree of
+freedom corresponds to $\frac{1}{2}k_B T$ of kinetic and potential energy respectively. $k_B$ is the Boltzmann constant.
+Assuming a crystal of $N$ unit cells (1 atom per cell), this results in a total internal energy of
 \begin{equation*}
     U = U^\text{eq} + 3N \cdot 2 \frac{1}{2}k_B T = U^\text{eq} + 3Nk_B T.
 \end{equation*}
-Using \autoref{eqn:CV} the heat capacity at constant volume reads 
+Using \autoref{eqn:CV} the heat capacity at constant volume reads
 \begin{equation*}
     C_V = 3Nk_B.
 \end{equation*}
-For the molar heat capacity the \textit{Dulong-Petit} law
+For the molar heat capacity, the \textit{Dulong-Petit} law
 \begin{equation}
     c^m_V = 3 R
 \end{equation}
 can be derived. Here $R = N_A k_B$ is the gas constant and $N_A$ the Avogadro constant (number of atoms in $\qty{1}{\mol}$).
-The classical approach leads to a heat capacity that is material- and temperature independent. Experimental results however show that at low temperatures the heat capacity is 
-proportional to $T^3$ and only approaches the classical value for $C_V$ at higher temperatures. Also a dependance on the material can be noticed in experiments.
+The classical approach leads to a heat capacity that is material- and temperature independent. Experimental results however, show that at low temperatures, the heat capacity is
+proportional to $T^3$ and only approaches the classical value for $C_V$ at higher temperatures. Also, a dependence on the material can be noticed in experiments.
 Quantum mechanical effects have to be taken into account to explain this behaviour.
 
 \subsection{The Einstein-Model}
 \label{subsec:Einstein}
+The Einstein-Approximation was the first theory to describe quantum dynamic effects on heat capacity.
+The approximation assumes the same frequency $\omega_\text{E}$ for all $3N$ oscillation modes of the system. Only energies of whole multiples of
+$\hbar \omega$ can be absorbed or emitted. With this approach
+\begin{equation*}
+    \langle U \rangle = 3N \hbar \omega_\text{E} \left(\frac{1}{2} + \frac{1}{\mathrm{e}^{\hbar \omega_\text{E}/k_BT}}\right)
+\end{equation*}
+follows for the internal energy using the Bose-Einstein statistics.
+The heat capacity will be
+\begin{equation}
+    \label{eqn:CV_Einstein}
+    C^\text{E}_V = 3Nk_B \left(\frac{\Theta_\text{E}}{T}\right)^2 \frac{\mathrm{e}^{\Theta_\text{E}/T}}{\left(\mathrm{e}^{\Theta_\text{E}/T} -1 \right)^2},
+\end{equation}
+where $\Theta_\text{E} = \sfrac{\hbar \omega_\text{E}}{k_B}$ is the Einstein Temperature.
+The approximation for low and high temperatures
+\begin{equation*}
+    C^\text{E}_V =
+    \begin{cases}
+        3Nk_B\left(\frac{\Theta_\text{E}}{T}\right)^2 \mathrm{e}^{-\Theta_\text{E}/T}, & T \ll \Theta_\text{E}\\
+        3Nk_B, & T \gg \Theta_\text{E}\\
+    \end{cases}
+\end{equation*}
+yields the correct result for high temperatures but does not follow the experimental dependency for the low temperature case.
+This is caused by the assumption that all atoms have the same frequency.
+
+\subsection{The Debye Model}
+A better approximation is given by the Debye Model, which introduces two fundamental assumptions: 1. All phonon branches are appoximated by three (acoustic) branches with
+a linear dispersion relation $\omega_i = v_i q$. 2. The summation over all possible wave vectors $q$ is replaced by an integration over the first Brillouin zone that can further
+be simplified to a spherical integration with radius $q_\text{D}$. Because of the requirement that $N$ different states (per branch) have to be included in the sphere and using a
+volume of $(2\pi/L)^3$ per state, the wave vector reads $q_\text{D} = \left(6\pi^2 \frac{N}{V}\right)^{\frac{1}{3}}$.
+The Debye Frequency is $\omega_{\text{D}, i} = q_\text{D} v_i$ where $v_i$ is the speed of sound of the $i$-th branch.
+The density of states can be written as
+\begin{equation*}
+    D_i(\omega) = \frac{V}{2\pi^2}\frac{\omega^2}{v^3_i}.
+\end{equation*}
+Now the internal energy
+\begin{equation*}
+    U = \int^{\omega_\text{D}}_{0} \frac{D(\omega)}{\mathrm{exp}(\hbar\omega / k_B T) -1} \,d\omega
+\end{equation*}
+can be calculated.
+Using the mean speed of sound $v_\text{S}$ of the three phonon branches and substituting $x = \hbar v_\text{S} q /k_B T$, the heat capacity
+\begin{equation}
+    \label{eqn:CV_Debye}
+    C^\text{D}_V = 9N k_B \left(\frac{T}{\Theta_\text{D}}\right)^3 \int^{\Theta_\text{D}/T}_{0} \frac{x^4 \mathrm{e}^x}{(e^{-x} -1)^2} \, dx
+\end{equation}
+can be derived.
+This can be approximated as
+\begin{equation*}
+    C^\text{D}_V =
+    \begin{cases}
+        \frac{12\pi^4}{5}Nk_B \left(\frac{T}{\Theta_\text{D}}\right)^3, & T \ll \Theta_\text{D}\\
+        3Nk_B, & T \gg \Theta_\text{D}\\
+    \end{cases}
+\end{equation*}
+for low and high temperatures respectively. This result includes the classical value for $C_V$ at high temperatures, as well as the experimental observation of
+a $T^3$ dependency for low temperatures.
