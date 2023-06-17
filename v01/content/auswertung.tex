@@ -1,32 +1,71 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Die Auswertung dieses Versuchs erfolgt mit zur Verfügung gestellten Ersatzdaten, da die eigentliche Messung auf Grund eines technischen Problemes 
+nicht durchgeführt werden konnte. Lediglich die Messdaten zur Bestimmung der Auflösungszeit wurden im Rahmen der Versuchsdruchführung aufgenommen.
 
+\subsection{Bestimmung der Auflösungszeit}
+Zur Bestimmung der Auflösungszeit, werden die nach der Koinzidenz gemessenen Zählraten der beiden Photomultiplier betrachtet. In \autoref{fig:T_VZ} sind 
+die Zählraten in Abhängigkeit zur Verzögerungszeit $T_\text{VZ}$ aufgetragen. Als Zählraten-Experiment genügen die Messwerte einer Poissonverteilung. Der statistische 
+Fehler lautet somit $\sqrt{N}$. 
+Eine negative Verzögerungszeit bedeutet hier eine größere Verzögerung der 
+Leitung zum linken PMT, während eine positive Verzögerungszeit die Verzögerungsleitung des rechten PMT beschreibt. Die Diskriminatoren sind auf eine Pulsbreite 
+von $\qty{10}{\nano\second}$ eingestellt. 
 \begin{figure}
   \centering
-  \includegraphics{plot1.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width = .8\textwidth]{plot1.pdf}
+  \caption{Messdaten zur Bestimmung der Auflösungszeit der Koinzidenz. Es sind die Messwerte aus zwei 
+  verschiedenen Messreihen aufgetragen und das Plateu, sowie die Halbwertsbreite der Kurve markiert.}
+  \label{fig:T_VZ}
 \end{figure}
+Nach Bildung des Mittelwertes der Messwerte im Plateubereich ergibt sich eine Halbwertsbreite von etwa $\qty{14}{\nano\second}$.
+Die Auflösungszeit berechnet sich damit zu 
+\begin{equation*}
+  \Delta t_\text{K} = 2 \cdot \qty{10}{\nano\second} - \qty{14}{\nano\second} = \qty{6}{\nano\second}.
+\end{equation*}
 
+\subsection{Kalibrierung des Vielkanalanalysators}
+Um die Kanalnummern des Vielkanalanalysators einer Lebensdauer eines gemessenen Myons zuordnen zu können, wird eine Kalibrierungsmessung des VKA durchgeführt.
+Die angesprochenen Kanalnummern sind in \autoref{fig:Kalibrierung} gegen die eingestellten Impulsabstände aufgetragen. Mit Hilfe einer linearen Ausgleichsrechnung
+kann so eine Umrechnungsfunktion der Kanalnummern in Zeiten ermittelt werden. 
 \begin{figure}
   \centering
-  \includegraphics{plot2.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width = .8\textwidth]{plot2.pdf}
+  \caption{Lineare Ausgleichsrechnung zur Kalibrierung der Kanalnummern des VKA. 
+  Es sind eingestellte Impulsabstände gegen die Kanalnummer aufgetragen. Die lineare Regression wurde mit \textit{scipy} \cite{scipy} durchgeführt.}
+  \label{fig:Kalibrierung}
 \end{figure}
+Mittels \textit{scipy} \cite{scipy} werden die Geradenparameter bestimmt. Es ergibt sich die Funktion
+\begin{equation*}
+  t [\unit{\micro\second}] = \num{0.0223 +- 0.00002} \cdot K - \num{0.017 \pm 0.003}
+\end{equation*}
+zur Umrechnung der Kanalnummer $K$ in einen zeitlichen Messwert.
 
+\subsection{Bestimmung der Lebensdauer kosmischer Myonen}
+Die Messdaten zur Bestimmung der Lebensdauer der Myonen liegen in Zählraten pro Kanal vor. Anhand der soeben ermittelten Umrechnungsfunktion werden die Kanalnummern 
+in Zeiten konvertiert. Die daraus folgenden Datenpunkte sind in \autoref{fig:fit} und in \autoref{fig:fit_log} logarithmisch dargestellt.
+Die Zählraten der Myonen folgen einem Exponentialgesetz.
+Es wird der Ansatz
+\begin{equation}
+  \label{eqn:Ansatz}
+  N(t) = N_0 \mathrm{e}^{-t/\tau} + U_0
+\end{equation}
+gewählt. Dabei wird mit dem Parameter $U_0$ eine konstante Untergrundrate berücksichtigt.
 \begin{figure}
   \centering
-  \includegraphics{fit.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width = .8\textwidth]{fit.pdf}
+  \caption{Messdaten zur Bestimmung der mittleren Lebensdauer von Myonen. Die gemessenen Zählraten $N$ sind gegen die Lebensdauer aufgetragen. 
+  Die Ausgleichsrechnung wird mit \textit{scipy} \cite{scipy} durchgeführt.}
+  \label{fig:fit}
 \end{figure}
-
+Durch eine nicht-lineare Ausgleichsrechnung mittels \textit{scipy} \cite{scipy} ergeben sich die Werte
+\begin{align*}
+  N_0 &= \num{287 +- 2}, & \tau &= \qty{2.04 +- 0.03}{\micro\second}, & U_0 &= \num{3.65 +- 0.77}
+\end{align*}
+für die freien Parameter. Die Exponetialfunktion \ref{eqn:Ansatz} ist ebenfalls in den Abbildungen \ref{fig:fit} und \ref{fig:fit_log} eingezeichnet.
 \begin{figure}
   \centering
-  \includegraphics{fit_log.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width = .8\textwidth]{fit_log.pdf}
+  \caption{Messdaten zur Bestimmung der mittleren Lebensdauer von Myonen in halblogarithmischer Darstellung. Die gemessenen Zählraten $N$ sind gegen die Lebensdauer aufgetragen. 
+  Die Ausgleichsrechnung wird mit \textit{scipy} \cite{scipy} durchgeführt.}
+  \label{fig:fit_log}
 \end{figure}
-
-Siehe \autoref{fig:plot}!
