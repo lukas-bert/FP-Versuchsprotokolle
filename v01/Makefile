@@ -1,15 +1,15 @@
 all: build/v01.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+build/plot1.pdf build/plot2.pdf build/fit.pdf build/fit_log.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
 # hier weitere Abhängigkeiten für build/v01.pdf deklarieren:
-build/v01.pdf: build/plot.pdf
-
+build/v01.pdf: build/plot1.pdf build/plot2.pdf build/fit.pdf build/fit_log.pdf
+ 
 build/v01.pdf: FORCE | build
 	# to find header and bib files in the main directory
 	TEXINPUTS=..: \
