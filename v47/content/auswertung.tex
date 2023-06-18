@@ -1,6 +1,50 @@
 \section{Analysis}
 \label{sec:Analysis}
 
+The recorded data ist shown in \autoref{tab:Data}. The measured resistance of the thermometers is convereted to temperatures using \autoref{eqn:R_T}.
+
+\begin{equation}
+  C_\mathrm{P} = \frac{M}{m} \frac{E}{\symup{\Delta}t}
+  \label{eq:C_P_calc}
+\end{equation}
+
+\begin{table}
+  \centering
+  \caption{Measured data for the }
+  \label{tab:Data}
+  \begin{tabular}{S S S S | S S S}
+    \toprule
+    \multicolumn{4}{c|}{Measured data} & \multicolumn{3}{c}{Calculated data}\\
+    {$\symup{\Delta}t \mathbin{/} \unit{s}$} & {$R \mathbin{/} \unit{\ohm}$} & {$I \mathbin{/} \unit{\milli\ampere}$} & {$U \mathbin{/} \unit{V}$} &%
+    {$E \mathbin{/} \unit{\joule}$} & {$T \mathbin{/} \unit{\kelvin}$} & {$T \mathbin{/} \unit{\celsius}$}\\
+    \midrule
+    200 &  24.4 &  158.5  & 16.63 & 527.2	 & 86  & -186 \\ 
+    235 &  27.0 &  160.8  & 16.85 & 636.7	 & 93  & -180 \\
+    335 &  31.3 &  160.0  & 16.80 & 900.5	 & 103 & -169 \\
+    385 &  35.5 &  159.3  & 16.75 & 1027.3 & 113 & -159 \\
+    405 &  39.7 &  159.8  & 16.80 & 1087.3 & 123 & -149 \\
+    380 &  43.8 &  160.1  & 16.87 & 1026.3 & 133 & -139 \\
+    405 &  47.9 &  160.3  & 16.91 & 1097.8 & 143 & -129 \\
+    345 &  52.0 &  160.6  & 16.95 & 939.1	 & 153 & -120 \\
+    435 &  56.1 &  160.8  & 16.97 & 1187.0 & 163 & -109 \\
+    405 &  60.2 &  160.9  & 16.99 & 1107.1 & 173 & -99  \\
+    425 &  64.3 &  161.1  & 17.01 & 1164.6 & 183 & -89  \\
+    455 &  68.3 &  161.2  & 17.03 & 1249.1 & 193 & -79  \\
+    440 &  72.3 &  161.2  & 17.03 & 1207.9 & 203 & -70  \\
+    430 &  76.3 &  161.3  & 17.03 & 1181.2 & 213 & -60  \\
+    460 &  80.3 &  161.4  & 17.04 & 1265.1 & 223 & -50  \\
+    480 &  84.2 &  161.4  & 17.04 & 1320.1 & 232 & -40  \\
+    405 &  88.2 &  161.5  & 17.04 & 1114.5 & 243 & -30  \\
+    425 &  92.1 &  161.5  & 17.04 & 1169.6 & 252 & -20  \\
+    465 &  96.1 &  161.5  & 17.04 & 1279.7 & 263 & -9   \\
+    435 & 100.0 &  161.6  & 17.04 & 1197.8 & 273 & 0    \\
+    480 & 103.9 &  161.6  & 17.03 & 1321.0 & 283 & 9    \\
+    465 & 107.8 &  161.6  & 17.03 & 1279.7 & 293 & 20   \\
+    470 & 111.7 &  161.7  & 17.03 & 1294.3 & 303 & 30   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \begin{figure}
   \centering
   \includegraphics{plot.pdf}
@@ -8,5 +52,3 @@
   \label{fig:plot}
 \end{figure}
 
-
-Siehe \autoref{fig:plot}!
