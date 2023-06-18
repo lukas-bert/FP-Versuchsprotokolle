@@ -62,4 +62,17 @@ Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert u
 
   \subsection{Messung}
   \label{subsec:Messung}
-  bla bla bla
+  In einem ersten Schritt wird das Signal der Photomultiplier mit einem Oszilloskop überprüft, um die richtige Funktion sicherzustellen. Das Signal wird in einem nächsten Schritt durch den
+  Diskriminator gesendet, welcher so eingestellt wird, dass eine Signalbreite von $\qty{10}{\nano\second}$ gegeben ist.
+
+  Nach dem Anschließen der Verzögerungsleitungen zwischen Photomultiplier und Diskriminator werden die einzelnen Signale an die Koinzidenz angeschlossen. Die aus der Koinzidenz ausgehenden
+  Signale werden mithilfe eines Zählwerks gezählt, wobei die Dauer der einzelnen Verzögerungen variiert wird, damit ein idealer Messbereich ermittelt werden kann.
+
+  Im Folgenden wird die Verzögerung so eingestellt, dass die Messung sicher in diesem idealen Bereich stattfindet. Als Signaleingang werden nun nicht die Photomultiplier, sondern
+  ein Doppelpulsgenerator mit einstellbarem Impulsabstand verwendet. Außerdem wird die Schaltung weiter gemäß des Schaltplan aus \autoref{fig:Aufbau} aufgebaut. An dem 
+  Time-Amplitude-Converter wird eine Suchzeit eingestellt. Die Suchzeit soll in der Größenordnung der mittleren Lebendauer der Myonen liegen, also etwa $\qtyrange{1}{10}{\micro\second}$.
+  Werden die Abstände der Doppelpulse variiert, lassen sich die einzelnen Kanäle des an dem PC angezeigen Histogramms erkennen, sodass die Kanäle jeweils einer bestimmten Zerfallszeit
+  zugeordnet werden können.
+
+  Für die Messung der mittleren Lebensdauer von kosmischen Myonen werden die Photomultiplier erneut angeschlossen und es werden für eine hinreichend lange Messdauer Daten genommen. Eine
+  Messdauer von etwa 2 Tagen ist in der Regel ausreichend.
