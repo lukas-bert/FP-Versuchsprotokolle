@@ -11,13 +11,13 @@ Photomultipliers ist in \autoref{fig:PMT} gegeben.
 
 Das Signal aus den beiden Photomultipliern durchläuft jeweils eine einstellbare Verzögerungsleitung und einen Diskriminator. Über die Verzögerungsleitung können eventuell unterschiedlich
 schnell reagierende Photomultiplier ausgegleichen werden und über den Diskriminator wird das Signal diskretisiert und ein Rauschen wird unterdrückt. In einer Koinzidenz werden die zwei 
-Signale miteindander verglichen und es wird nur ein Signal ausgegeben, wenn beide Eingangssignale zeitgleich eintreffen. Dadurch werden nur Events detektiert, die von beiden
+Signale miteinander verglichen und es wird nur ein Signal ausgegeben, wenn beide Eingangssignale zeitgleich eintreffen. Dadurch werden nur Events detektiert, die von beiden
 Photomultipliern registriert werden.
 
 Nach der Koinzidenz wird das Signal auf drei Wege aufgeteilt. Zwei Wege führen zu zwei verschiedenen AND-Gattern, ein weiterer führt durch eine $\qty{30}{\nano\second}$ Verzögerungsleitung 
 zu einem Monoflop, dessen negierter Ausgang mit dem ersten AND-Gatter und der normale Ausgang mit dem zweiten AND-Gatter verbunden ist. Das Ausgangssignal des ersten AND-Gatters startet 
 einen Time-Amplitude-Converter (TAC), das Signal des Zweiten stoppt diese. Mithilfe dieser Schaltung lässt sich der zeitliche Abstand zweier kurz aufeinanderfolgenden Pulse bestimmen.
-Die beiden Pulse sind das Eintreten in das Szintillatormaterial und der Zerfall des Myons. Die Logik ist in \autoref{tab:Logik} tabellarisch dargestellt.
+Die beiden Pulse sind das Eintreten in das Szintillatormaterial und der Zerfall des Myons. Die Logik ist in \autoref{tab:Logik} dargestellt.
 
 Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert und die Daten werden zur Auswertung gespeichert.
 
@@ -25,8 +25,8 @@ Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert u
     \centering
     \includegraphics[width=.8\textwidth]{content/pics/Schaltbild.pdf}
     \caption{Schematische Skizze des Versuchsaufbaus. Über eine Hochspannungsquelle werden PMT betrieben, welche Photonen im Szintillatortank %
-    detektieren. Das Signal durchläuft eine Verzögerungsleitung und einen Diskriminator und wird in einer Koinzidenz mit dem Signal des gegenüberliegenden PMT vergleicht. %
-    Über eine analoge Logikschaltung wird ein TAC gestartet und gestoppt. Dieses Signal wird von einer Software ausgewertet \cite{V01}.}
+    detektieren. Das Signal durchläuft eine Verzögerungsleitung und einen Diskriminator und wird in einer Koinzidenz mit dem Signal des gegenüberliegenden PMT verglichen. %
+    Über eine Logikschaltung wird ein TAC gestartet und gestoppt. Dieses Signal wird von einer Software ausgewertet \cite{V01}.}
     \label{fig:Aufbau}
   \end{figure}
 
@@ -34,7 +34,7 @@ Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert u
     \centering
     \includegraphics[width=.8\textwidth]{content/pics/PMT.pdf}
     \caption{Querschnitt eines PMT. Eintretende Photonen lösen über den äußerden Photoeffekt Elektronen aus. Die ausgelösten Elektronen werden beschleunigt und treffen erneut %
-    auf ein Elektrode und lösen mehr Elektronen aus. Dies wiederholt sich, sodass am Ende des PMT ein messbarer Puls entsteht \cite{Wermes}.}
+    auf eine Elektrode und lösen mehr Elektronen aus. Dies wiederholt sich, sodass am Ende des PMT ein messbarer Puls entsteht \cite{Wermes}.}
     \label{fig:PMT}
  \end{figure}
 
@@ -70,7 +70,7 @@ Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert u
 
   Im Folgenden wird die Verzögerung so eingestellt, dass die Messung sicher in diesem idealen Bereich stattfindet. Als Signaleingang werden nun nicht die Photomultiplier, sondern
   ein Doppelpulsgenerator mit einstellbarem Impulsabstand verwendet. Außerdem wird die Schaltung weiter gemäß des Schaltplan aus \autoref{fig:Aufbau} aufgebaut. An dem 
-  Time-Amplitude-Converter wird eine Suchzeit eingestellt. Die Suchzeit soll in der Größenordnung der mittleren Lebendauer der Myonen liegen, also etwa $\qtyrange{1}{10}{\micro\second}$.
+  Time-Amplitude-Converter wird eine Suchzeit eingestellt. Die Suchzeit soll in der Größenordnung der erwarteten mittleren Lebendauer der Myonen liegen, also etwa $\qtyrange{1}{10}{\micro\second}$.
   Werden die Abstände der Doppelpulse variiert, lassen sich die einzelnen Kanäle des an dem PC angezeigen Histogramms erkennen, sodass die Kanäle jeweils einer bestimmten Zerfallszeit
   zugeordnet werden können.
 
