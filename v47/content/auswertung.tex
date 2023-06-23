@@ -11,10 +11,10 @@ interval~$\symup{\Delta}t$ and the applied voltage $U$
 
 \subsection{Heat capacity at constant pressure}
 \label{subsec:Heat capacity at constant volume}
-A calculation of the values for $C_\mathrm{P}$ can be done via \autoref{eq:Cp}
+A calculation of the values for $C_\mathrm{p}$ can be done via \autoref{eq:Cp} resulting in
 
 \begin{equation}
-  C_\mathrm{P} = \frac{M}{m} \frac{E}{\symup{\Delta}T},
+  C_\mathrm{p} = \frac{M}{m} \frac{E}{\symup{\Delta}T},
   \label{eq:C_P_calc}
 \end{equation}
 where $M=\qty{63.546}{\gram\per\mol}$ is the molar mass of Copper and $m=\qty{342}{\gram}$ ist the mass of the copper sample used in the
@@ -25,14 +25,14 @@ All the calculated data is also shown in the \autoref{tab:Data}.
 \begin{table}
   \centering
   \caption{Measured and calulated data used to determine the heat capacity of Copper. The temperatures are calculated using \autoref{eqn:R_T}, the added %
-  energy is received via \autoref{eq:added_E} and for the values of $C_\mathrm{P}$ \autoref{eq:C_P_calc} is used.}
+  energy is received via \autoref{eq:added_E} and for the values of $C_\mathrm{p}$ \autoref{eq:C_P_calc} is used.}
   \label{tab:Data}
   \begin{tabular}{S S S S | S S S | S}
     \toprule
     \multicolumn{4}{c|}{Measured data} & \multicolumn{4}{c}{Calculated data}\\
     {$\symup{\Delta}t \mathbin{/} \unit{s}$} & {$R \mathbin{/} \unit{\ohm}$} & {$I \mathbin{/} \unit{\milli\ampere}$} & {$U \mathbin{/} \unit{V}$} &%
     {$E \mathbin{/} \unit{\joule}$} & {$T \mathbin{/} \unit{\kelvin}$} & {$T \mathbin{/} \unit{\celsius}$} & %
-    {$C_\mathrm{P} \mathbin{/} \frac{\unit{\joule}}{\unit{\mol\kelvin}}$}\\
+    {$C_\mathrm{p} \mathbin{/} \frac{\unit{\joule}}{\unit{\mol\kelvin}}$}\\
     \midrule
     %200 &  24.4 &  158.5  & 16.63 & 527.2	 & 86  & -186 \\ 
     {-} &  24.4 &  158.5  & 16.63 &  {-}   & 86  & -186 & {-}   \\
@@ -66,7 +66,7 @@ All the calculated data is also shown in the \autoref{tab:Data}.
 The heat capacity at constant volume $C_\mathrm{V}$ can be derived by using \autoref{eqn:Cp_CV} and the in \autoref{subsec:Heat capacity at constant volume}
 calculated heat capacity at constant pressure. The equation is rearranged to
 \begin{equation*}
-  C_\mathrm{V} = C_\mathrm{P} - 9 T V_0 \alpha^2 B.
+  C_\mathrm{V} = C_\mathrm{p} - 9 T V_0 \alpha^2 B.
 \end{equation*}
 The values for the bulk module $B$ and the molar volume $V_0$ can be found in the literature where as the values for the volumetric expansion $\alpha$ is given
 in \autoref{fig:alpha}. Hence the measured temperatures are not listed directly in the table an estimation for the volumetric expansion coefficient is performed
@@ -86,8 +86,8 @@ via
 
 The used values for the bulk module are 
 \begin{align*}
-  B &= \qty{140e9}{\pascal} & \text{\cite{V01}!!!!!!!!!!} \\
-  V_0 = \frac{M}{\rho} &= \qty{7.092e-6}{\cubic\metre\per\mol} & \text{\cite{V01}!!!!!!!!!}.
+  B &= \qty{140e9}{\pascal} \\
+  V_0 = \frac{M}{\rho} &= \qty{7.092e-6}{\cubic\metre\per\mol} \\
 \end{align*}
 
 In \autoref{tab:C_P,C_V} the values for the molar heat capacity with constant pressure and constant volume are given as well as the used volumetric expansion
@@ -95,12 +95,12 @@ coefficent.
 
 \begin{table}
   \centering
-  \caption{Calculated values for the volumetric expansion coefficient $\alpha$ and the heat capacity for constant pressure $C_{\symup{P}}$ and constant %
+  \caption{Calculated values for the volumetric expansion coefficient $\alpha$ and the heat capacity for constant pressure $C_{\symup{p}}$ and constant %
   volume $C_{\symup{V}}$.}
   \label{tab:C_P,C_V}
   \begin{tabular}{S S S S}
     \toprule
-    {$T \mathbin{/} \unit{\kelvin}$} & {$\alpha \mathbin{/} 10^{-6}\,\frac{1}{\unit{\kelvin}}$} & {$C_{\symup{P}} \mathbin{/} \frac{\unit{\joule}}{\unit{\mol\kelvin}}$} & %
+    {$T \mathbin{/} \unit{\kelvin}$} & {$\alpha \mathbin{/} 10^{-6}\,\frac{1}{\unit{\kelvin}}$} & {$C_{\symup{p}} \mathbin{/} \frac{\unit{\joule}}{\unit{\mol\kelvin}}$} & %
     {$C_{\symup{V}} \mathbin{/} \frac{\unit{\joule}}{\unit{\mol\kelvin}}$} \\
     \midrule
     %86  & 9.37  & 0.00  & -0.07 \\
@@ -133,7 +133,7 @@ coefficent.
 \begin{figure}
   \centering
   \includegraphics[width = 0.95\textwidth]{build/C.pdf}
-  \caption{Plot of the heat capacity for constant pressure~$C_{\symup{P}}$ and constant Volume~$C_{\symup{V}}$.}
+  \caption{Plot of the heat capacity for constant pressure~$C_{\symup{p}}$ and constant Volume~$C_{\symup{V}}$.}
   \label{fig:plot}
 \end{figure}
 
