@@ -1,0 +1,117 @@
+; C:\DIFFDAT1\Praktikum\Tom lukas\Rocking2_neu.raw(Diffrac Plus V1.01 file) converted by XCH V1.0
+_FILEVERSION=2
+_SITE='Deutschland'
+_USER='Administrator'
+_GONIOMETER_CODE=4885
+; D8 Theta/Theta; Special
+_SAMPLE_CHANGER_CODE=0
+_ATTACHMENTS_CODE=0
+_GONIOMETER_RADIUS=350.000000
+_FIXED_DIVSLIT=0.600000
+_FIXED_SAMPLESLIT=0.000000
+_FIXED_DETSLIT=11.660000
+_MONOCHROMATOR=0
+; None
+_THIN_FILM='N'
+_BETA_FILTER='Y'
+_FIXED_ANTISLIT=8.340000
+_ANALYZER_CODE=0
+; None
+_DATEMEASURED='26-Jun-2023 10:11:50'
+_WL_UNIT='A'
+_WL1=1.540600
+_WL2=1.544390
+_WL3=1.392220
+_WLRATIO=0.500000
+_ANODE='Cu'
+; (Data for Range number 1)
+_DRIVE='THETA'
+_STEPTIME=0.999980
+_STEPSIZE=0.005000
+_STEPMODE='C'
+_START=0.000000
+_THETA=0.000000
+_2THETA=0.300000
+_KHI=0.000000
+_PHI=90.000000
+_X=-2.005000
+_Y=0.500000
+_Z=0.086000
+_DIVERGENCE=0.000000
+_ANTISCATTER=0.000000
+_DETECTOR=5
+_DETECTORSLIT='unkn'
+_AUX1=0.000000
+_AUX2=0.000000
+_AUX3=0.000000
+_TIMESTARTED=2.000000
+_TEMP_RATE=-1.000000
+_TEMP_DELAY=-1.000000
+_KV=40
+_MA=35
+_RANGE_WL=1.540600
+_3DPLANE=0
+_GONIOMETER=0.299500
+_PSDCHANNEL0=0
+_2THETACOUNTS
+   0.0000         5
+   0.0050         8
+   0.0100         9
+   0.0150         5
+   0.0200        11
+   0.0250         6
+   0.0300        17
+   0.0350        22
+   0.0400        21
+   0.0450        34
+   0.0500        28
+   0.0550        49
+   0.0600        59
+   0.0650        94
+   0.0700       135
+   0.0750       187
+   0.0800       274
+   0.0850       401
+   0.0900       692
+   0.0950       901
+   0.1000      1185
+   0.1050      1624
+   0.1100      2720
+   0.1150      3933
+   0.1200      4934
+   0.1250      5777
+   0.1300      8282
+   0.1350     19457
+   0.1400     48297
+   0.1450     83904
+   0.1500    115323
+   0.1550     88805
+   0.1600     38467
+   0.1650     12328
+   0.1700      6334
+   0.1750      4969
+   0.1800      3958
+   0.1850      3444
+   0.1900      2779
+   0.1950      2102
+   0.2000      1601
+   0.2050      1215
+   0.2100       901
+   0.2150       640
+   0.2200       479
+   0.2250       359
+   0.2300       273
+   0.2350       235
+   0.2400       212
+   0.2450       156
+   0.2500       149
+   0.2550        91
+   0.2600        66
+   0.2650        55
+   0.2700        41
+   0.2750        23
+   0.2800        14
+   0.2850         8
+   0.2900        10
+   0.2950         5
+   0.3000         1
