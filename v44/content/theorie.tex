@@ -66,7 +66,7 @@ Für den Übergang von einem Vakuum ($n=1$) in ein Material mit $n<1$ kommt es u
 von Materie $n<1$ und in diesem Experiment tritt die Röntgenstrahlung aus Luft ($n \approx 1$) auf das Material, sodass es hier eine Winkel $\alpha_{\text{tot}}$ gibt. Dieser entspricht
 
 \begin{equation}
-    \alpha_{\text{tot}} \approx \sqrt{2\delta} = \lambda \sqrt{\frac{r_{\symup{e}}\rho}{\symup{pi}}}.
+    \alpha_{\text{tot}} \approx \sqrt{2\delta} = \lambda \sqrt{\frac{r_{\symup{e}}\rho}{\symup{\pi}}}.
     \label{eq:alpha_tot}
 \end{equation}
 Die Wellenlänge der verwendeten Röntgenstrahlung wird als $\lambda$ bezeichnet, die Dichte des Materials als $\rho$ und $r_{\symup{e}}$ ist der klassische Elektronenradius.
@@ -74,7 +74,7 @@ Die Wellenlänge der verwendeten Röntgenstrahlung wird als $\lambda$ bezeichnet
 Eine weitere wichtige Größe ist die Reflektivität $R$, welche als
 \begin{equation}
     R = |{r}|^2 = \left(\frac{\alpha_{\text{tot}}}{2\alpha}\right)
-    \label{eq:Reflektivität}
+    \label{eq:Reflektivitaet}
 \end{equation}
 definiert ist. Sie beschreibt also das Verhältnis der Intensitäten der reflektierten und einfallenden Strahlung für den Fall, dass $\alpha > 3 \alpha_{\text{tot}}$. ?????????????????
 
@@ -122,18 +122,20 @@ eingeführt. Dafür wird die Position in der j-ten Schicht $z_{\symup{j}}$ sowie
 $[z_{\symup{j}}+z, z_{\symup{j}}+z+\symup{d}z]$ befindet, benötigt. Die Wahrscheinlichkeitsverteilung wird als Gaußverteilung angenommen.
 Mithilfe der \textit{root-mean-square}-Rauigkeit ergeben sich die modifizierte, rekursive Fresnelgleichungen
 
-\begin{align*}
+\begin{align}
+    \label{eqn:r_korrigiert}
     r´_{\symup{j,j+1}} &= r_{\symup{j}}\symup{e}^{-2k_{\symup{z,j}}k_{\symup{z,j+1}}\sigma_{\symup{j}}^2} & t´_{\symup{j,j+1}} &= t_{\symup{j,j+1}}\symup{e}^{\frac{(k_{\symup{z,j}}-k_{\symup{z,j+1}})^2\sigma_{\symup{j}}^2}{2}}.
-\end{align*}
+\end{align}
 Diese können erneut in den Parrat-Algorithmus \autoref{eq:Parrat} eingesetzt werden, sodass die korrigierten Schichtdicken bestimmt werden können.
 
 \subsection{Korrektur um einen Geometriefaktor}
 Wenn die Röntgenstrahlung in einem kleinen Winkel auf die Probe trifft, beleuchet die Strahlung nicht die gesamte Probe. Eine Skizze zur Veranschaulichung dieses Sachverhalts ist in
 \autoref{fig:Geometriewinkel} gegeben. Für Winkel unterhalb eines Grenzwinkels $\alpha_{\symup{g}}$ muss daher ein Korrekturfaktor $G$ eingeführt werden.
 Der Grenzwinkel $\alpha_{\symup{g}}$ berechnet sich aus der Länge der Probe $D$ und der Strahlbreite der Röntgenstrahlung $d_0$ zu
-\begin{equation*}
+\begin{equation}
+    \label{eqn:a_g}
     \alpha_{\symup{g}} = \arcsin \left(\frac{d_0}{D}\right).
-\end{equation*}
+\end{equation}
 Für den Geometriefaktor $G$ gilt
 \begin{equation}
     G = 

@@ -1,12 +1,107 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Bestimmung der Halbwertsbreite und der maximalen Intensität}
+Die Halbwertsbreite und die maximale Intensität des Strahls kann mithilfe der Messdaten des Detektorscans bestimmt werden.
+Dazu wird an die in \autoref{fig:DScan} abgebildeten Messdaten eine Gaußfunktion der Form
+\begin{equation*}
+  I(\alpha) = \frac{I_0}{\sqrt{2\symup{\pi}\sigma^2}}\cdot \symup{exp}\left(-\frac{(\alpha - \alpha_0)^2}{2\sigma^2}\right) + B
+\end{equation*} 
+angepasst. 
 \begin{figure}
   \centering
-  \includegraphics{DScan.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width = .7\textwidth]{DScan.pdf}
+  \caption{Messdaten des Detektorscans und mittels \texttt{scipy} \cite{scipy} angepasste Gaußfunktion. Es sind Markierungen zur Bestimmung der Halbwertsbreite eingezeichnet.}
+  \label{fig:DScan}
 \end{figure}
+Der Fit wird mittels der \texttt{python} Bibliothek \texttt{scipy} \cite{scipy} durchgeführt.
+Die freien Parameter ergeben sich zu
+\begin{align*}
+  \alpha_0 &= \qty{-2.83 +-0.47e-3}{\degree} \\
+  \sigma &= \qty{3.78 +- 0.05e-2}{\degree} \\
+  I_0 &= \num{1.61 +- 0.02e4} \\
+  B &= \num{1.20 +- 0.43e3}.
+\end{align*}
+Die Halbwertsbreite (FWHM) lässt sich an der Höhe des Graphen ablesen, an welcher genau der halb Wert des Maximums erreicht wird. 
+Es ergibt sich der Wert 
+\begin{equation*}
+  \text{FWHM} = \qty{0.091}{\degree}.
+\end{equation*}
 
 
-Siehe \autoref{fig:plot}!
+\subsection{Bestimmung der Strahlbreite}
+Die Strahlbreite lässt sich aus den Messdaten des ersten durchgeführten Z-Scans ermitteln. Dazu werden die in \autoref{fig:ZScan} Messdaten betrachtet.
+Die Strahlbreite entspricht der Breite der steil abfallenden Flanke des Graphen zwischen den beiden Plateubereichen.
+\begin{figure}
+  \centering
+  \includegraphics[width = .7\textwidth]{ZScan.pdf}
+  \caption{Messdaten des ersten Z-Scans. Die Breite des Bereiches zwischen den Plateubereichen entspricht der Strahlbreite.}
+  \label{fig:ZScan}
+\end{figure}
+Es ergibt sich eine Strahlbreite von $d_0 \approx \qty{0.12}{\milli\metre}$. 
+
+\subsection{Ermittlung des Geometriewinkels}
+Trifft der Röntgenstrahl in einem kleinen Winkel auf die Probe, überschreitet die effektive Breites des Strahs die Probenlänge und ein 
+gewisser Anteil der Intensität kann nicht reflektiert werden. Um diesen systematischen Effekt zu korrigieren, wird der Geometriewinkel bestimmt, bis zu welchen dieser 
+Effekt auftritt. Er lässt sich anhand der Breite der in einem Rocking-Curve-Scan aufgenommenen Messkurve ermitteln.
+Die entsprechenden Messdaten sind in \autoref{fig:RockingScan} abgebildet.
+\begin{figure}
+  \centering
+  \includegraphics[width = .7\textwidth]{RockingScan.pdf}
+  \caption{Rocking-Curve-Scan zur Bestimmung des Geometriewinkels.}
+  \label{fig:RockingScan}
+\end{figure}
+Der Geometriewinkel ergibt sich zu $\alpha_\text{G} = \qty{0.44}{\degree}$. Mit der zuvor bestimmten Strahlbreite $d_0$ und der Probenlänge $D = \qty{20}{\milli\metre}$ bestimmt 
+sich der Theoriewert des Geometriewinkels nach \autoref{eqn:a_g} zu $\alpha_\text{G, Theorie} = \qty{0.34}{\degree}$.
+
+\subsection{Bestimmung der Dispersion und Rauigkeit des Siliziumwafers}
+Um die Oberflächen- und Schichtstruktur des mit Polysterol beschichteten Siliziumwafers bestimmen zu können werden ein Reflektivitäts-Scan und ein Diffuser-Scan durchgeführt.
+Zweiterer wird benötigt, um die zuvor gemessenen Reflektivität um den Anteil der gestreuten Intensität korrigieren zu können. Die Messdaten beider Scans und die um die gestreute 
+Intensität korrigierten Werte sind in \autoref{fig:Reflek1} abgebildet.
+\begin{figure}
+  \centering
+  \includegraphics[width = .7\textwidth]{Reflek1.pdf}
+  \caption{Es sind die Messdaten des Reflektivitäts-Scans und des diffusen Scans zu sehen, sowie die Differenz der beiden Messreihen.}
+  \label{fig:Reflek1}
+\end{figure}
+Im Folgenden wird anstatt der gemessenen Intensität, die Reflektivität $R$ betrachtet. Diese ergibt sich auf Grund der Messzeit von $\qty{5}{\second}$ zu 
+\begin{equation*}
+  R = \frac{I}{5I_0}.
+\end{equation*}
+Des Weiteren wird die gemessene Reflektivität nach \autoref{eq:Geometriefaktor} um den Geometriefaktor korrigiert.
+Die Fresnelreflektivität einer ideal glatten Polysteroloberfläche kann durch \autoref{eq:Reflektivitaet} genähert werden. Der kritische Winkel $\alpha_\text{c}$ errechnet sich mit
+\autoref{eq:alpha_tot} und $r_e\rho = \qty{20e14}{\metre^{-2}}$ \cite{V44} zu $\alpha_\text{c} = \qty{0.223}{\degree}$. Die Wellenlänge der Röntgenstrahlung ist die 
+Wellenlänge der $K_\alpha$-Linie von Kupfer: $\lambda = \qty{1.54e-10}{\metre}$.
+Die korrigierten Messwerte der Reflektivität sind in \autoref{fig:Reflek2} zusammen mit der Fresnelreflektivität aufgetragen.
+\begin{figure}
+  \centering
+  \includegraphics[width = .7\textwidth]{Reflek2.pdf}
+  \caption{Plot.}
+  \label{fig:Reflek2}
+\end{figure}
+Darüber hinaus sind die periodischen Minima der Kiessigoszillation eingezeichnet, anhand welcher sich die Schichtdicke des Polysterolfilms ermitteln lässt.
+Dazu wird der Abstand zwischen den Minima benötigt. Hierzu wird der Mittelwert und die Standardabweichung der Abstände der markierten Messwerte gebildet. Es ergibt sich 
+$\symup{\Delta}\alpha = \qty{4.96 +- 0.46e-2}{\degree}$. Mit \autoref{eq:Schichtdicke} folgt die Schichtdicke $d = \qty{8.89 +- 0.82e-8}{\metre}$.
+
+Da es sich bei der Probe um ein Mehrschichsystem aus Polysterolfilm und Siliziumwafer handelt, können über den Parrattalgorithmus (\eqref{eq:Parrat})
+die Dispersionen $\delta$, die Rauigkeiten der Grenzschichten $\sigma$ und ebenfalls die Dicke der Polysterolschicht bestimmt werden. 
+Es werden Rauigkeits-korrigierte Fresnelkoeffizienten aus \autoref{eqn:r_korrigiert} verwendet. 
+Die so entstehende Fitfunktion ist dem Programmcode im Anhang \ref{sec:Anhang} zu enthemen. Es wird ein Fit an die korrigierten Messdaten mittels \texttt{scipy} \cite{scipy}
+durchgeführt, wobei die Startwerte der freien Parameter auf zuvor berechnete und aus der Literatur bekannte Werte festgelegt werden. Ebenfalls wird der Wertebereich der Paramter 
+um die zu erwartenden Größenordnungen eingeschränkt, um eine Konvergenz der Minimierung zu gewährleisten. Des Weiteren werden nur Messdaten zwischen 
+$\qtyrange{0.3}{1.3}{\degree}$ berücksichtigt. Die ermittelte Ausgleichsfunktion und die Messdaten sind in \autoref{fig:Reflek3} dargestellt. 
+\begin{figure}
+  \centering
+  \includegraphics[width = .7\textwidth]{Reflek3.pdf}
+  \caption{Korrigierte Messdaten der Reflektivitäten und die ermittelte Ausgleichsfunktion des Parrattalgorithmus unter Berücksichtigung der Rauigkeitskorrektur.}
+  \label{fig:Reflek3}
+\end{figure}
+Die freien Parameter der beiden Schichten ergeben sich zu 
+\begin{align*}
+  &\delta_\text{Poly} = \num{2.58 +- 1.77e-6} & &\delta_\text{Si} = \num{1.17 +- 0.09e-5} \\
+  &\beta_\text{Poly} = \num{2.80 +- 1.34e-7} & &\delta_\text{Si} = \num{1.78 +- 131e-7} \\
+  &\sigma_\text{Luft, Poly} = \num{9.14 +- 661e-9} & &\sigma_\text{Poly, Si} = \num{2.06 +- 8.22e-10} \\
+  &d = \qty{9.31 +- 4.88e-8}{\metre}.
+\end{align*}
+Mit \autoref{eq:alpha_tot} können wieder die kritischen Winkel der beiden Materialien berechnet werden. Sie ergeben sich zu 
+$\alpha_\text{c, Poly} = \qty{0.28 +- 0.01}{\degree}$ und $\alpha_\text{c, Si} = \qty{0.13 +- 0.04}{\degree}$.
