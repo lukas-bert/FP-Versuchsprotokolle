@@ -125,7 +125,7 @@ plt.close()
 
 ########################################################################
 
-a_c = 0.223 # ° (kritischer Winkel von Polysterol)
+a_c = 0.223 # ° (kritischer Winkel von Silizium)
 
 def r(alpha):
     return (a_c/(2*alpha))**4
@@ -160,13 +160,14 @@ plt.plot(t, R_c, label = "Reflektivität (korrigiert)", c = "cornflowerblue")
 plt.plot(x, r(x), label = "Fresnelreflektivität", color = "black")
 plt.plot(x2, [r(a_c), r(a_c)], color = "black")
 plt.plot(t[idx], R_c[idx], lw = 0, marker = "^", label = "Minima", c = "firebrick", ms = 5)
-plt.vlines(a_c, 0, 10e3, label = r"$\alpha_c$ (Polysterol)", color = "deeppink")
+plt.vlines(a_c, 0, 10e3, label = r"$\alpha_c$ (Silizium)", color = "deeppink")
+#plt.vlines(0.153, 0, 10e3, label = r"$\alpha_c$ (Polysterol)", color = "rebeccapurple")
 plt.legend()
 plt.yscale("log")
 plt.xlim(0, 2.5)
 plt.ylim(None, 10e3)
 plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$R$ (a.u.)")
+plt.ylabel(r"$R$")
 plt.tight_layout()
 #plt.show()
 plt.savefig("build/Reflek2.pdf")
@@ -209,7 +210,7 @@ def parratt(a, delta2, delta3, b2, b3, d2, sigma1, sigma2):
 t_min = 0.3
 t_max = 1.3
 
-bounds = ([5e-7, 5e-7, 1e-10, 1e-10, 1e-9, 0, 0], [5e-5, 5e-5, 1e-6, 1e-6, 1e-7, 1e-9, 1e-9])
+bounds = ([5e-7, 5e-7, 1e-10, 1e-10, 1e-9, 0, 0], [5e-5, 5e-5, 1e-6, 1e-6, 1e-7, 1e-9, 1e-9]) # Limits der Parameter
 params, pcov = op.curve_fit(parratt, t[(t>t_min) * (t<t_max)], R_c[(t>t_min) * (t<t_max)], p0 = params, bounds = bounds)
 err = np.sqrt(np.diag(pcov))
 
@@ -241,7 +242,7 @@ plt.yscale("log")
 plt.xlim(0, 2.5)
 plt.ylim(None, 10e3)
 plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$R$ (a.u.)")
+plt.ylabel(r"$R$")
 plt.tight_layout()
 #plt.show()
 plt.savefig("build/Reflek3.pdf")

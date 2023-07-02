@@ -1,2 +1,30 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Zuerst wurde die Halbwertsbreite und maximale Intensität des Röntgenstrahls bestimmt. Die dazu aufgenommenen Messdaten sind jedoch nicht perfekt symmetrisch und weisen 
+besonders auf der rechten Seite der Gaußglocke einen welligen Verlauf auf. Dies hat zur Folge, dass die angepasste Gaußfunktion an einigen Stellen von der Kurve der 
+Messdaten abweicht und so die bestimmten Werte der Intensität und der Halbwertsbreite mit einer gewissen Unsicherheit behaftet sind. Dies wirkt sich auch auf die späteren
+Messergebnisse aus.\\
+Über den erste durchgeführten Z-Scan konnte eine  Strahlbreite von $\qty{0.12}{\milli\metre}$ ermittelt werden. Da jedoch zwischen den beiden Plateubereichen der Intensität 
+wenig Messwerte zur Verfügung stehen, ist auch dieser Wert mit einer hohen Unsicherheit behaftet. Auffällig ist auch, dass ein Peak im unteren Plateubereich registriert wurde,
+der beispielsweise durch einen Kratzer auf dem Siliziumwafer erklärt werden könnte. 
+Der experimentell bestimmte Geometriewinkel $\alpha_\text{G, exp} = \qty{0.44}{\degree}$ weicht um $\qty{29}{\percent}$ von dem mit der zuvor bestimmten Strahlbreite 
+berechneten Wert von $\alpha_\text{G, Theorie} = \qty{0.34}{\degree}$ ab. Da jedoch der berechnete Wert von der zuvor bestimmten Strahlbreite abhängt und diese wie bereits 
+erläutert von einer Unsicherheit behaftet ist, überrascht diese Abweichung nicht. Für die weiteren Berechnungen wurde deshalb der Wert 
+$\alpha_\text{G, exp} = \qty{0.44}{\degree}$ verwendet. \\
+Die Messdaten des Reflektivität-Scans zeigen eine gut erkennbare, oszillierende Struktur im Winkelbereich von $\qtyrange{0.3}{1.3}{\degree}$. Auch die in \autoref{fig:Reflek2}
+eingezeichnete Fresnelreflektivität einer ideal glatten Oberfläche, stimmt für $\alpha > \alpha_\text{c}$ annähernd mit dem gemessenen Verlauf überein. Die Über die 
+Kiessigoszillation bestimmte Schichtdicke des Polysterolfilms beträgt $d = \qty{8.89 +- 0.82e-8}{\metre}$.\\
+Die über den Parrattalgorithmus Algorithmus angepasste Kurve stimmt ebenfalls grob mit der Messkurve überein. Bei feinerer Betrachtung fallen jedoch deutliche Abweichungen auf.
+Um die Konvergenz des durchgeführten Fits zu erzielen, mussten die Startwerte und Wertebereiche der Parameter stark eingeschränkt werden, dennoch verbleiben einige Werte mit einer 
+hohen statistischen Unsicherheit.
+Die so bestimmten Dispersionen lauten  $\delta_\text{Poly, exp} = \num{2.58 +- 1.77e-6}$ und $\delta_\text{Si, exp} = \num{1.17 +- 0.09e-5}$. Die Literaturwerte sind
+$\delta_\text{Poly, lit} = \num{3.5e-6}$ und $\delta_\text{Si, lit} = \num{7.6e-6}$ \cite{V44}. Dies bedeutet relative Abweichungen von $\qty{26}{\percent}$ und 
+$\qty{85}{\percent}$ für Polysterol und Silizium respektive. Aus diesen Werten folgen die kritischen Winkel $\alpha_\text{c}$ der Materialien, die sich zu 
+$\alpha_\text{c, exp}(\text{Poly}) =\qty{0.28 +- 0.01}{\degree}$ und $\alpha_\text{c, exp}(\text{Si}) = \qty{0.13 +- 0.04}{\degree}$ ergeben. Die Literaturwerte lauten 
+$\alpha_\text{c, lit}(\text{Poly}) =\qty{0.153}{\degree}$ und $\alpha_\text{c, lit}(\text{Si}) =\qty{0.223}{\degree}$. Es folgen relative Abweichungen von $\qty{42}{\percent}$
+für die Polysterol Werte und  $\qty{83}{\percent}$ für Silizium. Die durch den Parrattalgorithmus ermittelte Schichtdicke $d = \qty{9.31 +- 4.88e-8}{\metre}$ weicht um 
+$\qty{5}{\percent}$ von dem zuvor bestimmten Wert ab. 
+Die Rauigkeiten der beiden Grenzschichten wurden zu $\sigma_\text{Luft, Poly} = \num{9.14 +- 661e-9}$ $\sigma_\text{Poly, Si} = \num{2.06 +- 8.22e-10}$ bestimmt. \\
+Allgemein sind die durch den Parrattalgorithmus bestimmten Messergebnisse von sehr großen Unsicherheiten behaftet.
+Auf Grund der vielen freien Parameter und der komplex strukturierten Messkurve konnte keine gute Anpassung des Algorithmus gefunden werden.
+Die Materialeigenschaften konnten nicht genau bestimmt werden. Lediglich die Schichtdicke konnte mit ausreichnder Präzision ermitttelt werden. 
