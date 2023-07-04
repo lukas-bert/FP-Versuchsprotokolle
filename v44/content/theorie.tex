@@ -1,6 +1,6 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
-Wird eine Oberfläche eines zu untersuchenden Material Röntgenstrahlung ausgesetzt, wird ein Teil der Strahlung reflektiert. Die Intensität der reflektierten 
+Wird eine Oberfläche eines zu untersuchenden Materials Röntgenstrahlung ausgesetzt, wird ein Teil der Strahlung reflektiert. Die Intensität der reflektierten 
 Strahlung lässt sich messen. Sind auch der Einfalls- und Ausfallswinkel bekannt, kann so eine Aussage über verschiedene Eigenschaften des Materials getroffen werden.
 Ziel dieses Versuchs ist es, mithilfe der Röntenreflektometrie die Dichte, Rauigkeit und Dicke eines Polysterolfilms auf einem Siliziumwafer zu bestimmen.
 
@@ -19,7 +19,7 @@ Dazu wird zunächst an eine Glühkathode eine Heizspannung angelegt, sodass aufg
 Mittels einer angelegten Beschleunigungsspannug werden die freien Elektronen zu einer Anode hin beschleunigt. In dem Anodenmaterial werden die Elektronen stark in
 dem Coulombfeld der Anodenatome abgebremst, wobei ein kontinuierliches Spektrum an Bremstrahlung abgestrahlt wird. 
 Durch das Herauslösen von Elektronen der unteren Energieniveaus kommt es durch das Auffüllen dieser zur Emission von einer charakteristischen Strahlung, welche
-Materialabhängig und für die einzelnen Übergänge diskret ist.
+materialabhängig und für die einzelnen Übergänge diskret ist.
 Der schematische Aufbau einer Röntgenröhre ist in \autoref{fig:Röntgenröhre} gezeigt.
 
 \begin{figure}
@@ -63,7 +63,7 @@ sind die Fresnelgleichungen näherungsweise identisch. Es gilt
 \end{align*}
 
 Für den Übergang von einem Vakuum ($n=1$) in ein Material mit $n<1$ kommt es unter einem Winkel $\alpha_{\text{tot}}$ zur Totalreflexion. Für Röntgenstrahlung ist jeder Brechnungsindex 
-von Materie $n<1$ und in diesem Experiment tritt die Röntgenstrahlung aus Luft ($n \approx 1$) auf das Material, sodass es hier eine Winkel $\alpha_{\text{tot}}$ gibt. Dieser entspricht
+von Materie $n<1$ und in diesem Experiment tritt die Röntgenstrahlung aus Luft ($n \approx 1$) auf das Material, sodass es hier einen Winkel $\alpha_{\text{tot}}$ gibt. Dieser entspricht
 
 \begin{equation}
     \alpha_{\text{tot}} \approx \sqrt{2\delta} = \lambda \sqrt{\frac{r_{\symup{e}}\rho}{\symup{\pi}}}.
@@ -76,7 +76,7 @@ Eine weitere wichtige Größe ist die Reflektivität $R$, welche als
     R = |{r}|^2 = \left(\frac{\alpha_{\text{tot}}}{2\alpha}\right)
     \label{eq:Reflektivitaet}
 \end{equation}
-definiert ist. Sie beschreibt also das Verhältnis der Intensitäten der reflektierten und einfallenden Strahlung für den Fall, dass $\alpha > 3 \alpha_{\text{tot}}$. ?????????????????
+definiert ist. Sie beschreibt also das Verhältnis der Intensitäten der reflektierten und einfallenden Strahlung.% für den Fall, dass $\alpha > 3 \alpha_{\text{tot}}$. ?????????????????
 
 \subsection{Multischichtsysteme}
 Besteht ein Material aus mehreren Schichten, teilt sich der Strahl an jeder Grenzschicht in einen reflektierten und einen gebrochenen Teil auf. So nimmt mit jeder weiteren Schicht
@@ -104,7 +104,7 @@ Verfügt ein Material über mehr als zwei Schichten, überlagern sich die Oszill
 Dafür wird die Rekursionsformel
 \begin{equation}
     X_{\symup{j}} = \frac{R_{\symup{j}}}{T_{\symup{j}}} = \symup{e}^{-2\symup{i}k_{\symup{z}}z_{\symup{j}}}\frac{r_{\symup{j,j+1}}+X_{\symup{j+1}}\symup{e}^{2\symup{i}k_{\symup{z,j+1}}z_{\symup{j}}}}%
-    {1+r_{\symup{j,j+1}}X_{\symup{j+1}}\symup{e}^{2\symup{i}k_{\symup{z,j+1}}z_{\symup{j}}}} ???????????
+    {1+r_{\symup{j,j+1}}X_{\symup{j+1}}\symup{e}^{2\symup{i}k_{\symup{z,j+1}}z_{\symup{j}}}} % ???????????
     \label{eq:Parrat}
 \end{equation}
 verwendet. Hier bezeichnet $r_{\symup{j,j+1}}$ die Fresnelreflektivität der j-ten Grenzschicht und $k_{\symup{z,j}}$ die z-Komponente des Wellenvektors $\vec{k}$ der j-ten Schicht.
