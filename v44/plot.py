@@ -109,7 +109,7 @@ t, c1 = np.genfromtxt("content/data/ReflectScan.UXD", unpack = True)
 t2, c2 = np.genfromtxt("content/data/DiffuserScan.UXD", unpack = True)
 
 plt.plot(t, c1, color = "cornflowerblue", label = "Reflektivität (unkorrigiert)")
-plt.plot(t2, c2, color = "firebrick", label = "Streurintensität")
+plt.plot(t2, c2, color = "firebrick", label = "Streuintensität")
 plt.plot(t, c1-c2, label = "Differenz", ls = "dashed")
 
 plt.legend()
