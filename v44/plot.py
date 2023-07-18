@@ -20,26 +20,27 @@ params, pcov = op.curve_fit(model, theta, counts, p0 = [np.mean(theta), np.std(t
 err = np.sqrt(np.diag(pcov))
 FWHM = 0.091
 I0 = params[2]
+sigma = ufloat(params[1], err[1])
 print("-------------------------------------------------------")
 print("Parameter der Gaußfunktion")
 print(f"t0      : {params[0]:.4e} +- {err[0]:.4e}")
 print(f"sigma   :  {params[1]:.4e} +- {err[1]:.4e}")
 print(f"I0      :  {params[2]:.4e} +- {err[2]:.4e}")
 print(f"B       :  {params[3]:.4e} +- {err[3]:.4e}")
-print(f"FWHM    :  {FWHM}")
+print(f"FWHM    :  {2*unp.sqrt(2*np.log(2))*sigma}")
 print("-------------------------------------------------------")
 
 x = np.linspace(-0.5, 0.5, 1000)
 plt.errorbar(theta, counts, yerr= np.sqrt(counts), marker = "x", color = "black", lw = 0, elinewidth = 1, capsize= 1, label = "Messdaten", alpha = .7, ms = 5)
 plt.plot(x, model(x, *params), label = "Fit", c = "firebrick", lw = 1.5)
 plt.hlines(params[2]/(2*np.sqrt(2*np.pi*params[1]**2)) - params[3], xmin = -0.5, xmax = 0.5, color = "gray", ls = "dashed", label = r"$\frac{1}{2} \;I_0$")
-plt.vlines([params[0] - 1/2*FWHM, params[0] + 1/2*FWHM] , 0, 2e5, color = "cornflowerblue", label = f"FWHM: {FWHM}°")
+plt.vlines([params[0] - 1/2*FWHM, params[0] + 1/2*FWHM] , 0, 2e5, color = "cornflowerblue", label = f"FWHM: {2*unp.sqrt(2*np.log(2))*sigma:.3f}°")
 plt.legend()
 plt.xlim(-0.3, 0.3)
 plt.ylim(0, 2e5)
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0), useMathText=True)
-plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
+#plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
+#plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
 plt.grid()
 plt.tight_layout()
 #plt.show()
@@ -59,8 +60,8 @@ plt.vlines([z[25], z[28]], ymin=0, ymax= 2.1e5, ls = "dashed", color = "firebric
 plt.xlim(-1, 1)
 plt.ylim(0, 2e5)
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0), useMathText=True)
-plt.xlabel(r"$z \mathbin{/} \unit{\milli\metre}$")
-plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
+#plt.xlabel(r"$z \mathbin{/} \unit{\milli\metre}$")
+#plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
 plt.grid()
 plt.legend()
 plt.tight_layout()
@@ -86,8 +87,8 @@ plt.legend()
 plt.xlim(-0.5, 0.5)
 plt.ylim(0, 9e4)
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0,0), useMathText=True)
-plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
+#plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
+#plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
 plt.grid()
 plt.tight_layout()
 #plt.show()
@@ -115,8 +116,8 @@ plt.plot(t, c1-c2, label = "Differenz", ls = "dashed")
 plt.legend()
 plt.yscale("log")
 plt.xlim(0, 2.5)
-plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
+#plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
+#plt.ylabel(r"$I \mathbin{/} \text{Hits}  \mathbin{/} \unit{\second}$")
 plt.tight_layout()
 #plt.show()
 
@@ -166,8 +167,8 @@ plt.legend()
 plt.yscale("log")
 plt.xlim(0, 2.5)
 plt.ylim(None, 10e3)
-plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$R$")
+#plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
+#plt.ylabel(r"$R$")
 plt.tight_layout()
 #plt.show()
 plt.savefig("build/Reflek2.pdf")
@@ -180,6 +181,7 @@ lam = 1.54e-10
 k = 2*np.pi/lam
 n1 = 1
 d1 = 0
+
 delta_Poly = 3.5e-6 # 1. Schicht Polysterol
 delta_Si = 7.6e-6 # 2. Schicht Silizium
 b_Poly = delta_Poly*0.025
@@ -187,12 +189,21 @@ b_Si = delta_Si/200
 d_ = noms(d)
 sigma_Poly = 1e-10
 sigma_Si = 1e-10
+
+delta_Poly = 2e-6 # 1. Schicht Polysterol
+delta_Si = 1.2e-5 # 2. Schicht Silizium
+b_Poly = 1.4e-8
+b_Si = 8.6e-10
+d_ = 8e-8
+sigma_Poly = 2e-10
+sigma_Si = 1e-10
+
 params = [delta_Poly, delta_Si, b_Poly, b_Si, d_, sigma_Poly, sigma_Si] # Startwerte
 err = np.zeros(len(params))
 
 def parratt(a, delta2, delta3, b2, b3, d2, sigma1, sigma2):
-    n2 = 1.0 - delta2 + b2*1j
-    n3 = 1.0 - delta3 + b3*1j
+    n2 = 1.0 - delta2 - b2*1j
+    n3 = 1.0 - delta3 - b3*1j
     a = np.deg2rad(a)
     kd1 = k *  np.sqrt(n1**2 - np.cos(a)**2)
     kd2 = k * np.sqrt(n2**2 - np.cos(a)**2)
@@ -208,9 +219,9 @@ def parratt(a, delta2, delta3, b2, b3, d2, sigma1, sigma2):
 
 # Fitbereich
 t_min = 0.3
-t_max = 1.3
+t_max = 0.7
 
-bounds = ([5e-7, 5e-7, 1e-10, 1e-10, 1e-9, 0, 0], [5e-5, 5e-5, 1e-6, 1e-6, 1e-7, 1e-9, 1e-9]) # Limits der Parameter
+bounds = ([5e-7, 5e-7, 1e-10, 1e-10, 1e-9, 1e-12, 1e-12], [5e-5, 5e-5, 1e-6, 1e-6, 1e-7, 1e-9, 1e-9]) # Limits der Parameter
 params, pcov = op.curve_fit(parratt, t[(t>t_min) * (t<t_max)], R_c[(t>t_min) * (t<t_max)], p0 = params, bounds = bounds)
 err = np.sqrt(np.diag(pcov))
 
@@ -241,9 +252,9 @@ plt.legend()
 plt.yscale("log")
 plt.xlim(0, 2.5)
 plt.ylim(None, 10e3)
-plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$R$")
+#plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
+#plt.ylabel(r"$R$")
 plt.tight_layout()
-#plt.show()
+plt.show()
 plt.savefig("build/Reflek3.pdf")
 plt.close()

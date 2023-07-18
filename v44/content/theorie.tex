@@ -18,10 +18,16 @@ Eine der Möglichkeiten, Röntgenstrahlung zu erzeugen ist das Abbremsen von Ele
 Dazu wird zunächst an eine Glühkathode eine Heizspannung angelegt, sodass aufgrund des glühelektrischen Effekts Elektronen aus dem Kathodenmaterial austreten.
 Mittels einer angelegten Beschleunigungsspannug werden die freien Elektronen zu einer Anode hin beschleunigt. In dem Anodenmaterial werden die Elektronen stark in
 dem Coulombfeld der Anodenatome abgebremst, wobei ein kontinuierliches Spektrum an Bremstrahlung abgestrahlt wird. 
-Durch das Herauslösen von Elektronen der unteren Energieniveaus kommt es durch das Auffüllen dieser zur Emission von einer charakteristischen Strahlung, welche
-materialabhängig und für die einzelnen Übergänge diskret ist.
+Durch das Herauslösen von Elektronen der unteren Energieniveaus enstehen Löcher in den jeweiligen Niveaus. Werden diese durch Elektronen aus höheren Schalen aufgefüllt,
+wird eine charakteristische Strahlung emittiert, welche materialabhängig und für die einzelnen Übergänge diskret ist. 
+Ein Beispiel eines solchen Röntgenspektrums ist in \autoref{fig:Röntgenspektrum} abgebildet.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{content/pics/Röntgenspektrum.png}
+    \caption{Schematische Darstellung eines Röntgenspektrums. Entnommen aus \cite{VROE}.}
+    \label{fig:Röntgenspektrum}
+\end{figure}
 Der schematische Aufbau einer Röntgenröhre ist in \autoref{fig:Röntgenröhre} gezeigt.
-
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{content/pics/Röntgenröhre.pdf}
@@ -39,7 +45,13 @@ Für den komplexen Brechnungsindex $n$ des Material gilt
 \begin{equation*}
     n = 1 - \delta + \symup{i} K.
 \end{equation*}
-Hierbei bezeichnet $\delta \sim 10^{-6}$ eine kleine Korrektur und $K$ die Absorption des Mediums.
+Hierbei bezeichnet $\delta \sim 10^{-6}$ die Dispersion und $K$ die Absorption des Mediums, welche gemäß
+\begin{align*}
+    \delta &= \frac{\lambda^2}{2\symup{\pi}}r_\text{e} \rho & K = \frac{\lambda}{4\symup{\pi}} \mu (r)
+\end{align*}
+berechnet werden können. 
+Die Wellenlänge der verwendeten Röntgenstrahlung wird als $\lambda$ bezeichnet, die Dichte des Materials als $\rho$ und $r_{\symup{e}}$ ist der klassische Elektronenradius.
+Die Funktion $\mu (r)$ ist der lineare Absorptionskoeffizient.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{content/pics/Grenzfläche.pdf}
@@ -62,21 +74,22 @@ sind die Fresnelgleichungen näherungsweise identisch. Es gilt
     t &= \frac{2n_1\sin\alpha}{n_1\sin\alpha + n_2 \sin\beta} & r &= \frac{n_1\sin\alpha - n_2\sin\beta}{n_1\sin\alpha+n_2 \sin\beta}.
 \end{align*}
 
-Für den Übergang von einem Vakuum ($n=1$) in ein Material mit $n<1$ kommt es unter einem Winkel $\alpha_{\text{tot}}$ zur Totalreflexion. Für Röntgenstrahlung ist jeder Brechnungsindex 
-von Materie $n<1$ und in diesem Experiment tritt die Röntgenstrahlung aus Luft ($n \approx 1$) auf das Material, sodass es hier einen Winkel $\alpha_{\text{tot}}$ gibt. Dieser entspricht
+Für den Übergang von einem Vakuum ($n=1$) in ein Material mit $n<1$ kommt es unter einem Winkel $\alpha \leq \alpha_{\text{tot}}$ zur Totalreflexion, da
+für Röntgenstrahlung jeder Brechnungsindex 
+von Materie $n<1$ ist. Dieser entspricht
 
 \begin{equation}
     \alpha_{\text{tot}} \approx \sqrt{2\delta} = \lambda \sqrt{\frac{r_{\symup{e}}\rho}{\symup{\pi}}}.
     \label{eq:alpha_tot}
 \end{equation}
-Die Wellenlänge der verwendeten Röntgenstrahlung wird als $\lambda$ bezeichnet, die Dichte des Materials als $\rho$ und $r_{\symup{e}}$ ist der klassische Elektronenradius.
 
-Eine weitere wichtige Größe ist die Reflektivität $R$, welche als
+Für $\alpha > \alpha_\text{tot}$ wird ein Teil des Strahles reflektiert und ein Teil transmittiert. Für den Fall, dass $\alpha > 3 \alpha_{\text{tot}}$ ist, kann
+die Fresnelreflektivität
 \begin{equation}
     R = |{r}|^2 = \left(\frac{\alpha_{\text{tot}}}{2\alpha}\right)
     \label{eq:Reflektivitaet}
 \end{equation}
-definiert ist. Sie beschreibt also das Verhältnis der Intensitäten der reflektierten und einfallenden Strahlung.% für den Fall, dass $\alpha > 3 \alpha_{\text{tot}}$. ?????????????????
+genähert werden. Diese beschreibt das Verhältnis der Intensitäten der reflektierten und einfallenden Strahlung.% für den Fall, dass $\alpha > 3 \alpha_{\text{tot}}$. ?????????????????
 
 \subsection{Multischichtsysteme}
 Besteht ein Material aus mehreren Schichten, teilt sich der Strahl an jeder Grenzschicht in einen reflektierten und einen gebrochenen Teil auf. So nimmt mit jeder weiteren Schicht
@@ -100,7 +113,7 @@ Die Schichtdicke $d$ des Multischichtsystems kann mithilfe der Kiessig Oszillati
 
 zwischen der Wellenlänge $\lambda$ der Röntgenstrahlung und dem Abstand $\symup{\Delta}\alpha$ zweier Extrema mit gleichem Vorzeichen verwendet.
 
-Verfügt ein Material über mehr als zwei Schichten, überlagern sich die Oszillationen. Mithilfe des so genannten Parrat-Algorithmus können erneut die Schichtdicken berechnet werden.
+Verfügt ein Material über mehr als zwei Schichten, überlagern sich die Oszillationen. Mithilfe des so genannten Parratt-Algorithmus kann die Gesamtreflektivität eines Multischichtsystems berechnet werden.
 Dafür wird die Rekursionsformel
 \begin{equation}
     X_{\symup{j}} = \frac{R_{\symup{j}}}{T_{\symup{j}}} = \symup{e}^{-2\symup{i}k_{\symup{z}}z_{\symup{j}}}\frac{r_{\symup{j,j+1}}+X_{\symup{j+1}}\symup{e}^{2\symup{i}k_{\symup{z,j+1}}z_{\symup{j}}}}%
@@ -112,7 +125,14 @@ Dabei gilt
 \begin{equation*}
     k_{\symup{z,j}} = \sqrt{n_{\symup{j}}^2 -\cos^2 \alpha}.
 \end{equation*}
-Die erste und letzte Schicht werden als unendlich angenommen und somit wird dort nicht weiter reflektiert, was den Startwert der Rekursion auf $R_{\symup{N+1}} = X_{\symup{N+1}} = 0$ setzt.
+Die erste und letzte Schicht werden als unendlich dick angenommen. Folglich wird an der untersten Schicht die transmittierte Strahlung an keiner weiteren Schicht reflektiert, was den Startwert der Rekursion auf $R_{\symup{N+1}} = X_{\symup{N+1}} = 0$ setzt.
+Eine graphische Darstellung der Überlegungen des Parratt-Algorithmus ist in \autoref{fig:Parratt} gegeben.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{content/pics/Parratt.png}
+    \caption{Darstellung der Reflexion non Lichtwellen an einem Multischichtsystem. Entnommen aus \cite{Tolan1999}.}
+    \label{fig:Parratt}
+\end{figure}
 
 Damit der Parrat-Algorithmus nicht nur für glatte, sondern auch für raue Oberflächen verwendet werden kann, wird eine \textit{root-mean-square}-Rauigkeit 
 \begin{equation*}
@@ -120,6 +140,8 @@ Damit der Parrat-Algorithmus nicht nur für glatte, sondern auch für raue Oberf
 \end{equation*}
 eingeführt. Dafür wird die Position in der j-ten Schicht $z_{\symup{j}}$ sowie die Wahrscheinlichkeit $P_{\symup{j}}$, dass diese sich in einem Intervall 
 $[z_{\symup{j}}+z, z_{\symup{j}}+z+\symup{d}z]$ befindet, benötigt. Die Wahrscheinlichkeitsverteilung wird als Gaußverteilung angenommen.
+Dies gilt nur im Fall $\sigma \ll d$, wobei $d$ die Schichtdicke beschreibt. Sobald $\sigma \approx d$ gilt, muss das effektive Dichtemodell verwendet werden.
+Dazu wird das kontinuierliche Dispersionsprofil des Systems in viele glatte Schichten unterteilt.
 Mithilfe der \textit{root-mean-square}-Rauigkeit ergeben sich die modifizierte, rekursive Fresnelgleichungen
 
 \begin{align}
