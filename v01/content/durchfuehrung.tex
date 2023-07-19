@@ -16,7 +16,7 @@ Photomultipliern registriert werden.
 
 Nach der Koinzidenz wird das Signal auf drei Wege aufgeteilt. Zwei Wege führen zu zwei verschiedenen AND-Gattern, ein weiterer führt durch eine $\qty{30}{\nano\second}$ Verzögerungsleitung 
 zu einem Monoflop, dessen negierter Ausgang mit dem ersten AND-Gatter und der normale Ausgang mit dem zweiten AND-Gatter verbunden ist. Das Ausgangssignal des ersten AND-Gatters startet 
-einen Time-Amplitude-Converter (TAC), das Signal des Zweiten stoppt diese. Mithilfe dieser Schaltung lässt sich der zeitliche Abstand zweier kurz aufeinanderfolgenden Pulse bestimmen.
+einen Time-Amplitude-Converter (TAC), das Signal des Zweiten stoppt diesen. Mithilfe dieser Schaltung lässt sich der zeitliche Abstand zweier kurz aufeinanderfolgenden Pulse bestimmen.
 Die beiden Pulse sind das Eintreten in das Szintillatormaterial und der Zerfall des Myons. Die Logik ist in \autoref{tab:Logik} dargestellt.
 
 Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert und die Daten werden zur Auswertung gespeichert.
@@ -68,7 +68,7 @@ Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert u
   Nach dem Anschließen der Verzögerungsleitungen zwischen Photomultiplier und Diskriminator werden die einzelnen Signale an die Koinzidenz angeschlossen. Die aus der Koinzidenz ausgehenden
   Signale werden mithilfe eines Zählwerks gezählt, wobei die Dauer der einzelnen Verzögerungen variiert wird, damit ein idealer Messbereich ermittelt werden kann.
 
-  Im Folgenden wird die Verzögerung so eingestellt, dass die Messung sicher in diesem idealen Bereich stattfindet. Als Signaleingang werden nun nicht die Photomultiplier, sondern
+  Im Folgenden wird die Verzögerung so eingestellt, dass die Messung sicher in diesem idealen Bereich stattfindet. Hierzu werden nicht die Photomultiplier, sondern
   ein Doppelpulsgenerator mit einstellbarem Impulsabstand verwendet. Außerdem wird die Schaltung weiter gemäß des Schaltplan aus \autoref{fig:Aufbau} aufgebaut. An dem 
   Time-Amplitude-Converter wird eine Suchzeit eingestellt. Die Suchzeit soll in der Größenordnung der erwarteten mittleren Lebendauer der Myonen liegen, also etwa $\qtyrange{1}{10}{\micro\second}$.
   Werden die Abstände der Doppelpulse variiert, lassen sich die einzelnen Kanäle des an dem PC angezeigen Histogramms erkennen, sodass die Kanäle jeweils einer bestimmten Zerfallszeit

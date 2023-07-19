@@ -1,35 +1,96 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 Die Auswertung dieses Versuchs erfolgt mit zur Verfügung gestellten Ersatzdaten, da die eigentliche Messung auf Grund eines technischen Problemes 
-nicht durchgeführt werden konnte. Lediglich die Messdaten zur Bestimmung der Auflösungszeit wurden im Rahmen der Versuchsdruchführung aufgenommen.
+nicht durchgeführt werden konnte. Lediglich die Messdaten zur Bestimmung der Halbwertsbreite der Messkurve der Verzögerungszeiten wurde im Rahmen der Versuchsdurchführung aufgenommen.
 
-\subsection{Bestimmung der Auflösungszeit}
-Zur Bestimmung der Auflösungszeit, werden die nach der Koinzidenz gemessenen Zählraten der beiden Photomultiplier betrachtet. In \autoref{fig:T_VZ} sind 
+\subsection{Bestimmung der Halbwertsbreite der Messkurve der Verzögerungszeiten}
+Zur Bestimmung der Halbwertsbreite werden die nach der Koinzidenz gemessenen Zählraten der beiden Photomultiplier betrachtet, welche in \autoref{tab:Mess1} gelistet sind. 
+\begin{table}
+  \tiny
+  \centering
+  \caption{Zählraten $N$ der Koinzidenz gegen verschiedene Verzögerungszeiten $T_\text{VZ}$ der Leitungen. Eine negative Verzögerungszeit beschreibt eine größere Verzögerung der Leitung zum linken PMT.
+  Es sind zwei Messreihen zu verschiedenen Zählzeiten aufgetragen.}
+  \label{tab:Mess1}
+  \begin{tabular}{c c c}
+    \toprule
+    {$ T_\text{VZ} \mathbin{/} \unit{\nano\second}$} & {$N \mathbin{/} \qty{10}{\second}$} & {$N \mathbin{/} \qty{20}{\second}$} \\
+    \midrule
+     0 & 59 & 42 \\
+    -1 & 76 &  \\
+    -2 & 42 & 28 \\
+    -3 & 73 &  \\
+    -4 & 64 & 36 \\
+    -5 & 58 &  \\
+    -6 & 49 & 19 \\
+    -7 & 63 &  \\
+    -8 & 40 & 23 \\
+    -9 & 40 &  \\
+   -10 & 23 & 9 \\
+   -11 & 18 &  \\
+   -12 & 11 & 4 \\
+   -13 &  6 &  \\
+   -14 &  0 & 0 \\
+     1 & 65 &  \\
+     2 & 48 & 21 \\
+     3 & 45 &  \\
+     4 & 51 & 16 \\
+     5 & 30 &  \\
+     6 & 32 & 18 \\
+     7 & 33 &  \\
+     8 & 18 & 9 \\
+     9 & 11 &  \\
+    10 &  7 & 3 \\
+    11 &  4 &  \\
+    12 &  4 & 0 \\
+    13 &  0 &  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+In \autoref{fig:T_VZ} sind 
 die Zählraten in Abhängigkeit zur Verzögerungszeit $T_\text{VZ}$ aufgetragen. Als Zählraten-Experiment genügen die Messwerte einer Poissonverteilung. Der statistische 
 Fehler lautet somit $\sqrt{N}$. 
 Eine negative Verzögerungszeit bedeutet hier eine größere Verzögerung der 
 Leitung zum linken PMT, während eine positive Verzögerungszeit die Verzögerungsleitung des rechten PMT beschreibt. Die Diskriminatoren sind auf eine Pulsbreite 
 von $\qty{10}{\nano\second}$ eingestellt. 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics[width = .8\textwidth]{plot1.pdf}
-  \caption{Messdaten zur Bestimmung der Auflösungszeit der Koinzidenz. Es sind die Messwerte aus zwei 
-  verschiedenen Messreihen aufgetragen und das Plateu, sowie die Halbwertsbreite der Kurve markiert.}
+  \caption{Zählraten nach der Koinzidenz gegen verschiedene Zeiten der Verzögerungsleitungen. Es sind die Messwerte aus zwei 
+  verschiedenen Messreihen aufgetragen (rot: $\qty{20}{\second}$ Messintervall, schwarz: $\qty{10}{\second}$ Messintervall). Das Plateu und die Halbwertsbreite der Kurve sind markiert.}
   \label{fig:T_VZ}
 \end{figure}
-Nach Bildung des Mittelwertes der Messwerte im Plateubereich ergibt sich eine Halbwertsbreite von etwa $\qty{14}{\nano\second}$.
-Die Auflösungszeit berechnet sich damit zu 
-\begin{equation*}
-  \symup{\Delta} t_\text{K} = 2 \cdot \qty{10}{\nano\second} - \qty{14}{\nano\second} = \qty{6}{\nano\second}.
-\end{equation*}
+Um die Halbwertsbreite der Verteilung zu bestimmen wird der Bereich zwischen $\qty{-5}{\nano\second}$ und $\qty{1}{\nano\second}$ als Plateubereich betrachtet und 
+der Mittelwert der Zählraten dieser Messdaten gebildet. Durch das Einzeichnen einer Horizontalen auf halber Höhe des Mittelwerts wird graphisch die Halbwertsbreite 
+abgelesen. Es ergibt sich ein Wert von $\symup{\Delta}t = \qty{14}{\nano\second}$.
 
 \subsection{Kalibrierung des Vielkanalanalysators}
 Um die Kanalnummern des Vielkanalanalysators (VKA) einer Lebensdauer eines gemessenen Myons zuordnen zu können, wird eine Kalibrierungsmessung des VKA durchgeführt.
-Die angesprochenen Kanalnummern sind in \autoref{fig:Kalibrierung} gegen die eingestellten Impulsabstände aufgetragen. Mit Hilfe einer linearen Ausgleichsrechnung
-kann so eine Umrechnungsfunktion der Kanalnummern in Zeiten ermittelt werden. 
-\begin{figure}
+Die angesprochenen Kanalnummern sind in \autoref{tab:Mess2} gegen die eingestellten Impulsabstände gelistet und in \autoref{fig:Kalibrierung} graphisch aufgetragen. 
+\begin{table}
   \centering
-  \includegraphics[width = .8\textwidth]{plot2.pdf}
+  \caption{Angesprochene Kanalnummern gegen eingestellte Impulsabstände.}
+  \label{tab:Mess2}
+  \begin{tabular}{S[table-format = 3.0] S[table-format = 1.1]}
+    \toprule
+    {Kanal} & {$t \mathbin{/} \unit{\micro\second}$} \\
+    \midrule
+     37 & 0,8 \\
+     81 & 1,8 \\
+    126 & 2,8 \\
+    171 & 3,8 \\
+    216 & 4,8 \\
+    261 & 5,8 \\
+    306 & 6,8 \\
+    350 & 7,8 \\
+    395 & 8,8 \\
+    440 & 9,8 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Mit Hilfe einer linearen Ausgleichsrechnung kann so eine Umrechnungsfunktion der Kanalnummern in Zeiten ermittelt werden. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = .7\textwidth]{plot2.pdf}
   \caption{Lineare Ausgleichsrechnung zur Kalibrierung der Kanalnummern des VKA. 
   Es sind eingestellte Impulsabstände gegen die Kanalnummer aufgetragen. Die lineare Regression wurde mit \textit{scipy} \cite{scipy} durchgeführt.}
   \label{fig:Kalibrierung}
