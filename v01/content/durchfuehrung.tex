@@ -3,7 +3,7 @@
 \subsection{Aufbau und Funktionsweise des Detektors}
 \label{subsec:Aufbau}
 Eine schematische Skizze des verwendeten Versuchsaufbaus ist in \autoref{fig:Aufbau} zu sehen. In einem zylindrischen Gefäß befindet sich ein organisches
-Szintillatormaterial. An dem linken und rechten Ende des Tanks ist jeweils ein Photomultiplier (PMT), auch Sekundärelektornenverstärker (SEV) genannt, angebracht.
+Szintillatormaterial. An dem linken und rechten Ende des Tanks ist jeweils ein Photomultiplier (\textit{PhotoMultiplier Tube}: PMT), auch Sekundärelektornenverstärker (SEV) genannt, angebracht.
 Tritt ein Photon in diesen Photomultiplier ein, löst es über den äußerden Photoeffekt ein Elektron aus dem Material heraus. Dieses Elektron wird in einem elektrischen Feld 
 zu einer Elektrode hin beschleunigt, wo erneut Elektronen ausgelöst werden. Dieser Prozess wiederholt sich, wobei nach jeder Beschleunigungsstufe mehr Elektronen beschleunigt werden.
 Am Ende des Photomultipliers treffen die Elektronen auf eine Anode und fließen über eine Widerstand ab. Dabei ensteht ein messbarer Spannungspuls. Ein Querschnitt eines beispielhaften
@@ -15,8 +15,12 @@ Signale miteinander verglichen und es wird nur ein Signal ausgegeben, wenn beide
 Photomultipliern registriert werden.
 
 Nach der Koinzidenz wird das Signal auf drei Wege aufgeteilt. Zwei Wege führen zu zwei verschiedenen AND-Gattern, ein weiterer führt durch eine $\qty{30}{\nano\second}$ Verzögerungsleitung 
-zu einem Monoflop, dessen negierter Ausgang mit dem ersten AND-Gatter und der normale Ausgang mit dem zweiten AND-Gatter verbunden ist. Das Ausgangssignal des ersten AND-Gatters startet 
-einen Time-Amplitude-Converter (TAC), das Signal des Zweiten stoppt diesen. Mithilfe dieser Schaltung lässt sich der zeitliche Abstand zweier kurz aufeinanderfolgenden Pulse bestimmen.
+zu einem Monoflop, dessen negierter Ausgang mit dem ersten AND-Gatter und der normale Ausgang mit dem zweiten AND-Gatter verbunden ist. 
+Der Monoflop konvertiert ein gepulstes Signal in ein durchgängiges binäres Signal (0 oder 1). Das Ausgangssignal des ersten AND-Gatters startet 
+einen Time-Amplitude-Converter (TAC), das Signal des Zweiten stoppt diesen.
+Ohne die $\qty{30}{\nano\second}$ Verzögerungsleitung wäre dies nicht möglich, da ein einziges Signal sowohl den Start, als auch den Stop des TAC auslösen würde.
+Das Ausgangssignal des TAC ist eine Amplitude, die proportional zur Stoppzeit ist, was über das Ansammeln von Ladung innerhalb der Stoppzeit realisiert wird.
+Mithilfe dieser Schaltung lässt sich der zeitliche Abstand zweier kurz aufeinanderfolgenden Pulse bestimmen.
 Die beiden Pulse sind das Eintreten in das Szintillatormaterial und der Zerfall des Myons. Die Logik ist in \autoref{tab:Logik} dargestellt.
 
 Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert und die Daten werden zur Auswertung gespeichert.
@@ -69,8 +73,8 @@ Das Signal des Time-Amplitude-Converters wird an einem Computer histogrammiert u
   Signale werden mithilfe eines Zählwerks gezählt, wobei die Dauer der einzelnen Verzögerungen variiert wird, damit ein idealer Messbereich ermittelt werden kann.
 
   Im Folgenden wird die Verzögerung so eingestellt, dass die Messung sicher in diesem idealen Bereich stattfindet. Hierzu werden nicht die Photomultiplier, sondern
-  ein Doppelpulsgenerator mit einstellbarem Impulsabstand verwendet. Außerdem wird die Schaltung weiter gemäß des Schaltplan aus \autoref{fig:Aufbau} aufgebaut. An dem 
-  Time-Amplitude-Converter wird eine Suchzeit eingestellt. Die Suchzeit soll in der Größenordnung der erwarteten mittleren Lebendauer der Myonen liegen, also etwa $\qtyrange{1}{10}{\micro\second}$.
+  ein Doppelpulsgenerator mit einstellbarem Impulsabstand verwendet. Außerdem wird die Schaltung weiter gemäß des Schaltplan aus \autoref{fig:Aufbau} aufgebaut. 
+  An dem Monoflop wird eine Suchzeit eingestellt. Die Suchzeit soll in der Größenordnung der erwarteten mittleren Lebendauer der Myonen liegen, also etwa $\qtyrange{1}{10}{\micro\second}$.
   Werden die Abstände der Doppelpulse variiert, lassen sich die einzelnen Kanäle des an dem PC angezeigen Histogramms erkennen, sodass die Kanäle jeweils einer bestimmten Zerfallszeit
   zugeordnet werden können.
 
