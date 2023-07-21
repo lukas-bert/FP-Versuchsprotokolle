@@ -89,9 +89,9 @@ Da es sich bei der Probe um ein Mehrschichsystem aus Polysterolfilm und Silizium
 die Dispersionen $\delta$, die Rauigkeiten der Grenzschichten $\sigma$ und ebenfalls die Dicke der Polysterolschicht bestimmt werden. 
 Es werden Rauigkeits-korrigierte Fresnelkoeffizienten aus \autoref{eqn:r_korrigiert} verwendet. 
 Die so entstehende Fitfunktion ist dem Programmcode im Anhang \ref{sec:Anhang} zu enthemen. Es wird ein Fit an die korrigierten Messdaten mittels \texttt{scipy} \cite{scipy}
-durchgeführt, wobei die Startwerte der freien Parameter auf zuvor berechnete und aus der Literatur bekannte Werte festgelegt werden. Ebenfalls wird der Wertebereich der Paramter 
-um die zu erwartenden Größenordnungen eingeschränkt, um eine Konvergenz der Minimierung zu gewährleisten. Des Weiteren werden nur Messdaten zwischen 
-$\qtyrange{0.3}{1.3}{\degree}$ berücksichtigt. Die ermittelte Ausgleichsfunktion und die Messdaten sind in \autoref{fig:Reflek3} dargestellt. 
+durchgeführt, wobei die Startwerte der freien Parameter auf zuvor berechnete und aus der Literatur bekannte Werte festgelegt werden. Ebenfalls wird der Wertebereich der Parameter 
+um die zu erwartenden Größenordnungen eingeschränkt, um eine Konvergenz der Minimierung zu gewährleisten.
+Die ermittelte Ausgleichsfunktion und die Messdaten sind in \autoref{fig:Reflek3} dargestellt. 
 \begin{figure}
   \centering
   \includegraphics[width = .7\textwidth]{Reflek3.pdf}
@@ -100,10 +100,10 @@ $\qtyrange{0.3}{1.3}{\degree}$ berücksichtigt. Die ermittelte Ausgleichsfunktio
 \end{figure}
 Die freien Parameter der beiden Schichten ergeben sich zu 
 \begin{align*}
-  &\delta_\text{Poly} = \num{2.58 +- 1.77e-6} & &\delta_\text{Si} = \num{1.17 +- 0.09e-5} \\
-  &\beta_\text{Poly} = \num{2.80 +- 1.34e-7} & &\delta_\text{Si} = \num{1.78 +- 131e-7} \\
-  &\sigma_\text{Luft, Poly} = \num{9.14 +- 661e-9} & &\sigma_\text{Poly, Si} = \num{2.06 +- 8.22e-10} \\
-  &d = \qty{9.31 +- 4.88e-8}{\metre}.
+  &\delta_\text{Poly} = \num{4.2e-6} & &\delta_\text{Si} = \num{1.6e-5} \\
+  &\beta_\text{Poly} = \num{2.7e-8} & &\delta_\text{Si} = \num{9.8e-7} \\
+  &\sigma_\text{Luft, Poly} = \num{4e-10} & &\sigma_\text{Poly, Si} = \num{3e-10} \\
+  &d = \qty{8.2e-8}{\metre}.
 \end{align*}
 Mit \autoref{eq:alpha_tot} können wieder die kritischen Winkel der beiden Materialien berechnet werden. Sie ergeben sich zu 
-$\alpha_\text{c, Poly} = \qty{0.28 +- 0.01}{\degree}$ und $\alpha_\text{c, Si} = \qty{0.13 +- 0.04}{\degree}$.
+$\alpha_\text{c, Poly} = \qty{0.32}{\degree}$ und $\alpha_\text{c, Si} = \qty{0.17}{\degree}$.

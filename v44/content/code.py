@@ -53,58 +53,50 @@ d = lam / (2 * a_d * np.pi / 180)
 # Parratt-Algorithmus
 
 lam = 1.54e-10
-k = 2 * np.pi / lam
+k = 2*np.pi/lam
 n1 = 1
 d1 = 0
-delta_Poly = 3.5e-6  # 1. Schicht Polysterol
-delta_Si = 7.6e-6  # 2. Schicht Silizium
-b_Poly = delta_Poly * 0.025
-b_Si = delta_Si / 200
-d_ = noms(d)
-sigma_Poly = 1e-10
-sigma_Si = 1e-10
-params = [delta_Poly, delta_Si, b_Poly, b_Si, d_, sigma_Poly, sigma_Si]  # Startwerte
+
+# Werte ermittelt aus zuvorigem Fit
+delta_Poly = 4.2e-6 # 1. Schicht Polysterol
+delta_Si = 1.6e-5 # 2. Schicht Silizium
+b_Poly = 2.7e-8
+b_Si = 9.8e-7
+d_ = 8.2e-8
+sigma_Poly = 4e-10
+sigma_Si = 3e-10
+
+params = [delta_Poly, delta_Si, b_Poly, b_Si, d_, sigma_Poly, sigma_Si] # Startwerte
 err = np.zeros(len(params))
 
-
 def parratt(a, delta2, delta3, b2, b3, d2, sigma1, sigma2):
-    n2 = 1.0 - delta2 + b2 * 1j
-    n3 = 1.0 - delta3 + b3 * 1j
+    n2 = 1.0 - delta2 - b2*1j
+    n3 = 1.0 - delta3 - b3*1j
     a = np.deg2rad(a)
-    kd1 = k * np.sqrt(n1**2 - np.cos(a) ** 2)
-    kd2 = k * np.sqrt(n2**2 - np.cos(a) ** 2)
-    kd3 = k * np.sqrt(n3**2 - np.cos(a) ** 2)
+    kd1 = k *  np.sqrt(n1**2 - np.cos(a)**2)
+    kd2 = k * np.sqrt(n2**2 - np.cos(a)**2)
+    kd3 = k * np.sqrt(n3**2 - np.cos(a)**2)
 
-    r12 = ((kd1 - kd2) / (kd1 + kd2)) * np.exp(-2 * kd1 * kd2 * sigma1**2)
-    r23 = ((kd2 - kd3) / (kd2 + kd3)) * np.exp(-2 * kd2 * kd3 * sigma2**2)
+    r12 = ((kd1 - kd2)/(kd1 + kd2))*np.exp(-2*kd1*kd2*sigma1**2)
+    r23 = ((kd2 - kd3)/(kd2 + kd3))*np.exp(-2*kd2*kd3*sigma2**2)
 
-    x2 = np.exp(-2j * kd2 * d2) * r23
-    x1 = (r12 + x2) / (1 + r12 * x2)
+    x2 = np.exp(-2j* kd2 * d2) * r23
+    x1 = (r12 + x2)/(1+ r12*x2)
 
-    return np.abs(x1) ** 2
-
+    return np.abs(x1)**2
 
 # Fitbereich
-t_min = 0.3
-t_max = 1.3
+t_min = 0.35
+t_max = 0.75
 
-bounds = (
-    [5e-7, 5e-7, 1e-10, 1e-10, 1e-9, 0, 0],
-    [5e-5, 5e-5, 1e-6, 1e-6, 1e-7, 1e-9, 1e-9],
-)  # Limits der Parameter
-params, pcov = op.curve_fit(
-    parratt,
-    t[(t > t_min) * (t < t_max)],
-    R_c[(t > t_min) * (t < t_max)],
-    p0=params,
-    bounds=bounds,
-)
-err = np.sqrt(np.diag(pcov))
+bounds = ([1e-7, 1e-7, 1e-10, 1e-10, 1e-9, 5e-12, 5e-12], [5e-5, 5e-5, 1e-6, 1e-6, 1e-7, 1e-9, 1e-9]) # Limits der Parameter
+#params, pcov = op.curve_fit(parratt, t[(t>t_min) * (t<t_max)], R_c[(t>t_min) * (t<t_max)], p0 = params, bounds = bounds)
+#err = np.sqrt(np.diag(pcov))
 
 delta_Si = ufloat(params[0], err[0])
 delta_Poly = ufloat(params[1], err[1])
-a_c_Poly = unp.sqrt(2 * delta_Poly) * 180 / np.pi
-a_c_Si = unp.sqrt(2 * delta_Si) * 180 / np.pi
+a_c_Poly = unp.sqrt(2*delta_Poly)*180/np.pi
+a_c_Si = unp.sqrt(2*delta_Si)*180/np.pi
 print("-------------------------------------------------------")
 print("Parameter des Parrattalgorithmus")
 print(f"delta_Poly  : {params[0]:.4e} +- {err[0]:.4e}")
@@ -118,19 +110,19 @@ print(f"alpha_c (Poly)  : {a_c_Poly:.4f} °")
 print(f"alpha_c (Si)    : {a_c_Si:.4f} °")
 print("-------------------------------------------------------")
 
-x = np.linspace(0, 2.5, 10000)
+x = np.linspace(0, 2.5, 1000)
 
-plt.plot(t, R_c, label="gemessene Reflektivität (korrigiert)", c="cornflowerblue")
-plt.plot(
-    x, parratt(x, *params), color="firebrick", alpha=0.8, label="Parrattalgorithmus"
-)
+plt.plot(t, R_c, label = "gemessene Reflektivität (korrigiert)", c = "cornflowerblue")
+plt.plot(x, parratt(x, *params), color = "firebrick", alpha = .8, label = "Parrattalgorithmus")
+#plt.vlines(noms(a_c_Poly), 0, 10e3, label = r"$\alpha_c$ (Polysterol) = " + f"{a_c_Poly:.4f}°", color = "deeppink")
+#plt.vlines(noms(a_c_Si), 0, 10e3, label = r"$\alpha_c$ (Si) = " + f"{a_c_Si:.4f}°", color = "rebeccapurple")
 plt.legend()
 plt.yscale("log")
 plt.xlim(0, 2.5)
 plt.ylim(None, 10e3)
 plt.xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
-plt.ylabel(r"$R$ (a.u.)")
+plt.ylabel(r"$R$")
 plt.tight_layout()
-# plt.show()
+#plt.show()
 plt.savefig("build/Reflek3.pdf")
 plt.close()
