@@ -1,8 +1,8 @@
-\section{Auswertung}
+\section{Analysis}
 \label{sec:Auswertung}
 
 \subsection{Dependence of the contrast on the polarisation angle}
-At first the dependence of the contrast on the polarisation angle phi is analysed. The measurements listed in \autoref{tab:contrast} show the minimum and maximum intensity 
+At first the dependence of the contrast on the polarisation angle $\phi$ is analysed. The measurements listed in \autoref{tab:contrast} show the minimum and maximum intensity 
 of the lasers interference for different polarisation angles $\phi$.
 \begin{table}
   \centering
@@ -30,8 +30,8 @@ of the lasers interference for different polarisation angles $\phi$.
     \bottomrule
   \end{tabular}
 \end{table}
-In order to compute the contrast, \autoref{eq:...} \textbf{EQREF HERE} is used to calculate the contrast 
-$K$ for each measuremnt series. After that the average values and the standard deviations of the three measurements are calculated. The corresponding datapoints are shown in 
+
+In order to compute the contrast $K$, \autoref{eq:...} \textbf{EQREF HERE} is applied for each measurement series. After that, the average values and the standard deviations of the three measurements are calculated. The corresponding datapoints are shown in 
 \autoref{fig:contrast}. 
 \begin{figure}
   \centering
@@ -48,40 +48,44 @@ The fitparameters follow as
 \begin{align*}
   K_0 &= \num{0.57 +- 0.01} & \delta &= \qty{3.23 +- 0.58}{\degree}
 \end{align*}
-using the \textit{python} extension \textit{scipy} \cite{scipy} and only include statistical uncertainties. The resulting fit function is also displayed in \autoref{fig:contrast}.
+using the \textit{python} extension \textit{scipy} \cite{scipy}. The resulting fit function is also displayed in \autoref{fig:contrast}.
 For the following measurements the polarisation angle is set to $\qty{45}{\degree}$.
 
-\subsection{Refraction index of glass}
-For the determination of the refraction index of glass the double glass holder is placed in the two beams. The two glass panes are already tilted by an angle 
+\subsection{refractive index of glass}
+For the determination of the refractive index of glass the double glass holder is placed in the two beams. The two glass panes are already tilted by an angle 
 $\Theta_0 = \pm\qty{10}{\degree}$. 
-Using \autoref{eq:...} \textbf{EQREF HERE} the number if maxima passing the center of the interference spectrum is given by
+Using \autoref{eq:...} \textbf{EQREF HERE} the number of maxima passing the center of the interference spectrum is given by
 \begin{equation*}
   M = \frac{\symup{\Delta}\phi_+ + \symup{\Delta}\phi_-}{2\pi}
 \end{equation*}
 where $\symup{\Delta}\phi_\pm$ is the phase shift induced by the glass panes tilted by $\pm\qty{10}{\degree}$. 
 This expression can be simplified to 
 \begin{equation}
+  \label{eq:M_n_glass}
   M = \frac{2T}{\lambda} \cdot \frac{n-1}{n} \cdot \Theta_0 \theta
 \end{equation}
-where $\lambda = \qty{632.99}{\nano\metre}$ is the wavenlenght of the laser and $T = \qty{1}{\milli\metre}$ is the thickness of the glass panes.
+where $\lambda = \qty{632.99}{\nano\metre}$ is the wavenlength of the laser and $T = \qty{1}{\milli\metre}$ is the thickness of the glass panes.
 The number of measured maxima is again averaged over the ten measurement series. The values are shown in \autoref{tab:n_glass}.
 \begin{table}
   \centering
-  \caption{Measurements of the maxima $M$ passing the center of the interference spectrum and corresponding tilt angle $\theta$.}
+  \aboverulesep=0ex % Solution part 1 of 3
+  \belowrulesep=0ex % Solution part 1 of 3
+  \caption{Measurements of the maxima $M$ passing the center of the interference spectrum and tilt angle $\theta$.}
   \label{tab:n_glass}
-  \begin{tabular}{ c c}
+  \begin{tabular}{c | c c c c c c c c c c | c}
     \toprule
-    {$\theta$} & {$\overline{M}$} \\
+    {$\theta$} & {$M_1$} & {$M_2$} & {$M_3$} & {$M_4$} & {$M_5$} & {$M_6$} & {$M_7$} & {$M_8$} & {$M_9$} & {$M_{10}$}  & {$\overline{M}$} \\
     \midrule
-    {2} & {\num{ 6.0 +- 0.45}} \\
-    {4} & {\num{12.3 +- 0.46}} \\
-    {6} & {\num{19.2 +- 0.75}} \\
-    {8} & {\num{25.3 +- 0.64}} \\
+    \rule{0pt}{1.1EM}
+    {2} &  6 &  6 &  6 &  6 &  5 &  6 &  6 &  6 &  7 &  6 & {\num{ 6.0 +- 0.45}} \\
+    {4} & 12 & 13 & 12 & 13 & 12 & 12 & 12 & 12 & 13 & 12 & {\num{12.3 +- 0.46}} \\
+    {6} & 19 & 20 & 19 & 20 & 18 & 19 & 18 & 20 & 20 & 19 & {\num{19.2 +- 0.75}} \\
+    {8} & 25 & 26 & 25 & 26 & 24 & 25 & 25 & 26 & 26 & 25 & {\num{25.3 +- 0.64}} \\
     \bottomrule
   \end{tabular}
 \end{table}
-The experimental value of the refraction index of glass follows from a linear fit to the datapoints.
-The datapoints and the resulting fit are shown in \autoref{fig:n_glass}.
+The experimental value of the refractive index of glass follows from a linear fit of \autoref{eq:M_n_glass} to the datapoints.
+The datapoints and the fit are shown in \autoref{fig:n_glass}.
 \begin{figure}
   \centering
   \includegraphics[width = .8\textwidth]{n_glass.pdf}
@@ -90,45 +94,66 @@ The datapoints and the resulting fit are shown in \autoref{fig:n_glass}.
 \end{figure}
 The resulting value is $n_\text{glass} = \num{1.484 +- 0.008}$.
 
-\subsection{Refraction index of air}
-To determine the refraction index of air, the measurements listed in \autoref{tab:n_air} are used.
+\subsection{refractive index of air}
+To determine the refractive index of air, the measurements listed in \autoref{tab:n_air} are used.
+Again the average over the five measurement series is calculated. Using \autoref{eq:...} \textbf{EQREF HERE} and the length $L = \qty{100 +- 0.1}{\milli\metre}$ of the air chamber 
+the corresponding refractive indices of air can be calculated at each 
+pressure value. The resulting refractive indices are also listed in \autoref{tab:n_air} and are shown against the pressure in \autoref{fig:n_air}.
 \begin{table}
   \centering
-  \caption{Measurements of the maxima $M$ passing the center of the interference spectrum and pressure $p$ in the air chamber.}
+  \aboverulesep=0ex % Solution part 1 of 3
+  \belowrulesep=0ex % Solution part 1 of 3
+  \caption{Measurements of the maxima $M$ passing the center of the interference spectrum and pressure $p$ in the air chamber. 
+  The refractive indices are displayed for the averaged value for each pressure.}
   \label{tab:n_air}
-  \begin{tabular}{c c c c c c}
+  \begin{tabular}{c | c c c c c | c}
     \toprule
-    {$p \mathbin{/} \unit{\milli\bar}$} & {$M_1$} & {$M_2$} & {$M_3$} & {$M_4$} & {$M_5$}\\
+    {$p \mathbin{/} \unit{\milli\bar}$} & {$M_1$} & {$M_2$} & {$M_3$} & {$M_4$} & {$M_5$} & {($\overline{n} -1) \mathbin{/} 10^{-5}$}\\
     \midrule
-    {  8} & { 0} & { 0} & { 0} & { 0} & { 0} \\
-    { 50} & { 2} & { 2} & { 2} & { 2} & { 2} \\
-    {100} & { 4} & { 4} & { 4} & { 4} & { 4} \\
-    {150} & { 6} & { 6} & { 6} & { 7} & { 6} \\
-    {200} & { 8} & { 9} & { 9} & { 9} & { 9} \\
-    {250} & {10} & {11} & {11} & {11} & {11} \\
-    {300} & {13} & {13} & {13} & {13} & {13} \\
-    {350} & {15} & {15} & {15} & {15} & {15} \\
-    {400} & {17} & {17} & {17} & {17} & {17} \\
-    {450} & {19} & {19} & {19} & {19} & {19} \\
-    {500} & {21} & {21} & {21} & {21} & {21} \\
-    {550} & {23} & {23} & {23} & {23} & {23} \\
-    {600} & {25} & {25} & {25} & {25} & {25} \\
-    {650} & {27} & {28} & {28} & {27} & {27} \\
-    {700} & {29} & {30} & {30} & {30} & {30} \\
-    {750} & {32} & {32} & {32} & {32} & {32} \\
-    {800} & {34} & {34} & {34} & {34} & {34} \\
-    {850} & {36} & {36} & {36} & {36} & {36} \\
-    {900} & {38} & {38} & {38} & {38} & {38} \\
-    {950} & {40} & {40} & {40} & {40} & {40} \\
-    {981} & {41} & {41} & {41} & {41} & {41} \\
+    \rule{0pt}{1.1EM}
+    {  8} & { 0} & { 0} & { 0} & { 0} & { 0} & \num{0 +-0}\\
+    { 50} & { 2} & { 2} & { 2} & { 2} & { 2} & \num{1.27+-0.00}\\
+    {100} & { 4} & { 4} & { 4} & { 4} & { 4} & \num{2.53+-0.00}\\
+    {150} & { 6} & { 6} & { 6} & { 7} & { 6} & \num{3.92+-0.25}\\
+    {200} & { 8} & { 9} & { 9} & { 9} & { 9} & \num{5.57+-0.25}\\
+    {250} & {10} & {11} & {11} & {11} & {11} & \num{6.84+-0.25}\\
+    {300} & {13} & {13} & {13} & {13} & {13} & \num{8.23+-0.01}\\
+    {350} & {15} & {15} & {15} & {15} & {15} & \num{9.49+-0.01}\\
+    {400} & {17} & {17} & {17} & {17} & {17} & \num{10.76+-0.01}\\
+    {450} & {19} & {19} & {19} & {19} & {19} & \num{12.03+-0.01}\\
+    {500} & {21} & {21} & {21} & {21} & {21} & \num{13.29+-0.01}\\
+    {550} & {23} & {23} & {23} & {23} & {23} & \num{14.56+-0.01}\\
+    {600} & {25} & {25} & {25} & {25} & {25} & \num{15.82+-0.02}\\
+    {650} & {27} & {28} & {28} & {27} & {27} & \num{17.34+-0.31}\\
+    {700} & {29} & {30} & {30} & {30} & {30} & \num{18.86+-0.25}\\
+    {750} & {32} & {32} & {32} & {32} & {32} & \num{20.26+-0.02}\\
+    {800} & {34} & {34} & {34} & {34} & {34} & \num{21.52+-0.02}\\
+    {850} & {36} & {36} & {36} & {36} & {36} & \num{22.79+-0.02}\\
+    {900} & {38} & {38} & {38} & {38} & {38} & \num{24.05+-0.02}\\
+    {950} & {40} & {40} & {40} & {40} & {40} & \num{25.32+-0.03}\\
+    {981} & {41} & {41} & {41} & {41} & {41} & \num{25.95+-0.03}\\
     \bottomrule
   \end{tabular}
 \end{table}
-Again the average over the five measurement series is calculated.
+From these values, the refractive index of air at standard atmosphere ($T = \qty{15}{\degreeCelsius}$, $p = \qty{1013}{\hecto\pascal}$) can be optained. The Lorentz-Lorenz law 
+(\autoref{eq:...}) can be approximated for $n \approx 1$ as 
+\begin{equation*}
+  n = \frac{3}{2}\frac{Ap}{RT} + 1.
+\end{equation*}
+Using this approach, the experimentally determined values of the refractive index in \autoref{fig:n_air} are fitted with a linear function 
+\begin{equation*}
+  n(p, T = T_0) = \frac{3}{2}\frac{p}{RT_0} \cdot a + b 
+\end{equation*}
+where $a$ and $b$ are the free parameters of the fit and $T_0 = \qty{22.2}{\degreeCelsius} = \qty{295.35}{\kelvin}$ is the measured room temperature.
+The fit parameters determined using \text{scipy} \cite{scipy} follow as 
+\begin{align*}
+  a &= \num{4.38 +- 0.02e-4} & b &= 1 + \num{3 +- 66e-8}.
+\end{align*}
+The experimental value of the refractive index of air at standard atmosphere then reads $n_\text{exp} = 1 + \num{27.05+-0.13e-5}$.
 
 \begin{figure}
   \centering
-  \includegraphics{n_air.pdf}
-  \caption{Plot.}
+  \includegraphics[width = .8\textwidth]{n_air.pdf}
+  \caption{Calculated refractive index of air against measured pressure and linear fit using \textit{scipy} \cite{scipy}.}
   \label{fig:n_air}
 \end{figure}
