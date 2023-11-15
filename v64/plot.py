@@ -80,9 +80,12 @@ def Maxima(theta, n):
 params1, pcov1 = op.curve_fit(Maxima, theta, M_mean, sigma = M_std)
 err1 = np.sqrt(np.diag(pcov1))
 
+d = np.abs(params1[0]-1.515)/1.515
+
 print("--------------------------------------------------")
 print("Refractive Index Glass:")
 print(f"n = {params1[0]:.4f} +- {err1[0]:.4f}")
+print(f"Relative deviation: {d*100}%")
 print("--------------------------------------------------")
 
 x = np.linspace(0, 10, 100)
@@ -108,9 +111,8 @@ plt.close()
 
 p, m1, m2, m3, m4, m5 = np.genfromtxt("content/data/air.txt", unpack = True)
 
-T_0 = 273.15 + 22.6 # K Raumtemperatur
-p = p
-L = ufloat(100e-3, 0.1e-3)
+T_0 = 273.15 + 22.2 # K Raumtemperatur
+L = ufloat(0.1, 0.1e-3)
 
 def n_air_exp(M):
     return M*lamda/(L) + 1
@@ -125,16 +127,16 @@ for i in range(len(n)):
 print("---------------------------------------------------")
 
 def n_air_theo(p, A, b):
-    return 3/2 * A*p/(const.R *T) + b
+    return (3/2) * A * p/(const.R *T_0) + b
 
-params2, pcov2 = op.curve_fit(n_air_theo, p, noms(n))
+params2, pcov2 = op.curve_fit(n_air_theo, p, noms(n))   
 err2 = np.sqrt(np.diag(pcov2))
 
-n_air_exp = 3/2 * ufloat(params2[0], err2[0])*1013/(const.R *(273.15 + 15)) + params2[1]
+n_air_exp = 3/2 * ufloat(params2[0], err2[0])*(1013)/(const.R *(273.15 + 22.5)) + ufloat(params2[1], err2[1])
 
 print("--------------------------------------------------")
 print("Fit: Refractive Index of Air:")
-print(f"A = {params2[0]:.4f} +- {err2[0]:.4f}")
+print(f"A = {params2[0]:.4e} +- {err2[0]:.4e}")
 print(f"b = {params2[1]:.8f} +- {err2[1]:.8f}")
 print(f"Experimental Value: n = {n_air_exp}")
 print("--------------------------------------------------")
@@ -154,6 +156,8 @@ plt.grid()
 plt.tight_layout()
 plt.xlim(0, 1000)
 plt.ylim(1, 1 + 2.8e-4)
+
+# scientific notation on y axis (thx chatGPT)
 from matplotlib.ticker import ScalarFormatter
 formatter = ScalarFormatter(useMathText=True)
 formatter.set_powerlimits((-3, 4))  # Set the range for using scientific notation
