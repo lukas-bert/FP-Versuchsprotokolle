@@ -1,6 +1,9 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Dependence of the contrast on the polarisation angle}
+At first the dependence of the contrast on the polarisation angle phi is analysed. The measurements listed in \autoref{tab:contrast} show the minimum and maximum intensity 
+of the lasers interference for different polarisation angles $\phi$.
 \begin{table}
   \centering
   \caption{Measurements for the polarisation angle dependence of the contrast $K$.}
@@ -27,22 +30,101 @@
     \bottomrule
   \end{tabular}
 \end{table}
-
+In order to compute the contrast, \autoref{eq:...} \textbf{EQREF HERE} is used to calculate the contrast 
+$K$ for each measuremnt series. After that the average values and the standard deviations of the three measurements are calculated. The corresponding datapoints are shown in 
+\autoref{fig:contrast}. 
 \begin{figure}
   \centering
-  \includegraphics{contrast.pdf}
-  \caption{Plot.}
+  \includegraphics[width = .8\textwidth]{contrast.pdf}
+  \caption{Averaged measurements of the contrast $K$ against the polarisation angle $\phi$ and fit using \textit{scipy} \cite{scipy}.}
   \label{fig:contrast}
 \end{figure}
+The theory law of the angle dependence is given by \autoref{eq:...} \textbf{EQREF HERE}. Here, a function of the form 
+\begin{equation*}
+  K = 2K_0 \cdot \lvert \symup{sin}(\phi - \delta)\symup{cos}(\phi - \delta) \rvert
+\end{equation*}
+is fitted to the data points. The offset $\delta$ is used to compensate for deviations in the experimental setup. 
+The fitparameters follow as 
+\begin{align*}
+  K_0 &= \num{0.57 +- 0.01} & \delta &= \qty{3.23 +- 0.58}{\degree}
+\end{align*}
+using the \textit{python} extension \textit{scipy} \cite{scipy} and only include statistical uncertainties. The resulting fit function is also displayed in \autoref{fig:contrast}.
+For the following measurements the polarisation angle is set to $\qty{45}{\degree}$.
 
-
+\subsection{Refraction index of glass}
+For the determination of the refraction index of glass the double glass holder is placed in the two beams. The two glass panes are already tilted by an angle 
+$\Theta_0 = \pm\qty{10}{\degree}$. 
+Using \autoref{eq:...} \textbf{EQREF HERE} the number if maxima passing the center of the interference spectrum is given by
+\begin{equation*}
+  M = \frac{\symup{\Delta}\phi_+ + \symup{\Delta}\phi_-}{2\pi}
+\end{equation*}
+where $\symup{\Delta}\phi_\pm$ is the phase shift induced by the glass panes tilted by $\pm\qty{10}{\degree}$. 
+This expression can be simplified to 
+\begin{equation}
+  M = \frac{2T}{\lambda} \cdot \frac{n-1}{n} \cdot \Theta_0 \theta
+\end{equation}
+where $\lambda = \qty{632.99}{\nano\metre}$ is the wavenlenght of the laser and $T = \qty{1}{\milli\metre}$ is the thickness of the glass panes.
+The number of measured maxima is again averaged over the ten measurement series. The values are shown in \autoref{tab:n_glass}.
+\begin{table}
+  \centering
+  \caption{Measurements of the maxima $M$ passing the center of the interference spectrum and corresponding tilt angle $\theta$.}
+  \label{tab:n_glass}
+  \begin{tabular}{ c c}
+    \toprule
+    {$\theta$} & {$\overline{M}$} \\
+    \midrule
+    {2} & {\num{ 6.0 +- 0.45}} \\
+    {4} & {\num{12.3 +- 0.46}} \\
+    {6} & {\num{19.2 +- 0.75}} \\
+    {8} & {\num{25.3 +- 0.64}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+The experimental value of the refraction index of glass follows from a linear fit to the datapoints.
+The datapoints and the resulting fit are shown in \autoref{fig:n_glass}.
 \begin{figure}
   \centering
-  \includegraphics{n_glass.pdf}
-  \caption{Plot.}
+  \includegraphics[width = .8\textwidth]{n_glass.pdf}
+  \caption{Averaged measurements of the number of maxima $\overline{M}$ against the tilt angle $\theta$ and fit using \textit{scipy} \cite{scipy}.}
   \label{fig:n_glass}
 \end{figure}
+The resulting value is $n_\text{glass} = \num{1.484 +- 0.008}$.
 
+\subsection{Refraction index of air}
+To determine the refraction index of air, the measurements listed in \autoref{tab:n_air} are used.
+\begin{table}
+  \centering
+  \caption{Measurements of the maxima $M$ passing the center of the interference spectrum and pressure $p$ in the air chamber.}
+  \label{tab:n_air}
+  \begin{tabular}{c c c c c c}
+    \toprule
+    {$p \mathbin{/} \unit{\milli\bar}$} & {$M_1$} & {$M_2$} & {$M_3$} & {$M_4$} & {$M_5$}\\
+    \midrule
+    {  8} & { 0} & { 0} & { 0} & { 0} & { 0} \\
+    { 50} & { 2} & { 2} & { 2} & { 2} & { 2} \\
+    {100} & { 4} & { 4} & { 4} & { 4} & { 4} \\
+    {150} & { 6} & { 6} & { 6} & { 7} & { 6} \\
+    {200} & { 8} & { 9} & { 9} & { 9} & { 9} \\
+    {250} & {10} & {11} & {11} & {11} & {11} \\
+    {300} & {13} & {13} & {13} & {13} & {13} \\
+    {350} & {15} & {15} & {15} & {15} & {15} \\
+    {400} & {17} & {17} & {17} & {17} & {17} \\
+    {450} & {19} & {19} & {19} & {19} & {19} \\
+    {500} & {21} & {21} & {21} & {21} & {21} \\
+    {550} & {23} & {23} & {23} & {23} & {23} \\
+    {600} & {25} & {25} & {25} & {25} & {25} \\
+    {650} & {27} & {28} & {28} & {27} & {27} \\
+    {700} & {29} & {30} & {30} & {30} & {30} \\
+    {750} & {32} & {32} & {32} & {32} & {32} \\
+    {800} & {34} & {34} & {34} & {34} & {34} \\
+    {850} & {36} & {36} & {36} & {36} & {36} \\
+    {900} & {38} & {38} & {38} & {38} & {38} \\
+    {950} & {40} & {40} & {40} & {40} & {40} \\
+    {981} & {41} & {41} & {41} & {41} & {41} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Again the average over the five measurement series is calculated.
 
 \begin{figure}
   \centering

@@ -28,7 +28,7 @@ K_std = np.std([K1, K2, K3], axis = 0)
 def theo_curve(phi, I_0, delta):
     return I_0 *2*np.abs(np.cos(phi - delta)*np.sin(phi - delta))
 
-params, pcov = op.curve_fit(theo_curve, theta, K_mean, p0 = [1, 0])
+params, pcov = op.curve_fit(theo_curve, theta, K_mean, p0 = [1, 0], sigma = K_std)
 err = np.sqrt(np.diag(pcov))
 
 print("--------------------------------------------------")
@@ -45,7 +45,7 @@ ax.errorbar(theta, K_mean, yerr = K_std, lw = 0, marker = ".", ms = 8, color = "
 ax.plot(x, theo_curve(x, *params), c = "firebrick", label = "Fit (theory curve)")
 plt.xlim(-0.1, np.pi+0.1)
 plt.xticks([0, np.pi/4, np.pi/2, 3*np.pi/4, np.pi], [0, 45, 90, 135, 180])
-plt.ylabel(r"Contrast $K$ [a.u.]")
+plt.ylabel(r"Contrast $K$")
 plt.xlabel(r"$\phi \mathbin{/} °$")
 plt.ylim(0, 0.7)
 plt.legend()
@@ -65,13 +65,19 @@ theta = theta*np.pi/180
 M_mean = np.mean([M1, M2, M3, M4, M5, M6, M7, M8, M9, M10], axis = 0)
 M_std = np.std([M1, M2, M3, M4, M5, M6, M7, M8, M9, M10], axis = 0)
 
-T = 1e-3 # thickness of the glassplate
+
+print("--------------------------------------------------")
+for i in range(len(M_mean)):
+    print(f"{M_mean[i]:.4f} +- {M_std[i]:.4f}")
+print("--------------------------------------------------")
+
+T = 1e-3 # thickness of the glass pane
 alpha_0 = 10*np.pi/180
 
 def Maxima(theta, n):
     return 2*T/lamda * (n-1)/n *alpha_0*theta
 
-params1, pcov1 = op.curve_fit(Maxima, theta, M_mean)
+params1, pcov1 = op.curve_fit(Maxima, theta, M_mean, sigma = M_std)
 err1 = np.sqrt(np.diag(pcov1))
 
 print("--------------------------------------------------")
@@ -148,6 +154,11 @@ plt.grid()
 plt.tight_layout()
 plt.xlim(0, 1000)
 plt.ylim(1, 1 + 2.8e-4)
+from matplotlib.ticker import ScalarFormatter
+formatter = ScalarFormatter(useMathText=True)
+formatter.set_powerlimits((-3, 4))  # Set the range for using scientific notation
+
+ax.yaxis.set_major_formatter(formatter)
 #plt.show()
 
 plt.savefig("build/n_air.pdf")
