@@ -85,12 +85,45 @@ the PBSC. It is given as
 When a light beam enters a medium, the propagation speed changes. This leads to a path difference relative to a light beam that does not propagate the medium.
 The discussed interference effects lead to intensity maxima and minima and the number of maxima is given as
 \begin{equation}
-    M = \frac{\delta}{2\symup{\pi}}. \notag %\label{eq:M}
+    M = \frac{\delta}{2\symup{\pi}}.
+    \label{eq:M}
 \end{equation}
 
 \subsubsection{Refractive Index of Glass}
 \label{sec:n_Glass}
-
+The path difference $\delta$ in glass is given as
+\begin{equation*}
+    \delta(\theta) = \frac{2\symup{\pi}}{\lambda_{\text{vac}}}T\frac{n-1}{2n}\theta^2.
+\end{equation*}
+The thickness of the glass is named as $T$, $\lambda_{\text{vac}}$ describes the wavelength in a perfect vacuum and $\theta$ is the angle of the glass in the beam path.
+The formula can be specialized for the case of two light beams entering the glass at different angles $\theta_1 = -\theta_2$. The path difference is then calculated as
+\begin{equation}
+    \delta(\theta) = \frac{2\symup{\pi}}{\lambda_{\text{vac}}}T\frac{n-1}{2n} ((\theta+\theta_1)^2 - (\theta+\theta_2)^2)
+    \label{eq:delta_glass}
+\end{equation}
+With the help of the two equations~\eqref{eq:M} and~\eqref{eq:delta_glass} the refractive index of glass yields as
+\begin{equation}
+    n = \frac{1}{1-\frac{M\lambda_{\text{vac}}}{2T\theta \theta_1}}.
+    \label{eq:n_Glass}
+\end{equation}
 
 \subsubsection{Refractive Index of Air}
 \label{sec:n_Air}
+The calculation of the refractive index of air is performed similarilly to the previous calculation of the refractive index of glass. Here, the path difference is
+given as
+\begin{equation}
+    \delta = \frac{2\symup{\pi}}{\lambda_{\text{vac}}}(n-1)T.
+    \label{eq:delta_gas}
+\end{equation}
+Again, the refractive index is calculated with the help of the equations~\eqref{eq:M} and~\eqref{eq:delta_gas} and reads as
+\begin{equation}
+    n = \frac{M\lambda_{\text{vac}}}{T} + 1.
+    \label{eq:n_gas}
+\end{equation}
+
+Apart from that, the Lorentz-Lorenz law can be used to connect the refractive index to the polarizability of a gas:
+\begin{equation}
+    \frac{n^2-1}{n^2+1} = \frac{Ap}{RT}.
+    \label{eq:LLL}
+\end{equation}
+The universal gas constant $R$, the temperature $T$, the pressure $p$ and the molrefraction $A$ are needed to perform a calculation of the refractive index.
