@@ -31,7 +31,7 @@ of the lasers interference for different polarisation angles $\phi$.
   \end{tabular}
 \end{table}
 
-In order to compute the contrast $K$, \autoref{eq:...} \textbf{EQREF HERE} is applied for each measurement series. After that, the average values and the standard deviations of the three measurements are calculated. The corresponding datapoints are shown in 
+In order to compute the contrast $K$, \autoref{eq:Contrast} is applied for each measurement series. After that, the average values and the standard deviations of the three measurements are calculated. The corresponding datapoints are shown in 
 \autoref{fig:contrast}. 
 \begin{figure}
   \centering
@@ -39,7 +39,7 @@ In order to compute the contrast $K$, \autoref{eq:...} \textbf{EQREF HERE} is ap
   \caption{Averaged measurements of the contrast $K$ against the polarisation angle $\phi$ and fit using \textit{scipy} \cite{scipy}.}
   \label{fig:contrast}
 \end{figure}
-The theory law of the angle dependence is given by \autoref{eq:...} \textbf{EQREF HERE}. Here, a function of the form 
+The theory law of the angle dependence is given by \autoref{eq:contrast_theo_func}. Here, a function of the form 
 \begin{equation*}
   K = 2K_0 \cdot \lvert \symup{sin}(\phi - \delta)\symup{cos}(\phi - \delta) \rvert
 \end{equation*}
@@ -54,7 +54,7 @@ For the following measurements the polarisation angle is set to $\qty{45}{\degre
 \subsection{refractive index of glass}
 For the determination of the refractive index of glass the double glass holder is placed in the two beams. The two glass panes are already tilted by an angle 
 $\Theta_0 = \pm\qty{10}{\degree}$. 
-Using \autoref{eq:...} \textbf{EQREF HERE} the number of maxima passing the center of the interference spectrum is given by
+Using the euqations \eqref{eq:M} and \eqref{eq:delta_glass} the number of maxima passing the center of the interference spectrum is given by
 \begin{equation*}
   M = \frac{\symup{\Delta}\phi_+ + \symup{\Delta}\phi_-}{2\pi}
 \end{equation*}
@@ -96,7 +96,7 @@ The resulting value is $n_\text{glass} = \num{1.484 +- 0.008}$.
 
 \subsection{refractive index of air}
 To determine the refractive index of air, the measurements listed in \autoref{tab:n_air} are used.
-Again the average over the five measurement series is calculated. Using \autoref{eq:...} \textbf{EQREF HERE} and the length $L = \qty{100 +- 0.1}{\milli\metre}$ of the air chamber 
+Again the average over the five measurement series is calculated. Using \autoref{eq:n_gas} and the length $L = \qty{100 +- 0.1}{\milli\metre}$ of the air chamber 
 the corresponding refractive indices of air can be calculated at each 
 pressure value. The resulting refractive indices are also listed in \autoref{tab:n_air} and are shown against the pressure in \autoref{fig:n_air}.
 \begin{table}
@@ -136,7 +136,7 @@ pressure value. The resulting refractive indices are also listed in \autoref{tab
   \end{tabular}
 \end{table}
 From these values, the refractive index of air at standard atmosphere ($T = \qty{15}{\degreeCelsius}$, $p = \qty{1013}{\hecto\pascal}$) can be optained. The Lorentz-Lorenz law 
-(\autoref{eq:...}) can be approximated for $n \approx 1$ as 
+(\autoref{eq:LLL}) can be approximated for $n \approx 1$ as 
 \begin{equation*}
   n = \frac{3}{2}\frac{Ap}{RT} + 1.
 \end{equation*}
