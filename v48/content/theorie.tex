@@ -1,4 +1,104 @@
+\section{Zielsetzung}
+In diesem Versuch werden die Eigenschaften eines Ionenkristalls (Strontium dotiertes Kaliumbromid) mithilfe der Ionen-Thermostrom Methode
+(\textit{ITC: ionic thermocurrents} \cite{PhysRev.148.816}) untersucht.
+Dabei wird die temperaturabhängige Relaxationszeit der Dipole des Ionenkristall vermessen und so die charakteristische Relaxationszeit $\tau_0$, sowie die Aktivierungsenergie $W$
+der Dipole bestimmt.
+
 \section{Theorie}
 \label{sec:Theorie}
+Ionenkristalle sind Kristalle, bei denen der Beitrag der ionischen Bindung überwiegt. Die positiv geladenen Kationen (hier: \ce{K^+}) gehen dabei eine Bindung mit den negativ
+geladenen Anionen (hier: \ce{Br^-}) ein und bilden ein kubisches Kristallgitter. In der Realität ist dieses Gitter jedoch nicht perfekt und es kommt zu Punktdefekten (Störstellen)
+an denen beispielsweise ein Gitterplatz nicht besetzt ist. Leerstellen können sich wie Ladungsträger im Kristall bewegen oder von anderen Atomen besetzt werden.
+Diese Eigenschaft wird sich bei der Dotierung von Kristallen zu Nutze gemacht, indem (geladene) Fremdatome in diese Störstellen eingebracht werden. 
+Bei der Dotierung von Kaliumbromid mit Strontium nehmen zweifach positiv geladenen Strontiumatome eine Leerstelle ein. Damit lokal Ladungsneutralität gewährleistet ist,
+wandert ein benachbartes Kaliumatom zu einer anderen Leerstelle oder an die Oberfläche des Kristalls.
+Es entstehen elektrische Dipole, die sich innerhalb des Kirstallgitters orientieren können.
 
-\cite{sample}
+\subsection{Elektrische Dipole in Ionenkristallen}
+Durch die unterschiedlich geladenen Atome bildet sich ein Dipolmoment
+\begin{equation*}
+    \vec{P} = \sum_i \vec{p}_i = \sum_i q \cdot \vec{r}_i
+\end{equation*}
+wobei $q$ die Ladung der Dipole und $r_i$ der Abstand ist. Ohne äußere Einflüsse sind die einzelnen Dipole des Kristalls zufällig ausgerichtet und das Gesamtdipolmoment verschwindet.
+Wird jedoch ein elektrisches Feld $\vec{E}$ angelegt, kann die potentielle Energie 
+\begin{equation*}
+    E_\text{pot} = -\vec{p} \cdot \vec{E}
+\end{equation*}     
+der Dipole minimiert werden, indem sich die Dipole parallel zu den Feldlinien des elektrischen Feldes ausrichten. Da dazu die Leerstellen des Kirstalls ihre Position ändern müssen 
+(Leerstellendiffusion) ist eine materialspezifische Aktivierungsenergie $W$ von nöten, um die Coulombbarriere des Gitterpontetials zu überwinden. 
+Ist genügend Energie durch thermische Anregung gegeben, richten sich die Dipole entlang des $\vec{E}$-Feldes aus. Durch Abschalten des elektrischen Feldes relaxieren die Dipole 
+wieder in eine zufällige Verteilung. Die Eneergieverteilung des Kristalls folgt dabei der Boltzmann-Statistik, weshalb sich eine temperaturabhängige Relaxationszeit 
+\begin{equation}
+    \label{eq:tau}
+    \tau(T) = \tau_0 \mathrm{e}^{W/k_\text{B}T}
+\end{equation}
+angeben lässt. Die materialspezifische charakteristische Relaxationszeit des Kristalls ist $\tau_0 = \tau(\infty)$. 
+Bei der Ionen-Thermostrom Methode wird der Kristall bei einer (hohen) Temperatur $T_1$ ausreichend lang durch ein elektrisches Feld $E$ polarisiert. 
+Anschließend wird der Kristall auf eine Temperatur $T_0$ 
+herunter gekühlt, sodass die durch \autoref{eq:tau} gegebene Relaxationszeit sehr lang ist. Durch Erwärmen des Kristalls relaxieren mehr und mehr Dipole, 
+wodurch ein Strom an den senkrecht zum
+$\vec{E}$-Feld liegenden Flächen des Kristalls messbar ist. Anhand des Temperaturverlaufs des Stroms lassen sich $\tau_0$ und $W$ bestimmen. 
+Dazu werden zwei Herleitungen eines Zusammenhangs zwischen den gesuchten Größen und dem Strom betrachtet \cite{Fuller1972}.
+
+\subsection{Herleitung über Polarisationsstrom}
+In dieser Herleitung ist der Ansatz des Polarisationsstroms durch die Überlegung 
+\begin{equation}
+    \label{eq:Ansatz}
+    i(T) = \text{(\diameter Polarisierung)} \cdot \text{(\# beteiligte Dipole)} \cdot \text{(Rate der Dipolrelaxation)}
+\end{equation} 
+gegeben.
+Die durchschnittliche Polarisierung ist dabei über die Debye-Polarisierung
+\begin{equation*}
+    \label{eq:debye}
+    P(T) = \frac{p^2 E}{3k_\text{B} T}
+\end{equation*}
+gegeben, wobei $p$ das Dipolmoment eines einzelnen Dipols ist. Die Anzahl der bei der Temperatur $T$ beitragenden Dipole wird über die Relaxationsgleichung 
+\begin{equation*}
+\frac{\symup{d}N}{\symup{d}T} = -\frac{1}{\tau(T)} \cdot N
+\end{equation*}
+beschrieben und ist bei konstanter Heizrate $b$ über die Lösung 
+\begin{align*}
+N &=  N_0 \text{exp}\left(-\int_{t_0}^t \frac{1}{\tau(T)} \symup{d}t'\right) \\
+&= N_0 \text{exp}\left( -\int_{T_0}^T (b\tau_0)^{-1} \symup{e}^{-W/k_\text{B}T'} \symup{d}T' \right)
+\end{align*}
+gegeben, wobei $N_0$ die Zahl der ursprünglich ausgerichteten Dipole bei $T_0$ ist. 
+Die Rate der Dipolrelaxation ist das Inverse der Relaxationszeit (\autoref{eq:tau}).
+Damit folgt aus \autoref{eq:Ansatz} für den Strom 
+\begin{equation}
+    \label{eq:i_T}
+    i(T) = \frac{N_0 p^2 E}{3k_\text{B}T_1 \tau_0} \symup{e}^{-W/k_\text{B} T} \cdot \text{exp}\left( -\int_{T_0}^T (b\tau_0)^{-1} \symup{e}^{-W/k_\text{B}T'} \symup{d}T' \right).
+\end{equation}
+Für tiefe Temperaturen, also zum Beginn der Messung gilt $\symup{e}^{-W/k_\text{B}T} \approx 0$
+\begin{equation*}
+    \Rightarrow \int_{T_0}^T \symup{e}^{-W/k_\text{B}T'} \symup{d}T' \approx 0,
+\end{equation*}
+weshalb sich für den Anfangsbereich (für tiefe T)
+\begin{equation}
+    \label{eq:W1}
+    \symup{ln}(i(T)) = const - \frac{W}{k_\text{B}T}
+\end{equation}
+schreiben lässt. Damit lässt sich durch eine lineare Regression des Anfangsbereichs die Aktivierungsenergie $W$ der Dipole bestimmen.
+Des Weiteren ergibt sich ein von der Feldstärke $E$ unabhängiges Maximum des Stromverlaufes bei 
+\begin{equation}
+    \label{eq:T_max}
+    T_\text{max}^2 = \frac{b W \tau(T_\text{max})}{k_\text{B}}
+\end{equation}
+durch Ableiten von \autoref{eq:i_T}. Mit dem Wertepaar $(T_\text{max}, \tau(T_\text{max}))$ lässt sich so ebenfalls die Aktivierungsenergie $W$ bestimmen.
+
+\subsection{Herleitung über die Stromdichte}
+Der zweiten Methode zur Herleitung des Depolarisationsstroms liegt die Überlegung zu Grunde, dass die zeitliche Änderungsrate der Polarisation gleich der Stromdichte $j$ ist:
+\begin{equation}
+    \label{eq:Ansatz2}
+    \frac{\symup{d}P}{\symup{d}t} = \frac{P(T)}{\tau{T}} = j(T).
+\end{equation}
+Durch Integration folgt 
+\begin{equation*}
+    P(T) \cdot A = \int_T^{T_f} j(T') \cdot A \symup{d}T' = \int_{t(T)}^\infty i(t') \symup{d}t',
+\end{equation*}
+wobei $A$ die Fläche der Kontakte am Kristall ist. Zusammen mit \autoref{eq:Ansatz2} ergibt sich so 
+\begin{align}
+    \tau(T) &= \frac{\int_{t(T)}^{\infty} i(t') dt'}{i(T)} \nonumber \\
+    \Leftrightarrow \symup{ln}(\tau(T)) &= \symup{ln}(\tau_0) + \frac{W}{k_\text{B}T} = \symup{ln}\left(\int_{i(T)}^\infty i(T')dT' \right) - \symup{ln}(i(T)).
+    \label{eq:W_tau0}
+\end{align}
+Das Integral kann dabei über graphische Integration über $i(T)$ approximiert werden. Durch eine lineare Ausgleichsrechnung können $W$ und $\tau_0$ bestimmt werden.
