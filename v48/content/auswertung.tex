@@ -114,7 +114,7 @@ Für die weitere Auswertung wird der Mittelwert der tatsächlichen Heizraten gen
 
 \subsection{Substraktion des Hintergrundes}
 \label{sec:Hintergrund}
-Der zu erwartende Untergrund bei Messung des Stroms $I$ entspricht einer Exponentialfunktion. Als gute Näherung kann mithilfe einer durch Fitten einer Exponentialfunktion
+Der zu erwartende Untergrund bei Messung des Stroms $I$ entspricht einer Exponentialfunktion. Als gute Näherung kann dieser durch Fitten einer Exponentialfunktion
 an Datenpunkte, die nicht am Peak liegen, berechnet und subtrahiert werden. Dies ist in \autoref{fig:T_I} für die beiden Messreihen zu sehen. Mit einer Exponentialfunktion
 vom Typ $f(x) = a_{\text{Bg}}\symup{e}^{b_{\text{Bg}}x} + c_{\text{Bg}}$ ergeben sich die Fitparameter
 \begin{align*}
@@ -166,7 +166,7 @@ negative Ströme ergeben. In der Diskussion der Ergebnisse in \autoref{sec:Disku
 
 \subsection{Ausgleichsrechnung für den Polarisationsansatz}
 \label{sec:Ausgleichsrechnung_Polarisationsansatz}
-In \autoref{sec:Herleitung_Polarisationsstrom} wird eine näherungsweise lineare Abhängigkeit des Logarithmus des Polarisationsstroms zum inversen der Temperatur hergeleitet.
+In \autoref{sec:Herleitung_Polarisationsstrom} wird eine näherungsweise lineare Abhängigkeit des Logarithmus des Polarisationsstroms zum Inversen der Temperatur hergeleitet.
 Die in \autoref{fig:T_I_clean} rot markierten Werte werden dafür verwendet und sind in \autoref{fig:T_I_Anstieg} in linearisierter Form dargestellt.
 Der Zusammenhang aus Formel~\eqref{eq:i_T} wird verwendet, um mithilfe der Parameter einer linearen Ausgleichsrechnung vom Typ $f(x) = m_{\text{Anstieg}}x+b_{\text{Anstieg}}$ die
 Aktivierungsenergie $W$ der Dipole auszurechnen.
@@ -196,11 +196,13 @@ Für die Parameter und die daraus folgende Aktivierungsenergie ergibt sich
 \end{figure}
 
 
+\newpage
+
 \subsection{Ausgleichsrechnung für den Integralansatz}
 \label{sec:Ausgleichsrechnung_Integralansatz}
 Gemäß des in \autoref{sec:Herleitung_Stromdichte} hergeleiteten Zusammenhangs~\eqref{eq:W_tau0} kann durch graphische Integration über den Strom erneut ein linearer 
-Zusammenhang zum inversen der Temperatur hergestellt werden. Die dafür verwendeten Datenpunkte sind in \autoref{fig:T_I_clean} orange markiert und in \autoref{fig:int}
-linearisiert aufgetragen. Auch hier liefert eine lineare Ausgleichsrechnung vom Typ $f(x) = m_{intfit}x + b_{\text{intfit}}$ die Parameter, die über \autoref{eq:W_tau0} Aufschluss
+Zusammenhang zum Inversen der Temperatur hergestellt werden. Die dafür verwendeten Datenpunkte sind in \autoref{fig:T_I_clean} orange markiert und in \autoref{fig:int}
+linearisiert aufgetragen. Auch hier liefert eine lineare Ausgleichsrechnung vom Typ $f(x) = m_\text{intfit}x + b_{\text{intfit}}$ die Parameter, die über \autoref{eq:W_tau0} Aufschluss
 über die Aktivierungsenergie $W$ geben. Es folgt
 \begin{align*}
     b_{\text{intfit}, 1} &= \num{-39.5+-2.6} & m_{\text{intfit}, 1} &= \qty{1.08(0.07)e+04}{\kelvin} &\Rightarrow W_{\text{intfit}, 1} &= \qty{0.93+-0.06}{\electronvolt} \\
