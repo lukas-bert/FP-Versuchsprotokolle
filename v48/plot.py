@@ -255,13 +255,18 @@ plt.savefig("build/int_2.pdf")
 def tau(T, tau_0, W):
    return tau_0*np.e**(W*const.e/(const.k*T))
 
-tau_1 = tau(T_1, noms(tau_1_lin_max), noms(W_1_linfit))
 
 fig, ax = plt.subplots()
 
 xx = np.linspace(200, 320, 10000)
 
-ax.plot(T_1, tau_1, label="wdawd")
+ax.plot(T_1, tau(T_1, noms(tau_1_lin_max), noms(W_1_linfit)), label=r"$\tau_{\text{linfit}, 1}$")
+ax.plot(T_2, tau(T_2, noms(tau_2_lin_max), noms(W_2_linfit)), label=r"$\tau_{\text{linfit}, 2}$")
+
+#ax.plot(T_1, tau(T_1, noms(tau_1_integral_max), noms(W_1_integral)), label=r"$\tau_{\text{intfit}, 1}$")
+#ax.plot(T_2, tau(T_2, noms(tau_2_integral_max), noms(W_2_integral)), label=r"$\tau_{\text{intfit}, 2}$", ylim=[0,])
+
+ax.set_ylim(-0.01,0.1)
 
 ax.legend()
 

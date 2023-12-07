@@ -6,13 +6,13 @@ verschiedene Heizraten $b\approx\qty{1,4}{\kelvin\per\minute}$ und $b\approx\qty
 
 Für die weitere Auswertung wird der Mittelwert der tatsächlichen Heizraten genommen. Es ergibt sich
 \begin{align*}
-    b_1 &= \qty{9999}{\kelvin\per\minute} \\
-    b_2 &= \qty{9999}{\kelvin\per\minute}. \\
+    b_1 &= \qty{1.9+-0.4}{\kelvin\per\minute} \\
+    b_2 &= \qty{1.47+-0.26}{\kelvin\per\minute}. \\
 \end{align*}
 
 \begin{table}
     \centering
-    \caption{Measurements.}
+    \caption{Daten der ersten Messreihe mit der Heizrate $b_1 = \qty{1.9+-0.4}{\kelvin\per\minute}$.}
     \label{tab:measurements_1}
     \begin{tabular}{S S S S S | S S S S S}
       \toprule
@@ -58,7 +58,7 @@ Für die weitere Auswertung wird der Mittelwert der tatsächlichen Heizraten gen
 
  \begin{table}
     \centering
-    \caption{Measurements 2.}
+    \caption{Daten der zweiten Messreihe mit der Heizrate $b_2 = \qty{1.47+-0.26}{\kelvin\per\minute}$}
     \label{tab:measurements_2}
     \begin{tabular}{S S S S S | S S S S S}
       \toprule
@@ -116,10 +116,10 @@ Für die weitere Auswertung wird der Mittelwert der tatsächlichen Heizraten gen
 \label{sec:Hintergrund}
 Der zu erwartende Untergrund bei Messung des Stroms $I$ entspricht einer Exponentialfunktion. Als gute Näherung kann mithilfe einer durch Fitten einer Exponentialfunktion
 an Datenpunkte, die nicht am Peak liegen, berechnet und subtrahiert werden. Dies ist in \autoref{fig:T_I} für die beiden Messreihen zu sehen. Mit einer Exponentialfunktion
-vom Typ $f(x) = a_{\text{BG}}\symup{e}^{b_{\text{Bg}}x} + c_{\text{Bg}}$ ergeben sich die Fitparameter
+vom Typ $f(x) = a_{\text{Bg}}\symup{e}^{b_{\text{Bg}}x} + c_{\text{Bg}}$ ergeben sich die Fitparameter
 \begin{align*}
-    a_{\text{BG}, 1} & = \qty{9999}{\pico\farad} & b_{\text{Bg}, 1} &= \num{9999} & c_{\text{Bg}, 1} &= \qty{9999}{\pico\farad} \\
-    a_{\text{BG}, 2} & = \qty{9999}{\pico\farad} & b_{\text{Bg}, 2} &= \num{9999} & c_{\text{Bg}, 2} &= \qty{9999}{\pico\farad}. \\
+    a_{\text{Bg}, 1} & = \qty{0.006+-0.005}{\pico\farad} & b_{\text{Bg}, 1} &= \num{0.0282+-0.0030} & c_{\text{Bg}, 1} &= \qty{0.3+-0.6}{\pico\farad} \\
+    a_{\text{Bg}, 2} & = \qty{0.022+-0.030}{\pico\farad} & b_{\text{Bg}, 2} &= \num{0.023+-0.005}   & c_{\text{Bg}, 2} &= \qty{-2.0+-1.3}{\pico\farad}. \\
 \end{align*}
 
 In \autoref{fig:T_I_clean} sind die um den Hintergrund bereinigten Messdaten dargestellt. Es fällt auf, dass sich für den höheren Temperaturbereich unphysikalische,
@@ -130,16 +130,17 @@ negative Ströme ergeben. In der Diskussion der Ergebnisse in \autoref{sec:Disku
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/T_I_1.pdf}
-        \caption{Cap.}
+        \caption{1. Messreihe, Heizrate $b_1 = \qty{1.9+-0.4}{\kelvin\per\minute}.$}
         \label{fig:T_I_1}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/T_I_2.pdf}
-        \caption{Cap.}
+        \caption{2. Messreihe, Heizrate $b_2 = \qty{1.47+-0.26}{\kelvin\per\minute}.$}
         \label{fig:T_I_2}
     \end{subfigure}
-    \caption{Cap.}
+    \caption{Messdaten des Stroms $I$ in Abhängigkeit von der Temperatur $T$ mit eingezeichnetem exponentiellen Fit für den thermischen Hintergrund. Die für den Fit %
+    verwendeten Messwerte sind rot markiert.}
     \label{fig:T_I}
 \end{figure}
 
@@ -149,30 +150,31 @@ negative Ströme ergeben. In der Diskussion der Ergebnisse in \autoref{sec:Disku
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/T_I_1_clean.pdf}
-        \caption{Cap.}
+        \caption{1. Messreihe, Heizrate $b_1 = \qty{1.9+-0.4}{\kelvin\per\minute}.$}
         \label{fig:T_I_1_clean}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/T_I_2_clean.pdf}
-        \caption{Cap.}
+        \caption{2. Messreihe, Heizrate $b_2 = \qty{1.47+-0.26}{\kelvin\per\minute}.$}
         \label{fig:T_I_2_clean}
     \end{subfigure}
-    \caption{Cap.}
+    \caption{Vom Hintergrund bereinigte Messdaten des Stroms $I$ in Abhängigkeit von der Temperatur $T$. Messwerte, welche später für die zwei Methoden zur Bestimmung %
+    der Aktivierungsenergie $W$ verwendet werden, sind entsprechend gekennzeichnet.}
     \label{fig:T_I_clean}
 \end{figure}
 
 \subsection{Ausgleichsrechnung für den Polarisationsansatz}
 \label{sec:Ausgleichsrechnung_Polarisationsansatz}
 In \autoref{sec:Herleitung_Polarisationsstrom} wird eine näherungsweise lineare Abhängigkeit des Logarithmus des Polarisationsstroms zum inversen der Temperatur hergeleitet.
-Die in \autoref{fig:T_I_clean} rot markierten Werte werden dafür verwendet und sind in \autoref{fig:T_I_linfit} in linearisierter Form dargestellt.
-Der Zusammenhang aus Formel~\eqref{eq:i_T} wird verwendet, um mithilfe der Parameter einer linearen Ausgleichsrechnung vom Typ $f(x) = m_{\text{linfit}}x+b_{\text{linfit}}$ die
+Die in \autoref{fig:T_I_clean} rot markierten Werte werden dafür verwendet und sind in \autoref{fig:T_I_Anstieg} in linearisierter Form dargestellt.
+Der Zusammenhang aus Formel~\eqref{eq:i_T} wird verwendet, um mithilfe der Parameter einer linearen Ausgleichsrechnung vom Typ $f(x) = m_{\text{Anstieg}}x+b_{\text{Anstieg}}$ die
 Aktivierungsenergie $W$ der Dipole auszurechnen.
 
 Für die Parameter und die daraus folgende Aktivierungsenergie ergibt sich
 \begin{align*}
-    b_{\text{linfit}, 1} &= \num{99999} & m_{\text{linfit}, 1} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{linfit}, 1} &= \qty{99999}{\electronvolt} \\
-    b_{\text{linfit}, 2} &= \num{99999} & m_{\text{linfit}, 2} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{linfit}, 2} &= \qty{99999}{\electronvolt}. \\
+    b_{\text{Anstieg}, 1} &= \num{34.6+-1.0} & m_{\text{Anstieg}, 1} &= \qty{-8.04(0.25)e+03}{\kelvin} &\Rightarrow W_{\text{Anstieg}, 1} &= \qty{0.693+-0.022}{\electronvolt} \\
+    b_{\text{Anstieg}, 2} &= \num{36.5+-0.8} & m_{\text{Anstieg}, 2} &= \qty{-8.64(0.21)e+03}{\kelvin} &\Rightarrow W_{\text{Anstieg}, 2} &= \qty{0.744+-0.018}{\electronvolt}. \\
 \end{align*}
 
 \begin{figure}
@@ -180,17 +182,17 @@ Für die Parameter und die daraus folgende Aktivierungsenergie ergibt sich
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/T_I_1_linfit.pdf}
-        \caption{Cap.}
-        \label{fig:T_I_1_linfit}
+        \caption{1. Messreihe, Heizrate $b_1 = \qty{1.9+-0.4}{\kelvin\per\minute}.$}
+        \label{fig:T_I_1_Anstieg}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/T_I_2_linfit.pdf}
-        \caption{Cap.}
-        \label{fig:T_I_2_linfit}
+        \caption{2. Messreihe, Heizrate $b_2 = \qty{1.47+-0.26}{\kelvin\per\minute}.$}
+        \label{fig:T_I_2_Anstieg}
     \end{subfigure}
-    \caption{Cap.}
-    \label{fig:T_I_linfit}
+    \caption{Linearisierte Darstellung der in \autoref{fig:T_I_clean} in rot gekennzeichneten Messwerte mit eingezeichneter Ausgleichsgeraden.}
+    \label{fig:T_I_Anstieg}
 \end{figure}
 
 
@@ -201,8 +203,8 @@ Zusammenhang zum inversen der Temperatur hergestellt werden. Die dafür verwende
 linearisiert aufgetragen. Auch hier liefert eine lineare Ausgleichsrechnung vom Typ $f(x) = m_{intfit}x + b_{\text{intfit}}$ die Parameter, die über \autoref{eq:W_tau0} Aufschluss
 über die Aktivierungsenergie $W$ geben. Es folgt
 \begin{align*}
-    b_{\text{intfit}, 1} &= \num{99999} & m_{\text{intfit}, 1} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{intfit}, 1} &= \qty{99999}{\electronvolt} \\
-    b_{\text{intfit}, 2} &= \num{99999} & m_{\text{intfit}, 2} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{intfit}, 2} &= \qty{99999}{\electronvolt}. \\
+    b_{\text{intfit}, 1} &= \num{-39.5+-2.6} & m_{\text{intfit}, 1} &= \qty{1.08(0.07)e+04}{\kelvin} &\Rightarrow W_{\text{intfit}, 1} &= \qty{0.93+-0.06}{\electronvolt} \\
+    b_{\text{intfit}, 2} &= \num{-53+-4}     & m_{\text{intfit}, 2} &= \qty{1.44(0.12)e+04}{\kelvin} &\Rightarrow W_{\text{intfit}, 2} &= \qty{1.24+-0.10}{\electronvolt}. \\
 \end{align*}
 
 \begin{figure}
@@ -210,16 +212,16 @@ linearisiert aufgetragen. Auch hier liefert eine lineare Ausgleichsrechnung vom 
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/int_1.pdf}
-        \caption{Cap.}
+        \caption{1. Messreihe, Heizrate $b_1 = \qty{1.9+-0.4}{\kelvin\per\minute}.$}
         \label{fig:int_1}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics{build/int_2.pdf}
-        \caption{Cap.}
+        \caption{2. Messreihe, Heizrate $b_2 = \qty{1.47+-0.26}{\kelvin\per\minute}.$}
         \label{fig:int_2}
     \end{subfigure}
-    \caption{Cap.}
+    \caption{Linearisierte Darstellung der in \autoref{fig:T_I_clean} in orange gekennzeichneten Messwerte mit eingezeichneter Ausgleichsgeraden.}
     \label{fig:int}
 \end{figure}
 
@@ -229,21 +231,22 @@ Aus \autoref{eq:T_max} folgt, dass die charakteristische Relaxationszeit $\tau_0
 Stelle des Strompeaks abhängt. Mithilfe der zuvor bestimmten Aktivierungsenergien $W$ werden 
 
 \begin{align*}
-    \tau_{0, \text{linfit}_1} &= \qty{9999}{\second} \\
-    \tau_{0, \text{linfit}_2} &= \qty{9999}{\second} \\
+    \tau_{0, \text{Anstieg}_1} &= \qty{5.4(1.3)e-19}{\second} \\
+    \tau_{0, \text{Anstieg}_2} &= \qty{5.3(1.0)e-19}{\second} \\
 \end{align*}
 berechnet. 
 Mithilfe des Parameters $b_{\text{intfit}}$ und \autoref{eq:W_tau0} wird ebenfalls $\tau_0$ bestimmt. Es ergibt sich
 \begin{align*}
-    \tau_{0, \text{intfit}_1} &= \qty{9999}{\second} \\
-    \tau_{0, \text{intfit}_2} &= \qty{9999}{\second} \\
+    \tau_{0, \text{intfit}_1} &= \qty{0.7(1.8)e-17}{\second} \\
+    \tau_{0, \text{intfit}_2} &= \qty{1(5)e-23}{\second} \\
 \end{align*}
-Unter Verwendung von \autoref{eq:tau} wird die Relaxationszeit in Abhängigkeit von der Temperatur in \autoref{fig:tau} geplottet.
+Unter Verwendung von \autoref{eq:tau} wird die Relaxationszeit in Abhängigkeit von der Temperatur in \autoref{fig:tau} geplottet. Auf das Einzeichnen der mithilfe der
+Integralmethode bestimmten Funktion von $\tau$ wird aufgrund der offensichtlich sehr großen Abweichung verzichtet.
 
 \begin{figure}
     \centering
     \includegraphics{build/tau.pdf}
-    \caption{Cap.}
+    \caption{Abhängigkeit der Relaxationszeit $\tau$ von der Temperatur.}
     \label{fig:tau}
 \end{figure}
 
