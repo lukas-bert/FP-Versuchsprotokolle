@@ -1,2 +1,323 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Zur Messung der Dipolrelaxation in dem betrachteten Kristall wird der Kondensatorstrom $I$ in Abhängigkeit von der Temperatur $T$ gemessen. Dabei werden zwei
+verschiedene Heizraten $b\approx\qty{1,4}{\kelvin\per\minute}$ und $b\approx\qty{2}{\kelvin\per\minute}$ verwendet. Die Messwerte sind in \autoref{tab:measurements_1} und
+\autoref{tab:measurements_2} angegeben.
+
+Für die weitere Auswertung wird der Mittelwert der tatsächlichen Heizraten genommen. Es ergibt sich
+\begin{align*}
+    b_1 &= \qty{9999}{\kelvin\per\minute} \\
+    b_2 &= \qty{9999}{\kelvin\per\minute}. \\
+\end{align*}
+
+\begin{table}
+    \centering
+    \caption{Measurements.}
+    \label{tab:measurements_1}
+    \begin{tabular}{S S S S S | S S S S S}
+      \toprule
+      {$t \mathbin{/} \unit{\minute}$} & {$T \mathbin{/} \unit{\celsius}$} & {$T \mathbin{/} \unit{\kelvin}$} &%
+      {$I \mathbin{/} \unit{\pico\ampere}$} & {$b \mathbin{/} \unit{\kelvin\per\minute}$} & {$t \mathbin{/} \unit{\minute}$} &%
+      {$T \mathbin{/} \unit{\celsius}$} & {$T \mathbin{/} \unit{\kelvin}$} & {$I \mathbin{/} \unit{\pico\ampere}$} &% 
+      {$b \mathbin{/} \unit{\kelvin\per\minute}$}\\
+      \midrule
+        \num{ 0} &  \num{-68.0} &  \num{205.0} &  \num{ 4.2} &  \num{0.0} & \num{31} &  \num{-10.0} &  \num{263.0} &  \num{54.0} &  \num{1.9} \\
+        \num{ 1} &  \num{-68.0} &  \num{205.0} &  \num{ 3.4} &  \num{0.3} & \num{32} &  \num{ -8.0} &  \num{265.0} &  \num{52.0} &  \num{2.0} \\
+        \num{ 2} &  \num{-67.0} &  \num{206.0} &  \num{ 3.0} &  \num{0.7} & \num{33} &  \num{ -6.0} &  \num{268.0} &  \num{47.0} &  \num{2.1} \\
+        \num{ 3} &  \num{-66.0} &  \num{207.0} &  \num{ 2.6} &  \num{0.9} & \num{34} &  \num{ -4.0} &  \num{270.0} &  \num{39.0} &  \num{2.1} \\
+        \num{ 4} &  \num{-65.0} &  \num{208.0} &  \num{ 2.5} &  \num{1.3} & \num{35} &  \num{ -1.0} &  \num{272.0} &  \num{30.0} &  \num{2.2} \\
+        \num{ 5} &  \num{-63.0} &  \num{210.0} &  \num{ 2.4} &  \num{1.6} & \num{36} &  \num{  1.0} &  \num{274.0} &  \num{23.0} &  \num{2.0} \\
+        \num{ 6} &  \num{-62.0} &  \num{212.0} &  \num{ 2.4} &  \num{1.8} & \num{37} &  \num{  3.0} &  \num{276.0} &  \num{18.0} &  \num{2.1} \\
+        \num{ 7} &  \num{-60.0} &  \num{213.0} &  \num{ 2.4} &  \num{1.9} & \num{38} &  \num{  5.0} &  \num{278.0} &  \num{16.0} &  \num{2.1} \\
+        \num{ 8} &  \num{-58.0} &  \num{215.0} &  \num{ 2.5} &  \num{2.0} & \num{39} &  \num{  7.0} &  \num{280.0} &  \num{16.0} &  \num{1.9} \\
+        \num{ 9} &  \num{-56.0} &  \num{217.0} &  \num{ 2.6} &  \num{2.0} & \num{40} &  \num{  9.0} &  \num{282.0} &  \num{16.5} &  \num{2.0} \\
+        \num{10} &  \num{-54.0} &  \num{219.0} &  \num{ 2.7} &  \num{2.0} & \num{41} &  \num{ 11.0} &  \num{284.0} &  \num{17.5} &  \num{2.0} \\
+        \num{11} &  \num{-52.0} &  \num{222.0} &  \num{ 2.9} &  \num{2.1} & \num{42} &  \num{ 13.0} &  \num{286.0} &  \num{18.5} &  \num{1.9} \\
+        \num{12} &  \num{-49.0} &  \num{224.0} &  \num{ 3.1} &  \num{2.2} & \num{43} &  \num{ 15.0} &  \num{288.0} &  \num{19.0} &  \num{2.0} \\
+        \num{13} &  \num{-47.0} &  \num{226.0} &  \num{ 3.4} &  \num{2.2} & \num{44} &  \num{ 17.0} &  \num{290.0} &  \num{20.0} &  \num{1.9} \\
+        \num{14} &  \num{-45.0} &  \num{228.0} &  \num{ 4.2} &  \num{2.2} & \num{45} &  \num{ 19.0} &  \num{292.0} &  \num{20.5} &  \num{2.0} \\
+        \num{15} &  \num{-42.0} &  \num{231.0} &  \num{ 5.1} &  \num{2.5} & \num{46} &  \num{ 21.0} &  \num{294.0} &  \num{21.5} &  \num{2.0} \\
+        \num{16} &  \num{-40.0} &  \num{233.0} &  \num{ 5.6} &  \num{2.5} & \num{47} &  \num{ 23.0} &  \num{296.0} &  \num{22.0} &  \num{2.0} \\
+        \num{17} &  \num{-38.0} &  \num{236.0} &  \num{ 6.1} &  \num{2.5} & \num{48} &  \num{ 25.0} &  \num{298.0} &  \num{22.0} &  \num{2.1} \\
+        \num{18} &  \num{-35.0} &  \num{238.0} &  \num{ 6.8} &  \num{2.3} & \num{49} &  \num{ 27.0} &  \num{300.0} &  \num{21.5} &  \num{2.1} \\
+        \num{19} &  \num{-33.0} &  \num{240.0} &  \num{ 7.7} &  \num{2.2} & \num{50} &  \num{ 29.0} &  \num{302.0} &  \num{20.5} &  \num{2.0} \\
+        \num{20} &  \num{-31.0} &  \num{242.0} &  \num{ 8.9} &  \num{2.0} & \num{51} &  \num{ 31.0} &  \num{304.0} &  \num{19.0} &  \num{1.9} \\
+        \num{21} &  \num{-29.0} &  \num{244.0} &  \num{10.5} &  \num{2.1} & \num{52} &  \num{ 33.0} &  \num{306.0} &  \num{17.5} &  \num{2.0} \\
+        \num{22} &  \num{-27.0} &  \num{246.0} &  \num{12.0} &  \num{2.2} & \num{53} &  \num{ 35.0} &  \num{308.0} &  \num{15.5} &  \num{1.9} \\
+        \num{23} &  \num{-25.0} &  \num{249.0} &  \num{15.5} &  \num{2.1} & \num{54} &  \num{ 37.0} &  \num{310.0} &  \num{14.0} &  \num{2.0} \\
+        \num{24} &  \num{-23.0} &  \num{250.0} &  \num{19.0} &  \num{1.8} & \num{55} &  \num{ 39.0} &  \num{312.0} &  \num{12.0} &  \num{2.0} \\
+        \num{25} &  \num{-21.0} &  \num{252.0} &  \num{23.5} &  \num{1.8} & \num{56} &  \num{ 40.0} &  \num{314.0} &  \num{11.0} &  \num{1.9} \\
+        \num{26} &  \num{-19.0} &  \num{254.0} &  \num{29.0} &  \num{1.9} & \num{57} &  \num{ 42.0} &  \num{316.0} &  \num{11.0} &  \num{2.0} \\
+        \num{27} &  \num{-17.0} &  \num{256.0} &  \num{35.0} &  \num{1.9} & \num{58} &  \num{ 45.0} &  \num{318.0} &  \num{10.5} &  \num{2.1} \\
+        \num{28} &  \num{-15.0} &  \num{258.0} &  \num{42.0} &  \num{1.9} & \num{59} &  \num{ 47.0} &  \num{320.0} &  \num{10.5} &  \num{2.0} \\
+        \num{29} &  \num{-13.0} &  \num{260.0} &  \num{48.0} &  \num{1.9} & \num{60} &  \num{ 49.0} &  \num{322.0} &  \num{11.5} &  \num{2.0} \\
+        \num{30} &  \num{-12.0} &  \num{262.0} &  \num{52.0} &  \num{1.8} & \num{61} &  \num{ 51.0} &  \num{324.0} &  \num{12.0} &  \num{2.0} \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+ \begin{table}
+    \centering
+    \caption{Measurements 2.}
+    \label{tab:measurements_2}
+    \begin{tabular}{S S S S S | S S S S S}
+      \toprule
+      {$t \mathbin{/} \unit{\minute}$} & {$T \mathbin{/} \unit{\celsius}$} & {$T \mathbin{/} \unit{\kelvin}$} &%
+      {$I \mathbin{/} \unit{\pico\ampere}$} & {$b \mathbin{/} \unit{\kelvin\per\minute}$} & {$t \mathbin{/} \unit{\minute}$} &%
+      {$T \mathbin{/} \unit{\celsius}$} & {$T \mathbin{/} \unit{\kelvin}$} & {$I \mathbin{/} \unit{\pico\ampere}$} &% 
+      {$b \mathbin{/} \unit{\kelvin\per\minute}$}\\
+      \midrule
+      \num{ 0} &  \num{-67.0} &  \num{206.0} &  \num{ 1.4 } &  \num{0.0} & \num{40} &  \num{ -6.0} &  \num{267.0} &  \num{40.0 } &  \num{1.4} \\
+      \num{ 1} &  \num{-66.0} &  \num{207.0} &  \num{ 1.35} &  \num{1.0} & \num{41} &  \num{ -5.0} &  \num{268.0} &  \num{36.0 } &  \num{1.5} \\
+      \num{ 2} &  \num{-65.0} &  \num{208.0} &  \num{ 1.25} &  \num{1.3} & \num{42} &  \num{ -3.0} &  \num{270.0} &  \num{30.0 } &  \num{1.5} \\ 
+      \num{ 3} &  \num{-63.0} &  \num{210.0} &  \num{ 1.2 } &  \num{1.4} & \num{43} &  \num{ -2.0} &  \num{271.0} &  \num{24.0 } &  \num{1.5} \\ 
+      \num{ 4} &  \num{-62.0} &  \num{211.0} &  \num{ 1.1 } &  \num{1.5} & \num{44} &  \num{ -0.0} &  \num{273.0} &  \num{19.0 } &  \num{1.4} \\ 
+      \num{ 5} &  \num{-60.0} &  \num{213.0} &  \num{ 1.05} &  \num{1.5} & \num{45} &  \num{  1.0} &  \num{274.0} &  \num{15.5 } &  \num{1.3} \\ 
+      \num{ 6} &  \num{-59.0} &  \num{214.0} &  \num{ 1.1 } &  \num{1.5} & \num{46} &  \num{  2.0} &  \num{276.0} &  \num{13.5 } &  \num{1.5} \\ 
+      \num{ 7} &  \num{-57.0} &  \num{216.0} &  \num{ 1.1 } &  \num{1.4} & \num{47} &  \num{  4.0} &  \num{277.0} &  \num{12.5 } &  \num{1.5} \\ 
+      \num{ 8} &  \num{-56.0} &  \num{217.0} &  \num{ 1.15} &  \num{1.5} & \num{48} &  \num{  5.0} &  \num{279.0} &  \num{12.5 } &  \num{1.4} \\ 
+      \num{ 9} &  \num{-54.0} &  \num{219.0} &  \num{ 1.3 } &  \num{1.5} & \num{49} &  \num{  7.0} &  \num{280.0} &  \num{12.5 } &  \num{1.4} \\ 
+      \num{10} &  \num{-53.0} &  \num{220.0} &  \num{ 1.45} &  \num{1.5} & \num{50} &  \num{  8.0} &  \num{281.0} &  \num{13.0 } &  \num{1.4} \\ 
+      \num{11} &  \num{-51.0} &  \num{222.0} &  \num{ 1.65} &  \num{1.8} & \num{51} &  \num{ 10.0} &  \num{283.0} &  \num{14.0 } &  \num{1.6} \\ 
+      \num{12} &  \num{-49.0} &  \num{224.0} &  \num{ 1.9 } &  \num{2.0} & \num{52} &  \num{ 11.0} &  \num{284.0} &  \num{14.5 } &  \num{1.4} \\ 
+      \num{13} &  \num{-47.0} &  \num{226.0} &  \num{ 2.7 } &  \num{2.4} & \num{53} &  \num{ 13.0} &  \num{286.0} &  \num{15.5 } &  \num{1.4} \\ 
+      \num{14} &  \num{-44.0} &  \num{229.0} &  \num{ 4.8 } &  \num{2.5} & \num{54} &  \num{ 14.0} &  \num{287.0} &  \num{16.0 } &  \num{1.5} \\ 
+      \num{15} &  \num{-42.0} &  \num{231.0} &  \num{ 5.2 } &  \num{1.8} & \num{55} &  \num{ 16.0} &  \num{289.0} &  \num{17.0 } &  \num{1.4} \\ 
+      \num{16} &  \num{-41.0} &  \num{232.0} &  \num{ 5.5 } &  \num{1.6} & \num{56} &  \num{ 17.0} &  \num{290.0} &  \num{17.5 } &  \num{1.5} \\ 
+      \num{17} &  \num{-39.0} &  \num{234.0} &  \num{ 5.5 } &  \num{1.5} & \num{57} &  \num{ 18.0} &  \num{292.0} &  \num{18.5 } &  \num{1.5} \\ 
+      \num{18} &  \num{-38.0} &  \num{235.0} &  \num{ 5.6 } &  \num{1.3} & \num{58} &  \num{ 20.0} &  \num{293.0} &  \num{19.0 } &  \num{1.5} \\ 
+      \num{19} &  \num{-37.0} &  \num{236.0} &  \num{ 5.6 } &  \num{1.2} & \num{59} &  \num{ 21.0} &  \num{295.0} &  \num{19.0 } &  \num{1.4} \\ 
+      \num{20} &  \num{-35.0} &  \num{238.0} &  \num{ 5.7 } &  \num{1.4} & \num{60} &  \num{ 23.0} &  \num{296.0} &  \num{19.0 } &  \num{1.4} \\ 
+      \num{21} &  \num{-34.0} &  \num{239.0} &  \num{ 6.0 } &  \num{1.4} & \num{61} &  \num{ 24.0} &  \num{297.0} &  \num{19.0 } &  \num{1.5} \\ 
+      \num{22} &  \num{-32.0} &  \num{241.0} &  \num{ 6.2 } &  \num{1.5} & \num{62} &  \num{ 26.0} &  \num{299.0} &  \num{18.5 } &  \num{1.5} \\ 
+      \num{23} &  \num{-31.0} &  \num{242.0} &  \num{ 6.7 } &  \num{1.5} & \num{63} &  \num{ 27.0} &  \num{300.0} &  \num{17.5 } &  \num{1.4} \\ 
+      \num{24} &  \num{-30.0} &  \num{244.0} &  \num{ 7.2 } &  \num{1.5} & \num{64} &  \num{ 28.0} &  \num{302.0} &  \num{17.0 } &  \num{1.3} \\ 
+      \num{25} &  \num{-28.0} &  \num{245.0} &  \num{ 7.9 } &  \num{1.5} & \num{65} &  \num{ 30.0} &  \num{303.0} &  \num{16.0 } &  \num{1.5} \\ 
+      \num{26} &  \num{-26.0} &  \num{247.0} &  \num{ 8.9 } &  \num{1.5} & \num{66} &  \num{ 32.0} &  \num{305.0} &  \num{15.0 } &  \num{1.5} \\ 
+      \num{27} &  \num{-25.0} &  \num{248.0} &  \num{10.5 } &  \num{1.5} & \num{67} &  \num{ 33.0} &  \num{306.0} &  \num{14.0 } &  \num{1.4} \\ 
+      \num{28} &  \num{-24.0} &  \num{250.0} &  \num{12.0 } &  \num{1.5} & \num{68} &  \num{ 34.0} &  \num{308.0} &  \num{12.5 } &  \num{1.5} \\ 
+      \num{29} &  \num{-22.0} &  \num{251.0} &  \num{14.0 } &  \num{1.5} & \num{69} &  \num{ 36.0} &  \num{309.0} &  \num{11.5 } &  \num{1.5} \\ 
+      \num{30} &  \num{-21.0} &  \num{253.0} &  \num{16.5 } &  \num{1.4} & \num{70} &  \num{ 37.0} &  \num{311.0} &  \num{10.5 } &  \num{1.5} \\ 
+      \num{31} &  \num{-19.0} &  \num{254.0} &  \num{19.0 } &  \num{1.4} & \num{71} &  \num{ 39.0} &  \num{312.0} &  \num{10.0 } &  \num{1.4} \\ 
+      \num{32} &  \num{-18.0} &  \num{255.0} &  \num{22.5 } &  \num{1.4} & \num{72} &  \num{ 40.0} &  \num{313.0} &  \num{ 9.2 } &  \num{1.4} \\ 
+      \num{33} &  \num{-16.0} &  \num{257.0} &  \num{26.5 } &  \num{1.4} & \num{73} &  \num{ 42.0} &  \num{315.0} &  \num{ 8.9 } &  \num{1.4} \\ 
+      \num{34} &  \num{-15.0} &  \num{258.0} &  \num{31.0 } &  \num{1.4} & \num{74} &  \num{ 43.0} &  \num{316.0} &  \num{ 8.6 } &  \num{1.5} \\ 
+      \num{35} &  \num{-14.0} &  \num{260.0} &  \num{35.0 } &  \num{1.5} & \num{75} &  \num{ 44.0} &  \num{318.0} &  \num{ 8.7 } &  \num{1.3} \\ 
+      \num{36} &  \num{-12.0} &  \num{261.0} &  \num{40.0 } &  \num{1.5} & \num{76} &  \num{ 46.0} &  \num{319.0} &  \num{ 9.2 } &  \num{1.5} \\ 
+      \num{37} &  \num{-10.0} &  \num{263.0} &  \num{42.0 } &  \num{1.5} & \num{77} &  \num{ 47.0} &  \num{321.0} &  \num{ 9.7 } &  \num{1.5} \\ 
+      \num{38} &  \num{ -9.0} &  \num{264.0} &  \num{44.0 } &  \num{1.4} & \num{78} &  \num{ 49.0} &  \num{322.0} &  \num{10.0 } &  \num{1.4} \\ 
+      \num{39} &  \num{ -8.0} &  \num{266.0} &  \num{43.0 } &  \num{1.5} & \num{79} &  \num{ 50.0} &  \num{323.0} &  \num{10.5 } &  \num{1.5} \\ 
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+
+\subsection{Substraktion des Hintergrundes}
+\label{sec:Hintergrund}
+Der zu erwartende Untergrund bei Messung des Stroms $I$ entspricht einer Exponentialfunktion. Als gute Näherung kann mithilfe einer durch Fitten einer Exponentialfunktion
+an Datenpunkte, die nicht am Peak liegen, berechnet und subtrahiert werden. Dies ist in \autoref{fig:T_I} für die beiden Messreihen zu sehen. Mit einer Exponentialfunktion
+vom Typ $f(x) = a_{\text{BG}}\symup{e}^{b_{\text{Bg}}x} + c_{\text{Bg}}$ ergeben sich die Fitparameter
+\begin{align*}
+    a_{\text{BG}, 1} & = \qty{9999}{\pico\farad} & b_{\text{Bg}, 1} &= \num{9999} & c_{\text{Bg}, 1} &= \qty{9999}{\pico\farad} \\
+    a_{\text{BG}, 2} & = \qty{9999}{\pico\farad} & b_{\text{Bg}, 2} &= \num{9999} & c_{\text{Bg}, 2} &= \qty{9999}{\pico\farad}. \\
+\end{align*}
+
+In \autoref{fig:T_I_clean} sind die um den Hintergrund bereinigten Messdaten dargestellt. Es fällt auf, dass sich für den höheren Temperaturbereich unphysikalische,
+negative Ströme ergeben. In der Diskussion der Ergebnisse in \autoref{sec:Diskussion} werden mögliche Gründe und die Wirkung auf die weitere Auswertung erörtert.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/T_I_1.pdf}
+        \caption{Cap.}
+        \label{fig:T_I_1}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/T_I_2.pdf}
+        \caption{Cap.}
+        \label{fig:T_I_2}
+    \end{subfigure}
+    \caption{Cap.}
+    \label{fig:T_I}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/T_I_1_clean.pdf}
+        \caption{Cap.}
+        \label{fig:T_I_1_clean}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/T_I_2_clean.pdf}
+        \caption{Cap.}
+        \label{fig:T_I_2_clean}
+    \end{subfigure}
+    \caption{Cap.}
+    \label{fig:T_I_clean}
+\end{figure}
+
+\subsection{Ausgleichsrechnung für den Polarisationsansatz}
+\label{sec:Ausgleichsrechnung_Polarisationsansatz}
+In \autoref{sec:Herleitung_Polarisationsstrom} wird eine näherungsweise lineare Abhängigkeit des Logarithmus des Polarisationsstroms zum inversen der Temperatur hergeleitet.
+Die in \autoref{fig:T_I_clean} rot markierten Werte werden dafür verwendet und sind in \autoref{fig:T_I_linfit} in linearisierter Form dargestellt.
+Der Zusammenhang aus Formel~\eqref{eq:i_T} wird verwendet, um mithilfe der Parameter einer linearen Ausgleichsrechnung vom Typ $f(x) = m_{\text{linfit}}x+b_{\text{linfit}}$ die
+Aktivierungsenergie $W$ der Dipole auszurechnen.
+
+Für die Parameter und die daraus folgende Aktivierungsenergie ergibt sich
+\begin{align*}
+    b_{\text{linfit}, 1} &= \num{99999} & m_{\text{linfit}, 1} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{linfit}, 1} &= \qty{99999}{\electronvolt} \\
+    b_{\text{linfit}, 2} &= \num{99999} & m_{\text{linfit}, 2} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{linfit}, 2} &= \qty{99999}{\electronvolt}. \\
+\end{align*}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/T_I_1_linfit.pdf}
+        \caption{Cap.}
+        \label{fig:T_I_1_linfit}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/T_I_2_linfit.pdf}
+        \caption{Cap.}
+        \label{fig:T_I_2_linfit}
+    \end{subfigure}
+    \caption{Cap.}
+    \label{fig:T_I_linfit}
+\end{figure}
+
+
+\subsection{Ausgleichsrechnung für den Integralansatz}
+\label{sec:Ausgleichsrechnung_Integralansatz}
+Gemäß des in \autoref{sec:Herleitung_Stromdichte} hergeleiteten Zusammenhangs~\eqref{eq:W_tau0} kann durch graphische Integration über den Strom erneut ein linearer 
+Zusammenhang zum inversen der Temperatur hergestellt werden. Die dafür verwendeten Datenpunkte sind in \autoref{fig:T_I_clean} orange markiert und in \autoref{fig:int}
+linearisiert aufgetragen. Auch hier liefert eine lineare Ausgleichsrechnung vom Typ $f(x) = m_{intfit}x + b_{\text{intfit}}$ die Parameter, die über \autoref{eq:W_tau0} Aufschluss
+über die Aktivierungsenergie $W$ geben. Es folgt
+\begin{align*}
+    b_{\text{intfit}, 1} &= \num{99999} & m_{\text{intfit}, 1} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{intfit}, 1} &= \qty{99999}{\electronvolt} \\
+    b_{\text{intfit}, 2} &= \num{99999} & m_{\text{intfit}, 2} &= \qty{99999}{\kelvin} &\Rightarrow W_{\text{intfit}, 2} &= \qty{99999}{\electronvolt}. \\
+\end{align*}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/int_1.pdf}
+        \caption{Cap.}
+        \label{fig:int_1}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics{build/int_2.pdf}
+        \caption{Cap.}
+        \label{fig:int_2}
+    \end{subfigure}
+    \caption{Cap.}
+    \label{fig:int}
+\end{figure}
+
+\subsection{Bestimmung der charakteristischen Relaxationszeit}
+\label{sec:Bestimmung_tau}
+Aus \autoref{eq:T_max} folgt, dass die charakteristische Relaxationszeit $\tau_0$ von der Aktivierungsenergie $W$, der Heizrate $b$ und der Temperatur $T_{\text{max}}$ an der 
+Stelle des Strompeaks abhängt. Mithilfe der zuvor bestimmten Aktivierungsenergien $W$ werden 
+
+\begin{align*}
+    \tau_{0, \text{linfit}_1} &= \qty{9999}{\second} \\
+    \tau_{0, \text{linfit}_2} &= \qty{9999}{\second} \\
+\end{align*}
+berechnet. 
+Mithilfe des Parameters $b_{\text{intfit}}$ und \autoref{eq:W_tau0} wird ebenfalls $\tau_0$ bestimmt. Es ergibt sich
+\begin{align*}
+    \tau_{0, \text{intfit}_1} &= \qty{9999}{\second} \\
+    \tau_{0, \text{intfit}_2} &= \qty{9999}{\second} \\
+\end{align*}
+Unter Verwendung von \autoref{eq:tau} wird die Relaxationszeit in Abhängigkeit von der Temperatur in \autoref{fig:tau} geplottet.
+
+\begin{figure}
+    \centering
+    \includegraphics{build/tau.pdf}
+    \caption{Cap.}
+    \label{fig:tau}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

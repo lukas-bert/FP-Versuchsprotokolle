@@ -250,6 +250,27 @@ ax.set_ylabel(r"$\ln \left(\frac{\int_T^\infty i(T')\symup{d}T'}{i(T)\tau_0 b}\r
 plt.tight_layout()
 plt.savefig("build/int_2.pdf")
 
+
+#Plot taus
+def tau(T, tau_0, W):
+   return tau_0*np.e**(W*const.e/(const.k*T))
+
+tau_1 = tau(T_1, noms(tau_1_lin_max), noms(W_1_linfit))
+
+fig, ax = plt.subplots()
+
+xx = np.linspace(200, 320, 10000)
+
+ax.plot(T_1, tau_1, label="wdawd")
+
+ax.legend()
+
+ax.set_xlabel(r"$T \mathbin{/} \unit{\kelvin}$")
+ax.set_ylabel(r"$\tau \mathbin{/} \unit{\second}$")
+
+plt.tight_layout()
+plt.savefig("build/tau.pdf")
+
 # PRINT
 print("#################### V21 ####################")
 print("---------------------------------------------")
@@ -298,7 +319,7 @@ print(f"--> W_2_integral = {W_2_integral} eV")
 print("---------------------------------------------")
 print(f"tau_1_lin_max = {tau_1_lin_max}")
 print(f"tau_2_lin_max = {tau_2_lin_max}")
-print(f"tau_1_integral_max = {tau_1_integral_max}")
-print(f"tau_2_integral_max = {tau_2_integral_max}")
+print(f"tau_1_integral_0 = {tau_1_integral_max}")
+print(f"tau_2_integral_0 = {tau_2_integral_max}")
 print("---------------------------------------------")
 print("#################### V21 ####################")
