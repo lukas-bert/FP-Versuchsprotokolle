@@ -22,7 +22,7 @@ l = np.linspace(0, 3.0, 10000)
 ax.hlines([0, 1], 0, 3.0, ls = "dotted", colors = "grey")
 #ax.plot(l, g(l, r1)*g(l, r1), label = "flat / flat")
 #ax.plot(l, g(l, r2)*g(l, r1), label = r"$r = 1000 \unit{\milli\metre} / r = \infty$")
-ax.plot(l, g(l, r2)*g(l, r2), label = r"$r_1 = \qty{1400}{\milli\metre}, r_2 = \qty{1000}{\milli\metre}$", ls = "dashed", lw = 1)
+#ax.plot(l, g(l, r2)*g(l, r2), label = r"$r_1 = \qty{1400}{\milli\metre}, r_2 = \qty{1000}{\milli\metre}$", ls = "dashed", lw = 1)
 ax.plot(l, g(l, r3)*g(l, r1), label = r"$r_1 = \qty{1400}{\milli\metre}, r_2 = \infty$")
 ax.plot(l, g(l, r3)*g(l, r3), label = r"$r_1 = \qty{1400}{\milli\metre}, r_2 = \qty{1400}{\milli\metre}$")
 
@@ -57,7 +57,7 @@ err = np.sqrt(np.diag(pcov))
 print("---------------------------------------------------------")
 print("Fitparamter Polarisationsfit:")
 print(r"I_1:    ", f"{params[0]:.4f} +- {err[0]:.4f}" )
-print(r"delta:  ", f"{params[1]:.4f} +- {err[1]:.4f}" )
+print(r"delta:  ", f"{params[1]*180/np.pi:.4f} +- {err[1]*180/np.pi:.4f}" )
 print(r"I_0:    ", f"{params[2]:.4e} +- {err[2]:.4e}" )
 print("---------------------------------------------------------")
 
@@ -89,7 +89,7 @@ d, I_00, I_01 = np.genfromtxt("content/data/TEM.txt", unpack = True)
 # TEM_00
 
 def f00(x, I_0, x_0, w):
-    return I_0*np.exp(-(x-x_0)**2/(2*w**2))
+    return I_0*np.exp(-(x-x_0)**2/(w**2))
 
 params00, pcov00 = op.curve_fit(f00, d, I_00)
 err00 = np.sqrt(np.diag(pcov00))
@@ -122,7 +122,7 @@ plt.close()
 # TEM_01
 
 def f01(x, I_0, x_0, w):
-    return I_0*8*(x-x_0)**2/(w**2)*np.exp(-(x-x_0)**2/(2*w**2))
+    return I_0*8*(x-x_0)**2/(w**2)*np.exp(-(x-x_0)**2/(w**2))
 
 params01, pcov01 = op.curve_fit(f01, d, I_01)
 err01 = np.sqrt(np.diag(pcov01))
