@@ -94,16 +94,37 @@ gelten. Die Faktoren $g_1$ und $g_2$ werden mit \eqref{eq:g_i} berechnet.
 Das erzeugte Laserlicht hat eine sehr viel kleinere Wellenlänge als die Länge des Resonators, sodass mehrere Frequenzen im Resonator eine stehende Welle bilden können. Diese unterschiedlichen
 Frequenzen werden als longitudinale Moden bezeichnet. 
 
-Aufgrund von kleinen Unebenheiten oder Verdrehungen der Spiegel können auch transversalen Moden beobachtet werden.
+Aufgrund von kleinen Unebenheiten oder Verdrehungen der Spiegel können auch transversalen Moden beobachtet werden. Die Intensitätsverteilung auf einem Schirm lässt sich mit Hermite-Polinomen beschreiben,
+sodass sich
+
+\begin{equation}
+    I_{mn}(x,y) = I_0\left(\frac{\omega_0}{\omega}\right)^2\left(H_m\left(\frac{\sqrt{2}x}{\omega}\right)\symup{e}^{-\frac{x^2}{\omega^2}}\right)\left(H_n\left(\frac{\sqrt{2}y}{\omega}\right)\symup{e}^{-\frac{x^2}{\omega^2}}\right)
+    \label{eq:I_mn}
+\end{equation}
+ergibt. Hierbei bezeichnet $H_n$ das passende Hermite-Polinom, gegeben durch
+\begin{equation*}
+    H_n = (-1)^{n}\symup{e}^{x^2}\frac{\symup{d}^n}{\symup{d}x^n}\symup{e}^{-x^2}.
+\end{equation*}
+
+In \autoref{fig:TEM} sind die ersten TEM-Moden abgebildet.
+\begin{figure}
+    \centering
+    \includegraphics[height=6cm]{content/pics/TEM.png}
+    \caption{Intensitätsverteilung der ersten TEM-Moden \cite{TEM-Moden}.}
+    \label{fig:TEM}
+\end{figure}
 
 \subsection{Brechung am Gitter}
+Wird Licht an einem Gitter gebrochen, so kommt es zu Interferenzerscheinungen. Die Felder von aufeinandertreffenden Wellenfronten addieren sich gemäß dem
+Superpositionsprinzip, sodass Intensitätsmaxima und -minima auftreten. Durch einfache geometrische Überlegungen folgt für die Position der Maxima
+\begin{equation*}
+    n \lambda = g \sin(\varphi_n).
+    % \label{eq:Interferenzbedingung}
+\end{equation*}
+Der Winkel $\varphi_n$ beschreibt den Winkel zwischen der optischen Achse und dem Strahlweg zum $n$-ten Maximum. Durch Einsetzen der Distanz zwischen dem Hauptmaximum
+und dem Maximum $n$-ter Ordnung $\frac{1}{2}s_{\symup{n}}$, sowie dem Abstand zum Schirm $d$, folgt für die Wellenlänge $\lambda$
 
 \begin{equation}
-    n \lambda = g \sin(\varphi_n)
-    \label{eq:Interferenzbedingung}
-\end{equation}
-
-\begin{equation}
-    \lambda = \frac{g\sin\left(\tan\left(\frac{s_{\symup{n}}}{2d}\right)\right)}{n}
+    \lambda = \frac{g\sin\left(\tan\left(\frac{s_{\symup{n}}}{2d}\right)\right)}{n}.
     \label{eq:lambda}
 \end{equation}
