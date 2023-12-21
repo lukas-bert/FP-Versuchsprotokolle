@@ -2,13 +2,13 @@
 \label{sec:Auswertung}
 In diesem Versuch stehen drei Spiegel als Enden des Resonators zur Verfügung. Ein Spiegel ist ein konkaver Auskopplungsspiegel (OC) mit einem Radius 
 $r_1 = \qty{1400}{\milli\metre}$, welcher immer verwendet werden muss, da hierüber das Licht ausgekoppelt wird.
-Dazu können ein weiterer konkaver Spiegel mit Radius $r_2 = \qty{1400}{\milli\metre}$ (Konfiguration 1) und ein flacher Spiegel mit $r_2 = \infty$ (Konfiguration 2) verwedendet werden.
+Dazu können ein weiterer konkaver Spiegel mit Radius $r_2 = \qty{1400}{\milli\metre}$ (Konfiguration 1) und ein flacher Spiegel mit $r_2 = \infty$ (Konfiguration 2) verwendet werden.
 \subsection{Überprüfung der Stabilitätsbedingung}
 Zuerst wird die Stabilitätsbedingung \eqref{eq:g1g2} überprüft.
 Die Theoriekurven der Stabilitätsbedingung nach \autoref{eq:g1g2} sind für beide Spiegelkonfigurationen in \autoref{fig:stability} zu sehen.
 \begin{figure}
   \centering
-  \includegraphics{stability.pdf}
+  \includegraphics[width = .8\textwidth]{stability.pdf}
   \caption{Stabilitätsbedingung für die verwendeten Spiegelkonfigurationen.}
   \label{fig:stability}
 \end{figure}
@@ -66,7 +66,7 @@ In \autoref{fig:TEM_Modes} sind verschiedene observierte Moden abgebildet.
   \label{fig:TEM_Modes}
 \end{figure}
 Es wird die Intensitätsverteilung der $\text{TEM}_{00}$ und $\text{TEM}_{10}$ Moden vermessen. Die Messdaten können \autoref{tab:TEM} entnommen werden.
-\begin{table}
+\begin{table}[H]
   \centering
   \aboverulesep=0ex % Solution part 1 of 3
   \belowrulesep=0ex % Solution part 1 of 3
@@ -119,13 +119,13 @@ Es wird die Intensitätsverteilung der $\text{TEM}_{00}$ und $\text{TEM}_{10}$ M
 
 Die Intensität der $\text{TEM}_{00}$-Mode folgt nach \autoref{eq:I_mn} einer Gaußverteilung, weshalb eine Funktion
 \begin{equation*}
-  I(x) = I_0 \text{exp}\left[-(x-x_0)^2/(\omega^2)\right]
+  I(x) = I_0 \text{exp}\left[-(x-x_0)^2/\omega^2\right]
 \end{equation*}
 mittels \textit{scipy} \cite{scipy} an die Messdaten gefitted wird.
 Der resultierende Fit ist in \autoref{fig:TEM00} zu sehen.
-\begin{figure}
+\begin{figure}[H]
   \centering
-  \includegraphics{TEM00.pdf}
+  \includegraphics[width = .8\textwidth]{TEM00.pdf}
   \caption{Messdaten der Intensitätsverteilung der $\text{TEM}_{00}$-Mode und Fit mittels \textit{scipy} \cite{scipy}.}
   \label{fig:TEM00}
 \end{figure}
@@ -141,12 +141,12 @@ Die Fitparameter ergeben sich zu
 
 Für die $\text{TEM}_{10}$-Mode wird die Funktion
 \begin{equation*}
-  I(x) = 8I_0\frac{(x-x_0)^2}{\omega^2} \text{exp}\left[-(x-x_0)^2/(\omega^2)\right]
+  I(x) = 8I_0\frac{(x-x_0)^2}{\omega^2} \text{exp}\left[-(x-x_0)^2/\omega^2\right]
 \end{equation*}
 an die Messdaten gefitted.
-\begin{figure}
+\begin{figure}[H]
   \centering
-  \includegraphics{TEM01.pdf}
+  \includegraphics[width = .8\textwidth]{TEM01.pdf}
   \caption{Messdaten der Intensitätsverteilung der $\text{TEM}_{10}$-Mode und Fit mittels \textit{scipy} \cite{scipy}.}
   \label{fig:TEM01}
 \end{figure}
@@ -156,7 +156,7 @@ Die Fitparameter lauten
   x_0 &= \qty{2.30 +- 0.09}{\milli\metre} \\
   \omega &= \qty{6.12 +- 0.09}{\milli\metre}.
 \end{align*}
-
+Die Messdaten und der resultierende Fit sind in \autoref{fig:TEM01} abgebildet.
 \subsection{Polarisation des Lasers}
 Zur Bestimmung der Polarisation des Laserstrahls werden die in \autoref{tab:polarisation} gelisteten Messdaten verwendet.
 \begin{table}
@@ -194,7 +194,7 @@ Aufgrund der zu erwartenden $\pi$-Periodizität wird die Funktion
 zur Modellierung der Daten verwendet. Die Daten und der resultierende Fit sind in \autoref{fig:polarisation} dargestellt.
 \begin{figure}
   \centering
-  \includegraphics{polarisation.pdf}
+  \includegraphics[width = .8\textwidth]{polarisation.pdf}
   \caption{Messdaten zur Bestimmung der Polarisation des Laserstrahls und Fit mittels \textit{scipy} \cite{scipy}.}
   \label{fig:polarisation}
 \end{figure}
