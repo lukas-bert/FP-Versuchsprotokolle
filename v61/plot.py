@@ -4,6 +4,8 @@ import scipy.optimize as op
 import uncertainties.unumpy as unp
 from uncertainties import ufloat
 import scipy.constants as const
+from uncertainties.unumpy import nominal_values as noms
+from uncertainties.unumpy import std_devs as stds
 
 ###########################################################################################################################
 # Stability of the Laser
@@ -187,6 +189,19 @@ delta_f=unp.uarray(mean, std)
 
 L_exp = const.c/(2*delta_f*10**6)
 
+plt.errorbar(np.array(L), noms(1/delta_f), yerr = stds(1/delta_f), label = "Messwerte", marker = ".", color = "black", lw = 0, capsize= 2, elinewidth= 1)
+l = np.linspace(50, 200, 100)
+plt.plot(l, 2/const.c*10**(4)*l, label = "Theoriekurve", c = "firebrick")
+plt.xlabel(r"$L \mathbin{/} \unit{\centi\metre}$")
+plt.ylabel(r"$\frac{1}{\symup{\Delta}f} \mathbin{/} \unit{\mega\hertz^{-1}}$")
+
+plt.legend()
+plt.grid()
+plt.tight_layout()
+#plt.show()
+
+plt.savefig("build/multimode.pdf")
+plt.close()
 
 print("---------------------------------------------------------")
 print("Multimoden Frequenzspektrum:")

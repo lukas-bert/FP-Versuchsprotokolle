@@ -214,39 +214,53 @@ Resonatorlängen entnommen werden kann. Aus dem gemessenen Frequenzspektrum kann
   \centering
   \aboverulesep=0ex % Solution part 1 of 3
   \belowrulesep=0ex % Solution part 1 of 3
-  \caption{Frequenzspektrum $[f]$ des Lasers bei verschiedenen Resonatorlängen $L$.}
+  \caption{Frequenzspektrum $[f]$ des Lasers bei verschiedenen Resonatorlängen $L$ und daraus ermittelte experimentelle Werte der Resonatorlänge $L_\text{exp}$.}
   \label{tab:Multimoden}
-  \begin{tabular}{c | c | l}
+  \begin{tabular}{c | c | l | c }
     %\toprule
-    {$L \mathbin{/} \unit{\centi\metre}$} & $[f] \mathbin{/} \unit{\mega\hertz}$ & $\symup{\Delta}f \mathbin{/} \unit{\mega\hertz}$ \\%& {$L_\text{exp} \mathbin{/} \unit{\centi\metre}$}\\
+    {$L \mathbin{/} \unit{\centi\metre}$} & $[f] \mathbin{/} \unit{\mega\hertz}$ & $\symup{\Delta}f \mathbin{/} \unit{\mega\hertz}$ & {$L_\text{exp} \mathbin{/} \unit{\centi\metre}$}\\
     \midrule
     \rule{0pt}{1.1EM}
-     50 &                      {304, 611, 919} & {307,50 \pm \; 0,50} \\   
+     50 &                      {304, 611, 919} & {307,50 \pm \; 0,50} & {$\num{48.75+-0.08}$} \\   
      \midrule
      \rule{0pt}{1.1EM} 
-     75 &           {203, 405, 604, 806, 1009} & {201,50 \pm \; 1,50} \\    
+     75 &           {203, 405, 604, 806, 1009} & {201,50 \pm \; 1,50} & {$\num{74.39+-0.55}$} \\    
      \midrule
      \rule{0pt}{1.1EM} 
-    100 & {150, 300, 454, 600, 754, 904, 1054} & {150,67 \pm \; 2,75} \\   
+    100 & {150, 300, 454, 600, 754, 904, 1054} & {150,67 \pm \; 2,75} & {$\num{99.49+-1.82}$} \\   
     \midrule
     \rule{0pt}{1.1EM}  
-    125 & {124, 240, 364, 480, 600, 720, 840,} & {120,00 \pm \; 2,67} \\  
-        &                    {960, 1080, 1204} &                      \\   
+    125 & {124, 240, 364, 480, 600, 720, 840,} & {120,00 \pm \; 2,67} & {$\num{124.91+-2.78}$} \\  
+        &                    {960, 1080, 1204} &                      & \\   
     \midrule
     \rule{0pt}{1.1EM}  
-    150 & {101, 203, 304, 401, 503, 604, 701,} & {100,64 \pm \; 1,77} \\     
-        &         {803, 904, 1005, 1106, 1208} &                      \\
+    150 & {101, 203, 304, 401, 503, 604, 701,} & {100,64 \pm \; 1,77} & {$\num{148.95+-2.62}$} \\     
+        &         {803, 904, 1005, 1106, 1208} &                      & \\
     \midrule
     \rule{0pt}{1.1EM}
-    175 &  {86, 176, 260, 350, 435, 518, 600,} & { 86,25 \pm \; 3,03} \\   
-        &     {686, 773, 863, 949, 1031, 1121} &                      \\
+    175 &  {86, 176, 260, 350, 435, 518, 600,} & { 86,25 \pm \; 3,03} & {$\num{173.79+-6.11}$} \\   
+        &     {686, 773, 863, 949, 1031, 1121} &                      & \\
     \midrule
     \rule{0pt}{1.1EM}
-    200 &  {75, 154, 221, 300, 375, 450, 525,} & { 75,31 \pm \; 4,18} \\
-        & {596, 670, 754, 825, 904, 980, 1054} &                      \\
+    200 &  {75, 154, 221, 300, 375, 450, 525,} & { 75,31 \pm \; 4,18} & {$\num{199.05+-11.04}$} \\
+        & {596, 670, 754, 825, 904, 980, 1054} &                      & \\
   \end{tabular}
 \end{table}
+
 Es lässt sich feststellen, dass der Abstand der Frequenzpeaks invers-proportional zu der Resonatorlänge ist und mit größerer Resonatorlänge mehr Frequenzen auftreten.
+In \autoref{fig:multimode} ist das Inverse der berechneten Abstände zwischen den Frequenzpeaks gegen die Länge des Resonators aufgetragen. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = .8\textwidth]{multimode.pdf}
+  \caption{Eingestellte Resonatorlänge gegen das Inverse der Schwebungsfrequenzen und Theoriekurve.}
+  \label{fig:multimode}
+\end{figure}
+Wie sich erkennen lässt, stimmen die Messwerte gut mit der Theoriekurve
+\begin{equation}
+  L = \frac{c}{2 \symup{\Delta}f}
+  \label{eq:delta_f}
+\end{equation}
+überein. Mit diesem Zusammenhang lassen sich experimentelle Werte der Längen des Resonators berechnen. Diese sind in \autoref{tab:Multimoden} aufgelistet.
 
 \subsection{Bestimmung der Wellenlänge des Lasers}
 Zuletzt wird die Wellenlänge des Lasers mittels der Interferenzbedingung bei Beugung an einem Gitter ermittelt. Dazu werden verschiedene Gitter in den Strahlengang gebracht und der 
