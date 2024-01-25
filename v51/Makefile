@@ -1,14 +1,14 @@
 all: build/v51.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+build/invert1.pdf build/invert2.pdf build/invert3.pdf build/invert_phase.pdf build/integrator.pdf build/differentiator.pdf build/generator_scope.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
 # hier weitere Abhängigkeiten für build/v51.pdf deklarieren:
-build/v51.pdf: build/plot.pdf
+build/v51.pdf: build/invert1.pdf build/invert2.pdf build/invert3.pdf build/invert_phase.pdf build/integrator.pdf build/differentiator.pdf build/generator_scope.pdf
 
 build/v51.pdf: FORCE | build
 	# to find header and bib files in the main directory

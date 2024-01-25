@@ -1,2 +1,65 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die experiementell bestimmten Leerlaufverstärkungen werden in \autoref{tab:vlg_V} mit den theoretischen verglichen. Es fällt auf, 
+dass für $V_{\mathrm{theo}}=15$ der experiementelle Wert mit dem Unsicherheitsbereich vereinbar ist. Für diese Messung konnte über einen 
+großen Plateaubereich gemittelt werden (siehe \autoref{fig:plots_inv}), was für die anderen beiden Verstärkungen nicht der Fall ist. Daher
+liegt die Vermutung nahe, dass mit einem größeren Datensatz auch die anderen Verstärkungen näher am Theoriewert lägen.
+\begin{table}
+    \centering
+    \caption{Vergleich der theoretischen und experiementell bestimmten Leerlaufverstärkungen}
+    \label{tab:vgl_V}
+    \begin{tabular}{S S S}
+      \toprule
+      {$V_{\mathrm{theo}}$} & {$V_{\mathrm{i}}$} & {rel. Abweichung} \\
+      \midrule
+      100 & \num{92+-5}     & \qty{8}{\percent} \\
+       15 & \num{15.1+-0.4} & \qty{0,7}{\percent} \\
+      179 & \num{129+-11}   & \qty{27,9}{\percent} \\ 
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  Die bestimmten Grenzfrequenzen und Bandbreiten hängen auch von den bestimmten Leerlaufverstärkungen ab, sodass sich die Unsicherheiten 
+  hier fortpflanzen.
+
+  Die Funktionsweise der Integratorschaltung kann in diesem Versuch bestätigt werden. In \autoref{fig:scope_int} ist deutlich die
+  integrierende Wirkung der Schaltung visualisiert. In dem zur Bestimmung der Zeitkonstanten verwendete Plot \autoref{fig:integrator_exp} ist zu
+  sehen, dass der erwartete Theoriewert und der experiementelle Wert voneinander abweichen. Im Detail liegen die beiden Werte
+  der beiden Werte
+  \begin{align*}
+    \tau_{\mathrm{int, theo}} &=\qty{1}{\milli\second} \\
+    \tau_{\mathrm{int, exp}} &= \qty{6.40+-0.21}{\milli\second} \\
+  \end{align*}
+ soweit auseinander, dass diese nicht durch statistische Unsicherheiten erklärt werden können. Es ist denkbar, dass ein Bauteil fehlerhaft ist
+ oder ein falsches Bauteil in die Schaltung eingesetzt wurde.
+
+ Bei der Differentiatorschaltung kann keine differnezierende Wirkung festgestellt werden. Stattdessen ist zu beobachten, dass die Schaltung
+ genau wie die Integratorschaltung zuvor funktioniert. Auch der Fit in \autoref{fig:differenzierer_exp} liefert eine Steigung von $m\approx -1$, 
+ was charakteristisch für eine Integratorschaltung ist. Es ist daher nicht auszuschließen, dass fahrlässiger Weise zweimal dieselbe Schaltung
+ aufgebaut wurde.
+
+ Für den Schmitt-Trigger wird die theoretische Schwellenspannung von $U_{\mathrm{kipp, theo}} = \qty{1,5}{\volt}$ experiementell bestätigt.
+ Minimale Abweichung lassen sich durch Innen- oder Kabelwiderstände erklären.
+
+ Für die erste Generatorschaltung weichen die bestimmten Werte der Frequenz und Spannung stark von den theoretischen ab. Es ist auch hier 
+ nicht unvorstellbar, dass falsche Bauteile eingesetzt wurden.
+ Die Periodendauer der Generatorschaltung mit variierender Amplitude wird zu
+\begin{equation*}
+  T_{\mathrm{exp}} = \qty{5.56+-0.32}{\milli\second}
+\end{equation*}
+bestimmt, was einer Abweichung von \qty{12,9}{\percent} zu der theoretischen von
+\begin{equation*}
+    T_{\mathrm{theo}} = \qty{6,28}{\milli\second}
+\end{equation*}
+entspricht. Möglich ist hier, dass die bestimmten lokalen Maxima nicht exakt genug sind. Hierbei ist darüber hinaus verwunderlich, dass
+die eingekoppelte Rechteckspannung nicht für alle Frequenzen sichtbar bleibt (vgl. \autoref{fig:scope_generator2}). Etwaige Rückkopplungen
+könnten ebenfalls das Ergbniss verfälschen.
+
+%  \begin{align*}
+%     \nu_\text{a} &=\qty{2,5}{\kilo\hertz} \\
+%     U_0 &=\qty{1,5}{\volt} \\
+%   \end{align*}
+%   \begin{align*}
+%     \nu_{\mathrm{a, exp}} &= \qty{4,678}{\kilo\hertz} \\
+%     U_{0, \mathrm{exp}} &= \qty{1,09}{\volt}.
+%   \end{align*}
