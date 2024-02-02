@@ -6,7 +6,7 @@ Kenngrößen und Zusammenhänge werden vermessen und mit den Erwartungen eines i
 \section{Theorie}
 \label{sec:Theorie}
 Der Operationsverstärker (\textit{OP}, \textit{OpAmp}) ist ein wichtiges Bauteil zur Verstärkung von Spannungssignalen.
-Dem Aufbau eines OpAmp's liegt ein Differenzverstärker zur Grunde, weshalb auch die Differenz zweier anliegender Spannungssignale verstärkt wird.
+Dem Aufbau eines OpAmp's liegt ein Differenzverstärker zur Grunde, welcher die Differenz zweier anliegender Spannungssignale verstärkt.
 Der invertierende Eingang wird mit einem \enquote{-} gekennzeichnet, der nicht-Invertierende mit einem \enquote{+}.
 Ein idealer OpAmp hat eine unendliche Leerlaufverstärkung, wohingegen der reale Operationsverstärker einen Verstärkungsfaktor $V$ von etwa $10^4$ bis $10^7$ aufweist.
 Der OpAmp wird mit zwei Betriebsspannungen $\pm U_\text{B}$ versorgt, wodurch die Amplitude des Ausgangsignals 
@@ -29,21 +29,23 @@ Beim idealen Operationsverstärker ist der Eingangswiderstand unendlich groß un
 von $R_\text{e} > \qty{1}{\mega\ohm}$ und einen Ausgangswiderstand von etwa $R_\text{a} = \qtyrange[range-phrase = -]{10}{1000}{\ohm}$.
 Ebenso hat der ideale OpAmp eine unendliche Übertragungsbandbreite, wohingegen der reale Operationsverstärker eine Grenzfrequenz zwischen $\qty{10}{\hertz}$ und 
 $\qty{10}{\kilo\hertz}$ hat. Die Bandbreite wird bei Operationsverstärkern mit dem konstanten Verstärkung-Bandbreite-Produkt angegeben.
-Des Weiteren tritt auch eine Gleichtaktverstärkung auf, also wenn gleiche Spannungssignale anliegen. Da dieses Verhalten unerwünscht ist, wird die Kenngröße der 
-Gleichtaktunterdrückung $G$
+Des Weiteren tritt bei realen Verstärkern eine Gleichtaktverstärkung auf, sobald gleiche Spannungssignale anliegen. 
+Bei einem idealen OpAmp wäre in diesem Fall die Ausgangsspannung $U_\text{a} = 0$.
+Nichtsdestotrotz tritt eine Gleichtaktunterdrückung auf, deren Kenngröße
 \begin{equation}
     G = \frac{V_0}{V_\text{Gl}}
     \label{eq:Gleichtakt}
 \end{equation}
-als Verhältnis der Leerlaufverstärkung $V_0$ und der Gleichtaktverstärkung $V_\text{Gl}$ angegeben.
+als Verhältnis der Leerlaufverstärkung $V_0$ und der Gleichtaktverstärkung $V_\text{Gl}$ angegeben wird und welche das gleichgetaktete Rauschen an den Eingängen
+des Operationsverstärkers unterdrückt.
 
 \subsection{Grundlegende Schaltungen}
-Durch Rückkopplung des Ausgangsignals auf den Eingang (Feedback) kann ein Operationsverstärker in vielen Schaltunge mit unterschiedlichen Funktionen verwendet werden.
-Eine positive Rückkopplung verstärkt dabei das Eingangssignal, während negatives Feedback dem Eingangssignal entgegen wirkt.
+Durch Rückkopplung des Ausgangsignals auf den Eingang (Feedback) kann ein Operationsverstärker in Schaltungen mit unterschiedlichen Funktionen verwendet werden.
+Eine positive Rückkopplung verstärkt dabei das Eingangssignal, während negatives Feedback Änderungen des Eingangssignals dämpft.
 Durch zweiteres kann eine Stabilisierung des Betriebs des OpAmp's erreicht werden.
 
 \subsubsection{Invertierender Linearverstärker}
-Bei einem invertierenden Verstärker wird eine Rückkopplung des Ausgangsignals auf den invertierenden Eingang (Gegenkopplung) gegeben.
+Bei einem invertierenden Verstärker wird eine Rückkopplung des Ausgangsignals auf den invertierenden Eingang (Gegenkopplung) angewandt.
 \begin{figure}
     \centering
     \includegraphics[width = .5\textwidth]{"content/pics/inverting.png"}
@@ -81,22 +83,22 @@ Der Schaltplan eines Integrators ist in \autoref{fig:integrator} gegeben.
 \end{figure}
 Hier gilt für den Knotenpunkt 
 \begin{equation*}
-    I_1 + I_\text{C} = 0
+    I_1 + I_\text{C} = 0\;.
 \end{equation*}
-und mit  
+Unter Verwendung des Ohmschen Gesetzes
 \begin{equation*}
     I_1 = \frac{U_1}{R}
 \end{equation*}
-und 
+für den Strom $I_1$ und dem Ausdruck
 \begin{equation*}
     \int I_C \symup{d}t = Q = CU_\text{a}
 \end{equation*}
-für die Ausgangsspannung 
+für den Strom am Kondensator, folgt zur Berechnung der Ausgangsspannung
 \begin{equation}
     U_\text{a} = -\frac{1}{RC} \int U_1 \symup{d}t \;.
     \label{eq:integrator1}
 \end{equation}
-Für eine Wechselspannung $U_1 = U_0 \symup{sin}\left(\omega t\right)$ ist also 
+Für eine Wechselspannung $U_1 = U_0 \symup{sin}\left(\omega t\right)$ beträgt die Ausgangsspannung demnach
 \begin{equation}
     U_\text{a} = \frac{U_0}{\omega RC} \symup{cos}\left(\omega t\right) \;.
     \label{eq:integrator2}
@@ -118,7 +120,7 @@ Analog zum Integrator folgt mit
     U_\text{a} = -RC \cdot \dot{U}_1 \;.
     \label{eq:differenzierer1}
 \end{equation}
-Also mit einer sinusförmigen Wechselspannung
+Mit einer sinusförmigen Wechselspannung am Eingang ergibt sich somit die Ausgangsspannung
 \begin{equation}
     U_\text{a} = -\omega RC U_0 \cdot \symup{cos}\left(\omega t\right) \;.
     \label{eq:differenzierer2}
@@ -158,9 +160,9 @@ Zuletzt werden die Schaltungen eines Generators (\autoref{fig:generator1}) und e
     \caption{Schaltplan eines Generators und eines Generators mit variierender Amplitude \cite{v51}.}
     \label{fig:generator}
 \end{figure}
-Der Generator besteht aus einem Schmitt-Trigger und einem Integrator. Der Schmitt-Trigger schaltet bei jedem Überschreiten oder Unterschreiten des Schwellenwertes $U_{\pm}$
-zwischen $\pm U_\text{B}$. Es liegt also eine Rechteckspannung an seinem Ausgang an. Am Ausgang des Integrators liegt dann eine Dreieckspannung an, die wieder auf den Eingang des 
-Schmitt-Triggers rückgekoppelt wird. 
+Der Generator besteht aus einem Schmitt-Trigger und einem Integrator. Der Schmitt-Trigger schaltet zwischen den Spannungen $\pm U_\text{B}$ und gibt daher eine Rechteckspannung aus.
+Diese wird über den Integrator zu einer Dreieckspannung umgewandelt, die wieder auf den Eingang des Schmitt-Triggers rückgekoppelt wird und dort wiederum das periodische 
+Umschalten des Schmitt-Triggers auslöst. 
 Die Frequenz des Generators ist durch
 \begin{equation}
 \nu_\text{a} = \frac{R_2}{4C R_1 R_3}
@@ -176,7 +178,7 @@ Die Ausgangsspannung des Generators mit variierender Amplitude wird über die Di
 \begin{equation}
     \frac{\symup{d}^2 U_\text{a}}{\symup{d}t^2} - \frac{\eta}{10RC}\frac{\symup{d}U_\text{a}}{\symup{d}t} + \frac{1}{(RC)^2}U_\text{a} = 0
 \end{equation}
-beschrieben. Die Konstante $-1 \leq \eta \leq 1$ ist dabei über $R_1$ einstellbar. 
+beschrieben. Die Dämpfungskonstante $-1 \leq \eta \leq 1$ ist dabei über $R_1$ einstellbar. 
 Für $\eta < 0$ kann eine gedämpfte Schwingung gemessen werden, für $\eta > 0$ oszilliert das System.
 Die Schwingungsdauer ist dabei 
 \begin{equation}
